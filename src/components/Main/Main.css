@@ -1,0 +1,6 @@
+.landing{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: var(--height-promo);
+  box-sizing: border-box;
+}

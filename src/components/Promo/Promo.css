@@ -1,0 +1,14 @@
+.promo {
+  --color-bg: var(--color-darkBlue);
+  background: var(--color-bg);
+}
+
+.promo__title {
+  margin: 0;
+  font-size: var(--font-size-titleBig);
+  line-height: var(--font-lineHeight-titleBig);
+  letter-spacing: var(--font-narrow);
+  width: var(--width-promoTitle);
+  text-align: center;
+  padding: var(--padding-promoTitle);
+}

@@ -134,6 +134,9 @@
   --height-afterSavedCards: 140px;
   --gap-horizontal-cardGrid: 24px;
   --gap-vertical-cardGrid: 30px;
+  --height-promo: 524px;
+  --width-promoTitle: 730px;
+  --padding-promoTitle: 184px 0 224px 0;
 }
 
 /* Значения для разрешения 768px */
@@ -149,7 +152,7 @@
     --font-lineHeight-studentName: 40px;
     --font-lineHeight-smallPlus: 14.5px;
 
-    /*Отступы*/
+    /*Отступы и размеры*/
     --padding-main: 0 50px;
     --padding-header: 18px 30px;
     --padding-footer: 0 30px 20px 0;
@@ -162,6 +165,8 @@
     --padding-userEditForm: 236px 0 269px 0;
     --padding-signForm: 232px 0;
     --padding-notFound: 408px 0 447px 0;
+    --height-promo: 784px;
+    --padding-promoTitle: 326px 0 342px 0;
   }
 }
 
@@ -192,7 +197,7 @@
     --font-lineHeight-titleTechSection: 36px;
     --font-lineHeight-studentName: 36px;
     --font-lineHeight-searchFormText: 18px;
-    /* Отступы */
+    /* Отступы и размеры*/
     --padding-header: 18px 30px;
     --padding-main: 0 18px;
     --padding-aboutProject: 70px 0;
@@ -203,5 +208,8 @@
     --padding-userEditForm: 70px 0 40px 0;
     --padding-signForm: 56px 0 30px 0;
     --padding-notFound: 329px 0 30px 0;
+    --height-promo: 570px;
+    --width-promoTitle: 300px;
+    --padding-promoTitle: 207px 0 346px 0;
   }
 }

@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../Logo/Logo';
 
 function Navigation({ place }) {
   return (
     <nav className="navigation">
-      <Link className="logo" />
+      <Link>
+        <Logo />
+      </Link>
 
       <ul className={`navigation__films ${place === 'landing' ? 'navigation__films_hidden' : ''}`}>
         <li className="navigation__films-element">
