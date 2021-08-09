@@ -1,6 +1,7 @@
 :root {
   /*Цвета палитры*/
   --color-white: #fff;
+  --color-trueBlack: #000;
   --color-black: #202020;
   --color-green: #3DDC84;
   --color-red: #EE3465;
@@ -69,7 +70,8 @@
   --font-size-titleSmallest: var(--font-size-medium);
   --font-size-mainText: var(--font-size-mediumMinus);
   --font-size-headerTextSmall: var(--font-size-small);
-  --font-size-headerTextBig: var(--font-size-smallPlus);
+  --font-size-headerTextMedium: var(--font-size-smallPlus);
+  --font-size-headerTextBig: var(--font-size-mediumMinus);
   --font-size-footerText: var(--font-size-smallPlus);
   --font-size-searchFormText: var(--font-size-mediumMinus);
   --font-size-userFormTitle: var(--font-size-bigger);
@@ -112,7 +114,7 @@
 
   /*Отступы и размеры*/
   --padding-main: 0 70px;
-  --padding-header: 28px 70px;
+  --padding-header: 18px 70px;
   --padding-search: 80px 0;
   --padding-aboutProject: 110px 0;
   --padding-usedTechs: 100px 0;

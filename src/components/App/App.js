@@ -1,19 +1,21 @@
 import './App.css';
-import Header from '../Header/Header'
-import Navigation from "../Navigation/Navigation";
-import Main from "../Main/Main";
-import Footer from "../Footer/Footer";
-
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
+import { Route, Switch } from 'react-router-dom';
+import React from 'react';
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   return (
-    <>
-      <Header />
-      <Navigation />
-      <Main />
+    <div className="app">
+      <Switch>
+        <Route exact path="/">
+          <Header place="landing" />
+          <Main />
+        </Route>
+      </Switch>
       <Footer />
-    </>
-
-
+    </div>
   );
 }
 

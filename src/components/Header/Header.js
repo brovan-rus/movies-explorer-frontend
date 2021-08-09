@@ -1,12 +1,10 @@
 import React from "react";
 import Navigation from "../Navigation/Navigation";
 
-function Header() {
+function Header({place}) {
   return (
-    <header className="header">
-      <div className="header__logo"/>
-      <Navigation />
-      
+    <header className={`header header_place_${place}`}>
+      <Navigation place={place}/>
     </header>
   );
 }
