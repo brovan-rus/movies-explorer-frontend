@@ -1,6 +1,10 @@
 .header {
   padding: var(--padding-header);
   background: var(--color-bg);
+  @media (--res-wideToMid) {
+    @mixin responsiveValue padding-left, 1280, 768, 70, 30;
+    @mixin responsiveValue padding-right, 1280, 768, 70, 30;
+  }
 
   &_place_landing {
     --color-bg: var(--color-darkBlue);

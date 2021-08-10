@@ -1,6 +1,35 @@
 .promo {
+  box-sizing: border-box;
+  padding: var(--padding-promo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   --color-bg: var(--color-darkBlue);
-  background: var(--color-bg);
+  background: var(--color-bg) no-repeat;
+  background-position-x: center;
+  background-position-y: 82px;
+  background-image: url('../../images/landing-logo.svg');
+  background-size: 320px;
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue height, 1280, 768, 524, 784;
+    @mixin responsiveValue background-position-y, 1280, 768, 82, 224;
+    @mixin responsiveValue padding-top, 1280, 768, 184, 326;
+    @mixin responsiveValue padding-bottom, 1280, 768, 224, 342;
+  }
+  @media (--res-midToSm) {
+    @mixin responsiveValue padding-top, 768, 320, 326, 207;
+    @mixin responsiveValue padding-bottom, 768, 320, 342, 246;
+    @mixin responsiveValue background-size, 768, 320, 320, 248;
+    @mixin responsiveValue background-position-y, 768, 320, 224, 142;
+    @mixin responsiveValue height, 768, 320, 784, 570;
+  }
+  @media (--res-sm) {
+    background-size: 248px;
+    background-position-y: 142px;
+  }
+
   &__title {
     margin: 0;
     font-size: var(--font-size-titleBig);
@@ -8,18 +37,11 @@
     letter-spacing: var(--font-narrow);
     width: var(--width-promoTitle);
     text-align: center;
-    padding: var(--padding-promoTitle);
-  }
+    font-weight: 400;
 
-  @media (--res-wideToMid) {
-    @mixin responsiveValue height, 1280, 768, 524, 784;
+    @media (--res-midToSm) {
+      @mixin responsiveValue font-size, 768, 320, 50, 31;
+      @mixin responsiveValue width, 768, 320, 730, 300;
+    }
   }
-
 }
-
-/*@media screen and (min-width: 768px) and (max-width: 1280px) {*/
-/*  .promo__title {*/
-/*    */
-/*  }*/
-/*}*/
-

@@ -1,6 +1,6 @@
 .landing{
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: var(--height-promo);
+  grid-template-rows: repeat(5, min-content);
   box-sizing: border-box;
 }
