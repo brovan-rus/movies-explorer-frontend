@@ -1,7 +1,15 @@
-.app{
-  &__text{
+.app {
+  &__text {
     font-family: var(--font-baseFontFamily);
     color: var(--color-text);
   }
+
+  &__link {
+    transition: opacity .4s ease-in;
+    &:hover{
+      opacity: .6;
+    }
+  }
+
 }
 

@@ -1,0 +1,31 @@
+.nav-tab{
+  --bg-color: var(--color-darkGray);
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-navTab);
+  &__link {
+    font-weight: 500;
+    font-size: var(--font-size-navTabText);
+    line-height: 16px;
+    text-decoration: none;
+    border-bottom: 2px solid white;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    &-element {
+      margin-right: 40px;
+      &:last-child{
+        margin-right: 0;
+      }
+      @media (--res-sm) {
+        margin-right: 24px;
+      }
+    }
+  }
+}

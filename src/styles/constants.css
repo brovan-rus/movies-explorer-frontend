@@ -92,6 +92,7 @@
   --font-size-cardLoadButton: var(--font-size-small);
   --font-size-notFoundErrorText: var(--font-size-great);
   --font-size-mobileNavText: 18px;
+  --font-size-navTabText: 13px;
 
   /*Высота линии элементов*/
   --font-lineHeight-titleBig: var(--font-lineHeight-biggest);
@@ -118,6 +119,7 @@
   --font-lineHeight-cardLoadButton: calc(var(--font-lineHeight-smaller) + 1.5px);
   --font-lineHeight-notFoundErrorText: var(--font-lineHeight-great);
   --font-lineHeight-mobileNavText: 22px;
+  --font-lineHeight-navTabText: 16px;
 
   /*Отступы и размеры*/
   --padding-main: 0 70px;
@@ -144,6 +146,7 @@
   --height-promo: 524px;
   --width-promoTitle: 730px;
   --padding-promo: 184px 0 224px 0;
+  --padding-navTab: 24px 0;
 }
 
 /*@media screen and (min-width: 768px) and (max-width: 1280px) {*/
@@ -199,6 +202,7 @@
     --font-size-userFormTextBig: var(--font-size-smallPlus);
     --font-size-titleTechSection: 30px;
     --font-size-studentName: 30px;
+    --font-size-navTabText: 13px;
     --font-lineHeight-great: 97px;
     --font-lineHeight-biggest: 39px;
     --font-lineHeight-big: 28px;
@@ -224,5 +228,6 @@
     --height-promo: 570px;
     --width-promoTitle: 300px;
     --padding-promoTitle: 207px 0 346px 0;
+    --padding-navTab: 25px 0;
   }
 }
