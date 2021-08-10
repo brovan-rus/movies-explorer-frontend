@@ -1,14 +1,25 @@
 .promo {
   --color-bg: var(--color-darkBlue);
   background: var(--color-bg);
+  &__title {
+    margin: 0;
+    font-size: var(--font-size-titleBig);
+    line-height: var(--font-lineHeight-titleBig);
+    letter-spacing: var(--font-narrow);
+    width: var(--width-promoTitle);
+    text-align: center;
+    padding: var(--padding-promoTitle);
+  }
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue height, 1280, 768, 524, 784;
+  }
+
 }
 
-.promo__title {
-  margin: 0;
-  font-size: var(--font-size-titleBig);
-  line-height: var(--font-lineHeight-titleBig);
-  letter-spacing: var(--font-narrow);
-  width: var(--width-promoTitle);
-  text-align: center;
-  padding: var(--padding-promoTitle);
-}
+/*@media screen and (min-width: 768px) and (max-width: 1280px) {*/
+/*  .promo__title {*/
+/*    */
+/*  }*/
+/*}*/
+

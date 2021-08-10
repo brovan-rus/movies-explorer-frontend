@@ -11,15 +11,15 @@ function Navigation({ place }) {
 
       <ul className={`navigation__films ${place === 'landing' ? 'navigation__films_hidden' : ''}`}>
         <li className="navigation__films-element">
-          <Link className="text navigation__link">Фильмы</Link>
+          <Link className="app__text navigation__link">Фильмы</Link>
         </li>
         <li className="navigation__films-element">
-          <Link className="text text__navigation navigation__link">Сохранённые фильмы</Link>
+          <Link className="app__text navigation__link">Сохранённые фильмы</Link>
         </li>
       </ul>
 
       <div className={`navigation__login ${place !== 'landing' ? 'navigation__login_hidden' : ''}`}>
-        <Link className="text navigation__login-element navigation__link">Регистрация</Link>
+        <Link className="app__text navigation__login-element navigation__link">Регистрация</Link>
         <Link>
           <button className="navigation__button navigation__login-element">Войти</button>
         </Link>
@@ -30,7 +30,7 @@ function Navigation({ place }) {
           place === 'landing' ? 'navigation__account-edit_hidden' : ''
         }`}
       >
-        <span className="text">Аккаунт</span>
+        <span className="app__text">Аккаунт</span>
         <div className="navigation__account-icon" />
       </Link>
     </nav>

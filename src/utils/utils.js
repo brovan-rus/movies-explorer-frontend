@@ -1,11 +1,11 @@
 const resEquation = (resA, resB, sizeA, sizeB) => {
-  const det = resA-resB;
-  const shift = (resA  * sizeB - resB * sizeA) / det;
-  const factor = (sizeA - sizeB) / det;
-  return({shift, factor});
-}
+  const det = resB - resA;
+  const shift = (resB * sizeA - resA * sizeB) / det;
+  const factor = (sizeB - sizeA) / det;
+  return { shift, factor };
+};
 
-export {resEquation};
+module.exports = { resEquation };
 
 // resA*x + y = sizeA
 // resB*x + y = sizeB
@@ -14,3 +14,8 @@ export {resEquation};
 // double det=a1*b2-a2*b1;
 // double y=(a1*c2-a2*c1)/det;
 // double x=(c1*b2-c2*b1)/det;
+// a1*x + y = c1
+// a2*x + y = c2
+// double det=a1-a2;
+// double y=(a1*c2-a2*c1)/det;
+// double x=(c1-c2)/det;

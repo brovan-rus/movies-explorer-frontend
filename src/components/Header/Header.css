@@ -1,9 +1,9 @@
-.header{
+.header {
   padding: var(--padding-header);
   background: var(--color-bg);
-}
 
-.header_place_landing{
-  --color-bg: var(--color-darkBlue);
+  &_place_landing {
+    --color-bg: var(--color-darkBlue);
+  }
 }
 

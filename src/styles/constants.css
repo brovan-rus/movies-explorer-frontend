@@ -1,3 +1,10 @@
+/*Разрешения экрана*/
+@custom-media --res-wide screen and (max-width: 1280px);
+@custom-media --res-wideToMid screen and (max-width: 1280px) and (min-width: 768px);
+@custom-media --res-mid screen and (max-width: 768px);
+@custom-media --res-midToSm screen and (max-width: 768px) and (min-width: 320px);
+@custom-media --res-sm screen and (max-width: 320px);
+
 :root {
   /*Цвета палитры*/
   --color-white: #fff;
@@ -139,8 +146,14 @@
   --padding-promoTitle: 184px 0 224px 0;
 }
 
+/*@media screen and (min-width: 768px) and (max-width: 1280px) {*/
+/*  :root {*/
+/*    --width-promoTitle: @mixin responsiveSize 730 784 1280 768;*/
+/*  }*/
+/*}*/
+
 /* Значения для разрешения 768px */
-@media screen and (max-width: 768px)  {
+@media (--res-mid)  {
   :root {
     /* Типографика */
     --font-size-titleSmallest: var(--font-size-mainText);
@@ -171,7 +184,7 @@
 }
 
 /* Значения для разрешения 320px */
-@media screen and (max-width: 320px)  {
+@media (--res-sm)  {
   :root {
     /* Типографика */
     --font-size-great: 80px;
