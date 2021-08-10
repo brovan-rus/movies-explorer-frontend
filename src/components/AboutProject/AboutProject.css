@@ -1,0 +1,104 @@
+.about-project {
+  box-sizing: border-box;
+  --bg-color: var(--color-black);
+  background-color: var(--bg-color);
+  padding: var(--padding-aboutProject);
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue padding-left, 1280, 768, 70, 50;
+    @mixin responsiveValue padding-right, 1280, 768, 70, 50;
+    @mixin responsiveValue padding-top, 1280, 768, 110, 90;
+    @mixin responsiveValue padding-bottom, 1280, 768, 110, 90;
+  }
+
+  @media (--res-midToSm) {
+    @mixin responsiveValue padding-left, 768, 320, 50, 18;
+    @mixin responsiveValue padding-right, 768, 320, 50, 18;
+    @mixin responsiveValue padding-top, 768, 320, 90, 70;
+    @mixin responsiveValue padding-bottom, 768, 320, 90, 70;
+  }
+}
+
+.two-columns {
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--padding-two-columns);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: max-content;
+  grid-gap: var(--two-columsGap);
+
+  @media (--res-wideLimit) {
+    max-width: 1280px;
+  }
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue padding-bottom, 1280, 768, 110, 93;
+    @mixin responsiveValue grid-gap, 1280, 768, 40 ,30;
+  }
+  @media (--res-midToSm) {
+    @mixin responsiveValue padding-bottom, 768, 320, 93, 60;
+    @mixin responsiveValue padding-top, 768, 320, 70, 60;
+  }
+  @media (--res-smPlus) {
+    grid-template-columns: 100%;
+    --two-columsGap: 56px;
+  }
+
+  &__title {
+    margin: var(--margin-two-columns-title);
+    font-size: var(--font-size-titleSmaller);
+    font-weight: 400;
+    line-height: var(--font-lineHeight-titleSmaller);
+    padding: 0;
+
+    @media (--res-wideToMid) {
+      @mixin responsiveValue margin-bottom, 1280, 768, 26, 22;
+    }
+    @media (--res-midToSm) {
+      @mixin responsiveValue margin-bottom, 768, 320, 22, 16;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: var(--font-size-mainText);
+    line-height: var(--font-lineHeight-mainTextNormalHeight);
+  }
+
+  &__column-right{
+    @media (--res-wideLimit) {
+      justify-self: center;
+    }
+  }
+}
+
+.progress-bar {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  font-size: var(--font-size-mainText);
+  line-height: var(--font-lineHeight-mainTextSmallHeight);
+  &__caption {
+    padding: var(--padding-progress-bar-caption);
+    margin-bottom: var(--interval-progress-bar);
+    --bg-color: var(--color-mediumGray);
+    background-color: var(--bg-color);
+    &_active{
+      --bg-color: var(--color-green);
+      color: var(--color-trueBlack);
+    }
+  }
+  &__text{
+    margin: 0;
+    color: var(--color-trueGray);
+  }
+  @media (--res-mid) {
+    grid-template-columns: 20.96% 79.04%;
+  }
+  @media (--res-sm) {
+    grid-template-columns: 35% 65%;
+  }
+}

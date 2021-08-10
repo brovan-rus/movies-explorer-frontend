@@ -1,8 +1,10 @@
 /*Разрешения экрана*/
+@custom-media --res-wideLimit screen and (min-width: 1280px);
 @custom-media --res-wide screen and (max-width: 1280px);
 @custom-media --res-wideToMid screen and (max-width: 1280px) and (min-width: 768px);
 @custom-media --res-mid screen and (max-width: 768px);
 @custom-media --res-midToSm screen and (max-width: 768px) and (min-width: 320px);
+@custom-media --res-smPlus screen and (max-width: 600px);
 @custom-media --res-sm screen and (max-width: 320px);
 
 :root {
@@ -19,6 +21,7 @@
   --color-lightGray: #DADADA;
   --color-mediumGray: #303030;
   --color-paleGray: #424242;
+  --color-trueGray: #A0A0A0;
   --color-mateGray: #313131;
   --color-mateDarkGray:  #2F2F2F;
   --color-liteMateGray: #22222;
@@ -125,9 +128,9 @@
   --padding-main: 0 70px;
   --padding-header: 18px 70px;
   --padding-search: 80px 0;
-  --padding-aboutProject: 110px 0;
-  --padding-usedTechs: 100px 0;
-  --padding-aboutStudent: 110px 0;
+  --padding-aboutProject: 110px 70px;
+  --padding-usedTechs: 100px 70px;
+  --padding-aboutStudent: 110px 70px;
   --padding-cards: 80px 70px;
   --padding-input: 15px;
   --padding-footerTop: 79px 70px 20px 70px;
@@ -147,13 +150,12 @@
   --width-promoTitle: 730px;
   --padding-promo: 184px 0 224px 0;
   --padding-navTab: 24px 0;
+  --two-columsGap: 140px;
+  --padding-two-columns: 70px 0 110px 0;
+  --margin-two-columns-title: 0 0 26px 0;
+  --padding-progress-bar-caption: 9px 0;
+  --interval-progress-bar: 14px;
 }
-
-/*@media screen and (min-width: 768px) and (max-width: 1280px) {*/
-/*  :root {*/
-/*    --width-promoTitle: @mixin responsiveSize 730 784 1280 768;*/
-/*  }*/
-/*}*/
 
 /* Значения для разрешения 768px */
 @media (--res-mid)  {
@@ -172,9 +174,9 @@
     --padding-main: 0 50px;
     --padding-header: 18px 30px;
     --padding-footer: 0 30px 20px 0;
-    --padding-usedTechs: 90px 0;
-    --padding-aboutProject: 90px 0;
-    --padding-aboutStudent: 90px 0;
+    --padding-usedTechs: 90px 50px;
+    --padding-aboutProject: 90px 50px;
+    --padding-aboutStudent: 90px 50px;
     --padding-cards: 80px 30px;
     --gap-vertical-cardGrid: 36px;
     --gap-horizontal-cardGrid: 30px;
@@ -183,6 +185,10 @@
     --padding-notFound: 408px 0 447px 0;
     --height-promo: 784px;
     --padding-promoTitle: 326px 0 342px 0;
+    --two-columsGap: 30px;
+    --padding-two-columns: 70px 0 93px 0;
+    --margin-two-columns-title: 0 0 22px 0;
+
   }
 }
 
@@ -202,7 +208,7 @@
     --font-size-userFormTextBig: var(--font-size-smallPlus);
     --font-size-titleTechSection: 30px;
     --font-size-studentName: 30px;
-    --font-size-navTabText: 13px;
+    --font-size-navTabText: 11px;
     --font-lineHeight-great: 97px;
     --font-lineHeight-biggest: 39px;
     --font-lineHeight-big: 28px;
@@ -217,9 +223,9 @@
     /* Отступы и размеры*/
     --padding-header: 18px 30px;
     --padding-main: 0 18px;
-    --padding-aboutProject: 70px 0;
-    --padding-usedTechs: 70px 0;
-    --padding-aboutStudent: 70px 0;
+    --padding-aboutProject: 70px 18px;
+    --padding-usedTechs: 70px 18px;
+    --padding-aboutStudent: 70px 14px;
     --padding-cards: 50px 10px 80px 10px;
     --margin-footer: 80px 10px 10px 10px;
     --padding-userEditForm: 70px 0 40px 0;
@@ -229,5 +235,8 @@
     --width-promoTitle: 300px;
     --padding-promoTitle: 207px 0 346px 0;
     --padding-navTab: 25px 0;
+    --padding-two-columns: 60px 0;
+    --margin-two-columns-title: 0 0 16px 0;
+    --padding-progress-bar-caption: 11px 0;
   }
 }

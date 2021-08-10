@@ -1,6 +1,21 @@
-.landing{
+.landing {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: repeat(5, min-content);
   box-sizing: border-box;
+
+  &__section-title {
+    box-sizing: border-box;
+    margin: 0;
+    border-bottom: var(--color-lightLine) solid 1px;
+    padding: 0 0 23px 0;
+    font-size: var(--font-size-titleSmall);
+    line-height: var(--font-lineHeight-titleSmall);
+    font-weight: 400;
+
+    @media (--res-midToSm) {
+      @mixin responsiveValue font-size, 768, 320, 22, 18;
+    }
+  }
 }
+
