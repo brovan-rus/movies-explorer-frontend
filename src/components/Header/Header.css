@@ -1,4 +1,6 @@
 .header {
+  width: 100%;
+  box-sizing: border-box;
   padding: var(--padding-header);
   background: var(--color-bg);
   @media (--res-wideToMid) {

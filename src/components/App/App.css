@@ -1,4 +1,10 @@
 .app {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(5, min-content);
+  box-sizing: border-box;
+  justify-items: center;
   min-width: 320px;
   &__text {
     font-family: var(--font-baseFontFamily);

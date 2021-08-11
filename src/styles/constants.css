@@ -132,11 +132,9 @@
   --padding-techs: 100px 70px;
   --padding-cards: 80px 70px;
   --padding-input: 15px;
-  --padding-footerTop: 79px 70px 20px 70px;
   --padding-userEditForm: 74px 0 70px 0;
   --padding-signForm: 70px 0 75px 0;
   --padding-notFound: 246px 0 60px 0;
-  --interval-footer: 20px;
   --interval-userFormSmall: 10px;
   --interval-userFormMedium: 16px;
   --interval-userFormBig: 20px;
@@ -170,6 +168,8 @@
   --height-about-me-photo: 327px;
   --width--about-me-photo: 270px;
   --padding-portfolio-list: 50px 0 0 0;
+  --padding-footer: 79px 70px 20px 70px;
+  --footer-interval: 20px;
 }
 
 /* Значения для разрешения 768px */
@@ -188,7 +188,6 @@
     /*Отступы и размеры*/
     --padding-main: 0 50px;
     --padding-header: 18px 30px;
-    --padding-footer: 0 30px 20px 0;
     --padding-techs: 90px 50px;
     --padding-aboutProject: 90px 50px;
     --padding-about-me: 90px 50px;
@@ -214,6 +213,7 @@
     --padding-portfolio: 0 50px 90px 70px;
     --height-about-me-photo: 307px;
     --width--about-me-photo: 255px;
+    --padding-footer: 115px 30px 20px 30px;
   }
 }
 
@@ -259,7 +259,6 @@
     --padding-techs: 70px 18px;
     --padding-about-me: 60px 14px 70px 14px;
     --padding-cards: 50px 10px 80px 10px;
-    --margin-footer: 80px 10px 10px 10px;
     --padding-userEditForm: 70px 0 40px 0;
     --padding-signForm: 56px 0 30px 0;
     --padding-notFound: 329px 0 30px 0;
@@ -280,5 +279,6 @@
     --padding-about-me__social-links-list: 40px 0 0 0;
     --padding-portfolio: 0 14px 70px 14px;
     --padding-portfolio-list: 40px 0 0 0;
+    --padding-footer: 79px 10px 10px 10px;
   }
 }

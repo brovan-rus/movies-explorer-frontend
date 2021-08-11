@@ -6,19 +6,19 @@ function Portfolio() {
       </h2>
       <ul className="portfolio__list">
         <li className="portfolio__list-element app__text">
-          <span>Статичный сайт</span>
+          <p className="portfolio__project-name">Статичный сайт</p>
           <a href="" className="portfolio__link app__link">
             ↗
           </a>
         </li>
         <li className="portfolio__list-element app__text">
-          <span>Адаптивный сайт</span>
+          <p className="portfolio__project-name">Адаптивный сайт</p>
           <a href="" className="portfolio__link app__link">
             ↗
           </a>
         </li>
         <li className="portfolio__list-element app__text">
-          <span>Одностраничное приложение</span>
+          <p className="portfolio__project-name">Одностраничное приложение</p>
           <a href="" className="portfolio__link app__link">
             ↗
           </a>

@@ -46,12 +46,20 @@
         padding: 0;
         border: 0;
       }
+
+      @media (--res-midToSm) {
+        @mixin responsiveValue font-size, 768, 320, 28, 18;
+      }
     }
   }
 
   &__link {
     color: var(--color-text);
     text-decoration: none;
+  }
+
+  &__project-name{
+    margin: 0;
   }
 
 }

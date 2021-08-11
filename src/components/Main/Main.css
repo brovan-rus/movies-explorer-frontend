@@ -1,9 +1,6 @@
 .landing {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(5, min-content);
-  box-sizing: border-box;
-  justify-items: center;
+  width: 100%;
+
 
   &__section-title {
     width: 100%;
