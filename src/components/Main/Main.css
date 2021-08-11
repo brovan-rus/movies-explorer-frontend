@@ -23,9 +23,9 @@
     &_place_portfolio {
       color: var(--color-gray);
       border: 0;
-      font-weight: 400;
+      font-weight: normal;
       font-size: var(--font-size-titleSmallest);
-      line-height: var(--font-lineHeight-titleSmaller);
+      line-height: var(--font-lineHeight-titleSmallest);
       padding: 0;
     }
   }

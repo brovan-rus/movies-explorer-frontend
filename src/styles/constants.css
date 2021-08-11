@@ -169,6 +169,7 @@
   --padding-portfolio: 0 70px 125px 70px;
   --height-about-me-photo: 327px;
   --width--about-me-photo: 270px;
+  --padding-portfolio-list: 50px 0 0 0;
 }
 
 /* Значения для разрешения 768px */
@@ -278,5 +279,6 @@
     --about-me__social-link-interval: 26px;
     --padding-about-me__social-links-list: 40px 0 0 0;
     --padding-portfolio: 0 14px 70px 14px;
+    --padding-portfolio-list: 40px 0 0 0;
   }
 }

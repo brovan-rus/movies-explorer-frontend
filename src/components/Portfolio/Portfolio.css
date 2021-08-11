@@ -1,4 +1,7 @@
 .portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   --bg-color: var(--color-black);
   background-color: var(--bg-color);
   box-sizing: border-box;
@@ -15,6 +18,40 @@
     @mixin responsiveValue padding-bottom, 768, 320, 90, 70;
     @mixin responsiveValue padding-left, 768, 320, 50, 14;
     @mixin responsiveValue padding-right, 768, 320, 50, 14;
+  }
+
+  &__list {
+    width: 100%;
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content;
+    grid-row-gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: var(--padding-portfolio-list);
+
+    &-element {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 0 19px 0;
+      border-bottom: 1px solid var(--color-darkLine);
+      letter-spacing: var(--font-narrow);
+      font-weight: 400;
+      font-size: var(--font-size-titleMedium);
+      line-height: var( --font-lineHeight-titleBig);
+
+      &:last-child {
+        padding: 0;
+        border: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: var(--color-text);
+    text-decoration: none;
   }
 
 }

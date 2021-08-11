@@ -67,6 +67,10 @@
     padding: var(--padding-techs-list);
     margin: 0;
 
+    @media (--res-mid) {
+      grid-template-columns: repeat(2, var(--width-techs-list-element));
+    }
+
     &-element {
       line-height: var(--height-techs-list-element);
       --bg-color: var(--color-mediumGray);
