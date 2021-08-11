@@ -73,7 +73,7 @@
   /*Типографика элементов*/
   /*Размеры шрифтов элементов*/
   --font-size-titleBig: var(--font-size-biggest);
-  --font-size-titleTechSection: var(--font-size-titleBig);
+  --font-size-titleTechs: var(--font-size-titleBig);
   --font-size-titleMedium: var(--font-size-big);
   --font-size-titleSmall: var(--font-size-bigMinus);
   --font-size-titleSmaller: var(--font-size-mediumPlus);
@@ -99,7 +99,7 @@
 
   /*Высота линии элементов*/
   --font-lineHeight-titleBig: var(--font-lineHeight-biggest);
-  --font-lineHeight-titleTechSection: var(--font-lineHeight-titleBig);
+  --font-lineHeight-titleTechs: var(--font-lineHeight-titleBig);
   --font-lineHeight-titleMedium: var(--font-lineHeight-big);
   --font-lineHeight-titleSmall: var(--font-lineHeigth-bigMinus);
   --font-lineHeight-titleSmaller: var(--font-lineHeight-mediumPlus);
@@ -129,8 +129,7 @@
   --padding-header: 18px 70px;
   --padding-search: 80px 0;
   --padding-aboutProject: 110px 70px;
-  --padding-usedTechs: 100px 70px;
-  --padding-aboutStudent: 110px 70px;
+  --padding-techs: 100px 70px;
   --padding-cards: 80px 70px;
   --padding-input: 15px;
   --padding-footerTop: 79px 70px 20px 70px;
@@ -155,6 +154,21 @@
   --margin-two-columns-title: 0 0 26px 0;
   --padding-progress-bar-caption: 9px 0;
   --interval-progress-bar: 14px;
+  --padding-techs-title: 90px 0 0 0;
+  --padding-techs-subtitle: 26px 0 0 0;
+  --padding-techs-list: 100px 0 0 0;
+  --width-techs-subtitle: 460px;
+  --height-techs-list-element: 60px;
+  --width-techs-list-element: 90px;
+  --padding-about-me: 110px 70px 100px 70px;
+  --padding-about-me-two-columns: 66px 0 0 0;
+  --padding-about-me-subtitle: 18px 0 0 0;
+  --padding-about-me-text: 26px 0 0 0;
+  --about-me__social-link-interval: 20px;
+  --padding-about-me__social-links-list: 99px 0 0 0;
+  --padding-portfolio: 0 70px 125px 70px;
+  --height-about-me-photo: 327px;
+  --width--about-me-photo: 270px;
 }
 
 /* Значения для разрешения 768px */
@@ -174,9 +188,9 @@
     --padding-main: 0 50px;
     --padding-header: 18px 30px;
     --padding-footer: 0 30px 20px 0;
-    --padding-usedTechs: 90px 50px;
+    --padding-techs: 90px 50px;
     --padding-aboutProject: 90px 50px;
-    --padding-aboutStudent: 90px 50px;
+    --padding-about-me: 90px 50px;
     --padding-cards: 80px 30px;
     --gap-vertical-cardGrid: 36px;
     --gap-horizontal-cardGrid: 30px;
@@ -188,7 +202,24 @@
     --two-columsGap: 30px;
     --padding-two-columns: 70px 0 93px 0;
     --margin-two-columns-title: 0 0 22px 0;
+    --padding-techs-title: 80px 0 0 0;
+    --padding-techs-subtitle: 22px 0 0 0;
+    --padding-techs-list: 90px 0 0 0;
+    --height-techs-list-element: 57px;
+    --width-techs-list-element: 84px;
+    --padding-about-me__subtitle: 16px 0 0 0;
+    --padding-about-me-text: 20px 0 0 0;
+    --padding-about-me__social-links-list: 87px 0 0 0;
+    --padding-portfolio: 0 50px 90px 70px;
+    --height-about-me-photo: 307px;
+    --width--about-me-photo: 255px;
+  }
+}
 
+/*Значения для промежуточной точки 600px */
+@media (--res-smPlus) {
+  :root {
+    --height-about-me-photo: 352px;
   }
 }
 
@@ -206,7 +237,7 @@
     --font-size-titleSmallest: var(--font-size-mainText);
     --font-size-searchFormText: var(--font-size-mainText);
     --font-size-userFormTextBig: var(--font-size-smallPlus);
-    --font-size-titleTechSection: 30px;
+    --font-size-titleTechs: 30px;
     --font-size-studentName: 30px;
     --font-size-navTabText: 11px;
     --font-lineHeight-great: 97px;
@@ -217,15 +248,15 @@
     --font-lineHeight-small: 15px;
     --font-lineHeight-userFormTextBiggerHeight: 13px;
     --font-lineHeight-titleSmaller: var(--font-lineHeight-titleSmall);
-    --font-lineHeight-titleTechSection: 36px;
+    --font-lineHeight-titleTechs: 36px;
     --font-lineHeight-studentName: 36px;
     --font-lineHeight-searchFormText: 18px;
     /* Отступы и размеры*/
     --padding-header: 18px 30px;
     --padding-main: 0 18px;
     --padding-aboutProject: 70px 18px;
-    --padding-usedTechs: 70px 18px;
-    --padding-aboutStudent: 70px 14px;
+    --padding-techs: 70px 18px;
+    --padding-about-me: 60px 14px 70px 14px;
     --padding-cards: 50px 10px 80px 10px;
     --margin-footer: 80px 10px 10px 10px;
     --padding-userEditForm: 70px 0 40px 0;
@@ -238,5 +269,14 @@
     --padding-two-columns: 60px 0;
     --margin-two-columns-title: 0 0 16px 0;
     --padding-progress-bar-caption: 11px 0;
+    --padding-techs-title: 60px 0 0 0;
+    --width-techs-subtitle: 292px;
+    --padding-techs-subtitle: 24px 0 0 0;
+    --padding-techs-list: 70px 0 0 0;
+    --padding-about-me__two-columns: 60px 0;
+    --padding-about-me__subtitle: 20px 0 0 0;
+    --about-me__social-link-interval: 26px;
+    --padding-about-me__social-links-list: 40px 0 0 0;
+    --padding-portfolio: 0 14px 70px 14px;
   }
 }

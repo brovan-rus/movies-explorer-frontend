@@ -1,4 +1,5 @@
 .nav-tab{
+  width: 100%;
   --bg-color: var(--color-darkGray);
   background: var(--bg-color);
   display: flex;
