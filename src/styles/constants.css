@@ -214,6 +214,8 @@
     --height-about-me-photo: 307px;
     --width--about-me-photo: 255px;
     --padding-footer: 115px 30px 20px 30px;
+    --padding-mobile-menu: 159px 90px 92px 90px;
+
   }
 }
 
@@ -280,5 +282,6 @@
     --padding-portfolio: 0 14px 70px 14px;
     --padding-portfolio-list: 40px 0 0 0;
     --padding-footer: 79px 10px 10px 10px;
+    --padding-mobile-menu: 144px 10px 10px 48px;
   }
 }

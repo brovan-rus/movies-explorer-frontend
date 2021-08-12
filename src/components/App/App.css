@@ -6,6 +6,14 @@
   box-sizing: border-box;
   justify-items: center;
   min-width: 320px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+
   &__text {
     font-family: var(--font-baseFontFamily);
     color: var(--color-text);

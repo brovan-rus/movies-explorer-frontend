@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
+import MobileMenu from '../MobileMenu/MobileMenu';
 
 function Navigation({ place }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const handleMobileMenuOpen = () => {
+    setIsMobileMenuOpen(true);
+  };
+  const onMobileMenuClose = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="navigation">
       <Link>
@@ -28,13 +37,26 @@ function Navigation({ place }) {
       </div>
 
       <Link
-        className={`navigation__account-edit app__link ${
+        className={`navigation__account-edit navigation__account-edit_place_header app__link ${
           place === 'landing' ? 'navigation__account-edit_hidden' : ''
         }`}
       >
         <span className="app__text">Аккаунт</span>
         <div className="navigation__account-icon" />
       </Link>
+
+      <button
+        className={`navigation__burger-button ${
+          isMobileMenuOpen ? 'navigation__burger-button_hidden' : ''
+        } app__link`}
+        onClick={handleMobileMenuOpen}
+      >
+        <span className="navigation__burger-button-line" />
+        <span className="navigation__burger-button-line" />
+        <span className="navigation__burger-button-line" />
+      </button>
+
+      <MobileMenu isOpened={isMobileMenuOpen} onMobileMenuClose={onMobileMenuClose} place={place} />
     </nav>
   );
 }
