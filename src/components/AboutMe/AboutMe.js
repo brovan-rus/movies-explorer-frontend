@@ -2,7 +2,7 @@ import student from '../../images/student.jpg';
 
 function AboutMe() {
   return (
-    <section className="about-me">
+    <section className="about-me" id="about-me">
       <h2 className="landing__section-title app__text">Студент</h2>
       <article className="about-me__two-columns">
         <div>
@@ -17,12 +17,18 @@ function AboutMe() {
           <nav>
             <ul className="about-me__social-links-list">
               <li className="about-me__social-links-list-element">
-                <a href="" className="about-me__social-link app__text app__link">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100005340542138"
+                  className="about-me__social-link app__text app__link"
+                >
                   Facebook
                 </a>
               </li>
               <li className="about-me__social-links-list-element">
-                <a href="" className="about-me__social-link app__text app__link">
+                <a
+                  href="https://github.com/brovan-rus/"
+                  className="about-me__social-link app__text app__link"
+                >
                   Github
                 </a>
               </li>

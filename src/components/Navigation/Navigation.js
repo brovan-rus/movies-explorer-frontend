@@ -47,7 +47,7 @@ function Navigation({ place }) {
 
       <button
         className={`navigation__burger-button ${
-          isMobileMenuOpen ? 'navigation__burger-button_hidden' : ''
+          isMobileMenuOpen || place === 'landing' ? 'navigation__burger-button_hidden' : ''
         } app__link`}
         onClick={handleMobileMenuOpen}
       >
