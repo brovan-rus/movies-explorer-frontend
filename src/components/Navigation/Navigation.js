@@ -20,7 +20,9 @@ function Navigation({ place }) {
 
       <ul className={`navigation__films ${place === 'landing' ? 'navigation__films_hidden' : ''}`}>
         <li className="navigation__films-element">
-          <Link className="app__text navigation__link app__link">Фильмы</Link>
+          <Link to="/movies" className="app__text navigation__link app__link">
+            Фильмы
+          </Link>
         </li>
         <li className="navigation__films-element">
           <Link className="app__text navigation__link app__link">Сохранённые фильмы</Link>

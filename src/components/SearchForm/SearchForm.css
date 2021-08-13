@@ -1,0 +1,98 @@
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--padding-search-form);
+
+  @media (--res-mid) {
+    flex-direction: column;
+  }
+
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue padding-top, 1280, 768, 80, 60;
+    @mixin responsiveValue padding-bottom, 1280, 768, 83, 57;
+    @mixin responsiveValue padding-left, 1280, 768, 70, 30;
+    @mixin responsiveValue padding-right, 1280, 768, 70, 30;
+  }
+
+  @media (--res-midToSm) {
+    @mixin responsiveValue padding-bottom, 1280, 768, 57, 44;
+    @mixin responsiveValue padding-left, 1280, 768, 30, 14;
+    @mixin responsiveValue padding-right, 1280, 768, 30, 14;
+  }
+
+
+  &__search-field {
+    display: flex;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin: var(--magrin-search-fieldset);
+
+  }
+
+  &__input {
+    padding: var(--padding-search-form-input);
+    margin: var(--magrin-search-input);
+    width: 100%;
+    position: relative;
+    background-color: var(--bg-color);
+    outline: 0;
+    border-radius: 50px;
+    border: solid 1.5px var(--color-tranparentLine);
+    font-weight: 400;
+    font-size: var(--font-size-searchFormText);
+    line-height: var(--font-lineHeight-searchFormText);
+  }
+
+  &__button {
+    outline: 0;
+    border: 0;
+    --button-size: 34px;
+    background-color: var(--color-blue);
+    border-radius: 48px;
+    height: var(--button-size);
+    width: var(--button-size);
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    &:after {
+      --line-length: 7px;
+      --line-width: 1.5px;
+      content: '';
+      position: absolute;
+      top: calc(var(--button-size) / 2 - var(--line-length) + var(--line-width) + 1.5px);
+      right: calc(var(--button-size) / 2 - var(--line-length) + var(--line-width) + 1px);
+      width: var(--line-length);
+      height: var(--line-width);
+      background-color: var(--color-white);
+      transform: skew(-45deg, 45deg);
+      border-radius: 3px;
+    }
+
+    &:before {
+      --line-length: 7px;
+      --line-width: 1.5px;
+      content: '';
+      position: absolute;
+      bottom: calc(var(--button-size) / 2 - var(--line-length) + var(--line-width) + 1.5px);
+      right: calc(var(--button-size) / 2 - var(--line-length) + var(--line-width) + 1px);
+      width: var(--line-length);
+      height: var(--line-width);
+      background-color: var(--color-white);
+      transform: skew(45deg, -45deg);
+      border-radius: 3px;
+    }
+  }
+
+
+
+}

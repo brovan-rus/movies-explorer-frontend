@@ -94,6 +94,7 @@
   --font-size-cardText: var(--font-size-smaller);
   --font-size-cardLoadButton: var(--font-size-small);
   --font-size-notFoundErrorText: var(--font-size-great);
+  --font-size-filter-checkbox: var(--font-size-smallPlus);
   --font-size-mobileNavText: 18px;
   --font-size-navTabText: 13px;
 
@@ -170,6 +171,12 @@
   --padding-portfolio-list: 50px 0 0 0;
   --padding-footer: 79px 70px 20px 70px;
   --footer-interval: 20px;
+  --padding-search-form: 80px 70px 83px 70px;
+  --padding-search-form-input: 15px 87px 22px 15px;
+  --magrin-search-fieldset: 0 41px 0 0;
+  --margin-filter-checkbox-text: 0 14px 0 0;
+  --magrin-search-input: 0;
+
 }
 
 /* Значения для разрешения 768px */
@@ -215,6 +222,10 @@
     --width--about-me-photo: 255px;
     --padding-footer: 115px 30px 20px 30px;
     --padding-mobile-menu: 159px 90px 92px 90px;
+    --padding-search-form: 60px 30px 57px 30px;
+    --margin-filter-checkbox-text: 0 12px 0 0;
+    --magrin-search-input: 0 0 38px 0;
+    --magrin-search-fieldset: 0;
 
   }
 }
@@ -254,6 +265,7 @@
     --font-lineHeight-titleTechs: 36px;
     --font-lineHeight-studentName: 36px;
     --font-lineHeight-searchFormText: 18px;
+    --font-size-filter-checkbox: var(--font-size-smaller);
     /* Отступы и размеры*/
     --padding-header: 18px 30px;
     --padding-main: 0 18px;
@@ -283,5 +295,8 @@
     --padding-portfolio-list: 40px 0 0 0;
     --padding-footer: 79px 10px 10px 10px;
     --padding-mobile-menu: 144px 10px 10px 48px;
+    --padding-search-form: 60px 10px 44px 10px;
+    --margin-filter-checkbox-text: 0 13px 0 0;
+    --magrin-search-input: 0 0 45px 0;
   }
 }
