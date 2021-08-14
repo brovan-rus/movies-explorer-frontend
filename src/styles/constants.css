@@ -84,11 +84,11 @@
   --font-size-headerTextBig: var(--font-size-mediumMinus);
   --font-size-footerText: var(--font-size-smallPlus);
   --font-size-searchFormText: var(--font-size-mediumMinus);
-  --font-size-userFormTitle: var(--font-size-bigger);
-  --font-size-userFormTextBig: var(--font-size-mediumMinus);
-  --font-size-userFormTextMedium: var(--font-size-smallPlus);
-  --font-size-userFormTextSmall: var(--font-size-smaller);
-  --font-size-userFormTextSmaller: var(--font-size-smallest);
+  --font-size-formTitle: var(--font-size-bigger);
+  --font-size-formTextBig: var(--font-size-mediumMinus);
+  --font-size-formTextMedium: var(--font-size-smallPlus);
+  --font-size-formTextSmall: var(--font-size-smaller);
+  --font-size-formTextSmaller: var(--font-size-smallest);
   --font-size-studentName: var(--font-size-big);
   --font-size-cardTitle: var(--font-size-mediumNeutral);
   --font-size-cardText: var(--font-size-smaller);
@@ -113,11 +113,11 @@
   --font-lineHeight-headerTextBig: var(--font-lineHeight-mediumMinus);
   --font-lineHeight-footerText: var(--font-lineHeight-small);
   --font-lineHeight-searchFormText: var(--font-lineHeight-mediumMinus);
-  --font-lineHeight-userFormTitle: var(--font-lineHeight-bigger);
-  --font-lineHeight-userFormTextBiggerHeight: var(--font-lineHeight-smallPlus);
-  --font-lineHeight-userFormTextBigHeight: var(--font-lineHeight-small);
-  --font-lineHeight-userFormTextMediumHeight: var(--font-lineHeight-smaller);
-  --font-lineHeight-userFormTextSmallHeight: var(--font-lineHeight-smallest);
+  --font-lineHeight-formTitle: var(--font-lineHeight-bigger);
+  --font-lineHeight-formTextBiggerHeight: var(--font-lineHeight-smallPlus);
+  --font-lineHeight-formTextBigHeight: var(--font-lineHeight-small);
+  --font-lineHeight-formTextMediumHeight: var(--font-lineHeight-smaller);
+  --font-lineHeight-formTextSmallHeight: var(--font-lineHeight-smallest);
   --font-lineHeight-cardTitle: var(--font-lineHeight-mediumMinus);
   --font-lineHeight-cardText: var(--font-lineHeight-smaller);
   --font-lineHeight-studentName: var(--font-lineHeight-biggest);
@@ -138,9 +138,9 @@
   --padding-userEditForm: 74px 0 70px 0;
   --padding-signForm: 70px 0 75px 0;
   --padding-notFound: 246px 0 60px 0;
-  --interval-userFormSmall: 10px;
-  --interval-userFormMedium: 16px;
-  --interval-userFormBig: 20px;
+  --interval-formf: 10px;
+  --interval-formfm: 16px;
+  --interval-formBig: 20px;
   --interval-mobileNav: 28px;
   --width-mobileNavWidth: 520px;
   --height-afterSavedCards: 140px;
@@ -190,6 +190,13 @@
   --padding-card-list-wrapper: 80px 0;
   --width-movies-list-button: 41%;
   --height-movies-list-button: 36px;
+  --padding-profile: 74px 0 70px 0;
+  --margin-profile-form-title: 0 0 123px 0;
+  --margin-inputs-wrapper: 0 0 220px 0;
+  --width-profile-input-contatiner: 410px;
+  --padding-profile-input-contatiner: 0 0 16px 0;
+  --margin-profile-input-contatiner: 17px 0 0 0;
+  --margin-profile-edit-button: 0 0 16px 0;
 
 }
 
@@ -246,6 +253,9 @@
     --card-width: 339px;
     --card-height: 258px;
     --height-card-heading: 26.3%;
+    --padding-profile: 236px 0 269px 0;
+    --margin-profile-form-title: 0 0 96px 0;
+    --margin-inputs-wrapper: 0 0 210px 0;
 
   }
 }
@@ -270,7 +280,7 @@
     --font-size-titleMedium: var(--font-size-titleSmall);
     --font-size-titleSmallest: var(--font-size-mainText);
     --font-size-searchFormText: var(--font-size-mainText);
-    --font-size-userFormTextBig: var(--font-size-smallPlus);
+    --font-size-formTextBig: var(--font-size-smallPlus);
     --font-size-titleTechs: 30px;
     --font-size-studentName: 30px;
     --font-size-navTabText: 11px;
@@ -280,7 +290,7 @@
     --font-lineHeight-medium: 16px;
     --font-lineHeigth-bigMinus: 22px;
     --font-lineHeight-small: 15px;
-    --font-lineHeight-userFormTextBiggerHeight: 13px;
+    --font-lineHeight-formTextBiggerHeight: 13px;
     --font-lineHeight-titleSmaller: var(--font-lineHeight-titleSmall);
     --font-lineHeight-titleTechs: 36px;
     --font-lineHeight-studentName: 36px;
@@ -325,5 +335,9 @@
     --card-height: 236px;
     --height-card-heading: 28.8%;
     --width-movies-list-button: 75%;
+    --padding-profile: 70px 0 40px 0;
+    --margin-profile-form-title: 0 0 80px 0;
+    --margin-inputs-wrapper: 0 0 379px 0;
+    --width-profile-input-contatiner: 260px;
   }
 }

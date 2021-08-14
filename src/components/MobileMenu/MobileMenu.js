@@ -11,12 +11,18 @@ function MobileMenu({ isOpened, onMobileMenuClose, place }) {
         <nav className="mobile-menu__navigation">
           <ul className="mobile-menu__list">
             <li className="mobile-menu__list-element">
-              <a href="" className="mobile-menu__link app__text app__link">
+              <Link
+                onClick={handleMobileMenuClose}
+                to="/"
+                className="mobile-menu__link app__text app__link"
+              >
                 Главная
-              </a>
+              </Link>
             </li>
             <li className="mobile-menu__list-element">
               <Link
+                onClick={handleMobileMenuClose}
+                to="/movies"
                 href=""
                 className={`mobile-menu__link ${
                   place === 'movies' ? 'mobile-menu__link_active' : ''
@@ -27,6 +33,8 @@ function MobileMenu({ isOpened, onMobileMenuClose, place }) {
             </li>
             <li className="mobile-menu__list-element">
               <Link
+                onClick={handleMobileMenuClose}
+                to="/saved-movies"
                 href=""
                 className={`mobile-menu__link ${
                   place === 'saved-movies' ? 'mobile-menu__link_active' : ''
@@ -36,7 +44,11 @@ function MobileMenu({ isOpened, onMobileMenuClose, place }) {
               </Link>
             </li>
           </ul>
-          <Link className="navigation__account-edit navigation__account-edit_place_mobile-menu app__link">
+          <Link
+            onClick={handleMobileMenuClose}
+            to="/profile"
+            className="navigation__account-edit navigation__account-edit_place_mobile-menu app__link"
+          >
             <p className="app__text ">Аккаунт</p>
             <div className="navigation__account-icon" />
           </Link>

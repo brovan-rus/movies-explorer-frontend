@@ -68,6 +68,10 @@
     }
   }
 
+  &__logo {
+    min-width: 212px;
+  }
+
   &__account {
     &-edit {
       text-decoration: none;
@@ -78,6 +82,11 @@
 
       &_place_mobile-menu {
         display: flex;
+      }
+
+      &_place_header {
+        min-width: 212px;
+        justify-content: flex-end;
       }
 
       &_hidden {

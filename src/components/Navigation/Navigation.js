@@ -14,9 +14,9 @@ function Navigation({ place }) {
 
   return (
     <nav className="navigation">
-      <Link>
+      <div className="navigation__logo">
         <Logo />
-      </Link>
+      </div>
 
       <ul className={`navigation__films ${place === 'landing' ? 'navigation__films_hidden' : ''}`}>
         <li className="navigation__films-element">
@@ -41,9 +41,10 @@ function Navigation({ place }) {
       </div>
 
       <Link
+        to="/profile"
         className={`navigation__account-edit navigation__account-edit_place_header app__link ${
           place === 'landing' ? 'navigation__account-edit_hidden' : ''
-        }`}
+        } navigation__account_edit_place_header`}
       >
         <span className="app__text">Аккаунт</span>
         <div className="navigation__account-icon" />

@@ -8,7 +8,7 @@ import card5 from '../../images/card5.jpg';
 import card6 from '../../images/card6.jpg';
 import card7 from '../../images/card7.jpg';
 import card8 from '../../images/card8.jpg';
-import card9 from '../../images/card9.png';
+import card9 from '../../images/card9.jpg';
 import card10 from '../../images/card10.jpg';
 import card11 from '../../images/card11.jpg';
 import card12 from '../../images/card12.jpg';

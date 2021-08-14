@@ -21,9 +21,9 @@
   }
 
   @media (--res-midToSm) {
-    @mixin responsiveValue padding-bottom, 1280, 768, 57, 44;
-    @mixin responsiveValue padding-left, 1280, 768, 30, 14;
-    @mixin responsiveValue padding-right, 1280, 768, 30, 14;
+    @mixin responsiveValue padding-bottom, 768, 320, 57, 44;
+    @mixin responsiveValue padding-left, 768, 320, 30, 14;
+    @mixin responsiveValue padding-right, 768, 320, 30, 14;
   }
 
 

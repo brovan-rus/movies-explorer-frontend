@@ -1,0 +1,108 @@
+.profile {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--color-black);
+  padding: var(--padding-profile);
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue padding-top, 1280, 768, 74, 236;
+    @mixin responsiveValue padding-bottom, 1280, 768, 70, 269;
+  }
+
+  @media (--res-midToSm) {
+    @mixin responsiveValue padding-top, 768, 320, 236, 61;
+    @mixin responsiveValue padding-bottom, 768, 320, 269, 40;
+  }
+
+  &__title {
+    font-size: var(--font-size-formTitle);
+    line-height: var(--font-lineHeight-formTitle);
+    margin: var(--margin-profile-form-title);
+
+    @media (--res-wideToMid) {
+      @mixin responsiveValue margin-bottom, 1280, 768, 123, 96;
+    }
+    @media (--res-midToSm) {
+      @mixin responsiveValue margin-bottom, 768, 320, 96, 80;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  &__input-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    width: var(--width-profile-input-contatiner);
+    align-content: space-between;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-paleGray);
+    padding: var(--padding-profile-input-contatiner);
+
+    &:last-child {
+      border: 0;
+      margin: var(--margin-profile-input-contatiner);
+    }
+
+    @media (--res-midToSm) {
+      @mixin responsiveValue width, 768, 320, 410, 260;
+    }
+  }
+
+  &__form-label {
+    font-size: var(--font-size-formTextSmall);
+    line-height: var(--font-lineHeight-formTextMediumHeight);
+  }
+
+  &__input {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    background-color: var(--color-black);
+    font-size: var(--font-size-formTextSmall);
+    line-height: var(--font-lineHeight-formTextMediumHeight);
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
+    font-weight: 400;
+    font-size: var(--font-size-formTextMedium);
+    line-height: var(--font-lineHeight-formTextBigHeight);
+    background-color: var(--color-black);
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    margin: var(--margin-profile-edit-button);
+
+    &_color_red {
+      color: var(--color-red);
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__inputs-wrapper{
+    margin: var(--margin-inputs-wrapper);
+  }
+
+
+}
+
