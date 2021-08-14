@@ -24,7 +24,7 @@
   --color-trueGray: #A0A0A0;
   --color-mateGray: #313131;
   --color-mateDarkGray:  #2F2F2F;
-  --color-liteMateGray: #22222;
+  --color-liteMateGray: #222222;
   --color-neutralGrayRGB: 170, 170, 170;
 
   /*Цвета элементов*/
@@ -176,6 +176,15 @@
   --magrin-search-fieldset: 0 41px 0 0;
   --margin-filter-checkbox-text: 0 14px 0 0;
   --magrin-search-input: 0;
+  --movies-card-list-padding: 0 70px 80px 70px;
+  --movies-card-list-magrin: 0 0 80px 0;
+  --card-width: 364px;
+  --card-height: 271px;
+  --gap-column-card-list: 24px;
+  --gap-row-card-list: 30px;
+  --margin-card-title: 0 0 9px 0;
+  --padding-card-heading: 14px;
+  --height-card-heading: 25%;
 
 }
 
@@ -226,6 +235,12 @@
     --margin-filter-checkbox-text: 0 12px 0 0;
     --magrin-search-input: 0 0 38px 0;
     --magrin-search-fieldset: 0;
+    --movies-card-list-padding: 0 30px 80px 30px;
+    --gap-column-card-list: 30px;
+    --gap-row-card-list: 36px;
+    --card-width: 339px;
+    --card-height: 258px;
+    --height-card-heading: 26.3%;
 
   }
 }
@@ -298,5 +313,11 @@
     --padding-search-form: 60px 10px 44px 10px;
     --margin-filter-checkbox-text: 0 13px 0 0;
     --magrin-search-input: 0 0 45px 0;
+    --movies-card-list-padding: 0 px 10px 80px 10px;
+    --movies-card-list-magrin: 0 0 50px 0;
+    --gap-row-card-list: 16px;
+    --card-width: 300px;
+    --card-height: 236px;
+    --height-card-heading: 28.8%;
   }
 }
