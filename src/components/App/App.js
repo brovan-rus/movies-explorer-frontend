@@ -15,9 +15,14 @@ function App() {
           <Main />
           <Footer />
         </Route>
-        <Route exact path="/movies">
+        <Route path="/movies">
           <Header place="movies" />
           <Movies />
+          <Footer />
+        </Route>
+        <Route path="/saved-movies">
+          <Header place="movies" />
+
           <Footer />
         </Route>
       </Switch>

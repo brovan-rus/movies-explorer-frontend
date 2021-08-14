@@ -1,6 +1,6 @@
 function MoviesCard({ image, title, isSaved, length, place }) {
   return (
-    <div className="movies-card">
+    <li className="movies-card">
       <div className="movies-card__heading">
         <div className="movies-card__title-wrapper app__text">
           <h3 className="movies-card__title">{title}</h3>
@@ -16,7 +16,7 @@ function MoviesCard({ image, title, isSaved, length, place }) {
         </button>
       </div>
       <img src={image} alt={title} />
-    </div>
+    </li>
   );
 }
 

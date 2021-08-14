@@ -1,6 +1,6 @@
 /*Разрешения экрана*/
 @custom-media --res-wideLimit screen and (min-width: 1280px);
-@custom-media --res-wide screen and (max-width: 1280px);
+@custom-media --res-wide screen and (max-width: 1279px);
 @custom-media --res-wideToMid screen and (max-width: 1280px) and (min-width: 768px);
 @custom-media --res-mid screen and (max-width: 768px);
 @custom-media --res-midToSm screen and (max-width: 768px) and (min-width: 320px);
@@ -97,6 +97,7 @@
   --font-size-filter-checkbox: var(--font-size-smallPlus);
   --font-size-mobileNavText: 18px;
   --font-size-navTabText: 13px;
+  --font-size-movies-list-button: 12px;
 
   /*Высота линии элементов*/
   --font-lineHeight-titleBig: var(--font-lineHeight-biggest);
@@ -124,6 +125,7 @@
   --font-lineHeight-notFoundErrorText: var(--font-lineHeight-great);
   --font-lineHeight-mobileNavText: 22px;
   --font-lineHeight-navTabText: 16px;
+  --font-lineHeight-movies-list-button: 15px;
 
   /*Отступы и размеры*/
   --padding-main: 0 70px;
@@ -176,7 +178,7 @@
   --magrin-search-fieldset: 0 41px 0 0;
   --margin-filter-checkbox-text: 0 14px 0 0;
   --magrin-search-input: 0;
-  --movies-card-list-padding: 0 70px 80px 70px;
+  --padding-movies-list: 0 70px;
   --movies-card-list-magrin: 0 0 80px 0;
   --card-width: 364px;
   --card-height: 271px;
@@ -185,6 +187,9 @@
   --margin-card-title: 0 0 9px 0;
   --padding-card-heading: 14px;
   --height-card-heading: 25%;
+  --padding-card-list-wrapper: 80px 0;
+  --width-movies-list-button: 41%;
+  --height-movies-list-button: 36px;
 
 }
 
@@ -235,7 +240,7 @@
     --margin-filter-checkbox-text: 0 12px 0 0;
     --magrin-search-input: 0 0 38px 0;
     --magrin-search-fieldset: 0;
-    --movies-card-list-padding: 0 30px 80px 30px;
+    --padding-movies-list: 0 30px 0 30px;
     --gap-column-card-list: 30px;
     --gap-row-card-list: 36px;
     --card-width: 339px;
@@ -313,11 +318,12 @@
     --padding-search-form: 60px 10px 44px 10px;
     --margin-filter-checkbox-text: 0 13px 0 0;
     --magrin-search-input: 0 0 45px 0;
-    --movies-card-list-padding: 0 px 10px 80px 10px;
+    --padding-movies-list: 0 10px;
     --movies-card-list-magrin: 0 0 50px 0;
     --gap-row-card-list: 16px;
     --card-width: 300px;
     --card-height: 236px;
     --height-card-heading: 28.8%;
+    --width-movies-list-button: 75%;
   }
 }
