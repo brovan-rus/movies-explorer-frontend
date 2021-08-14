@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import { Route, Switch } from 'react-router-dom';
 import React from 'react';
 import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   return (
@@ -22,7 +23,7 @@ function App() {
         </Route>
         <Route path="/saved-movies">
           <Header place="movies" />
-
+          <SavedMovies />
           <Footer />
         </Route>
       </Switch>

@@ -13,10 +13,12 @@ import card10 from '../../images/card10.jpg';
 import card11 from '../../images/card11.jpg';
 import card12 from '../../images/card12.jpg';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import Preloader from '../Preloader/Preloader';
 
 function Movies() {
   return (
     <main className="movies">
+      <Preloader />
       <SearchForm />
       <MoviesCardList>
         <MoviesCard

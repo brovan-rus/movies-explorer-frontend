@@ -25,7 +25,9 @@ function Navigation({ place }) {
           </Link>
         </li>
         <li className="navigation__films-element">
-          <Link className="app__text navigation__link app__link">Сохранённые фильмы</Link>
+          <Link to="/saved-movies" className="app__text navigation__link app__link">
+            Сохранённые фильмы
+          </Link>
         </li>
       </ul>
 
