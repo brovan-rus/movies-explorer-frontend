@@ -2,13 +2,14 @@ import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const user = {
   name: 'Константин',
@@ -43,6 +44,9 @@ function App() {
         </Route>
         <Route path="/signup">
           <Register />
+        </Route>
+        <Route path="*">
+          <ErrorMessage title="404" text="Страница не найдена" />
         </Route>
       </Switch>
     </div>

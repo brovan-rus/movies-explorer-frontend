@@ -93,11 +93,13 @@
   --font-size-cardTitle: var(--font-size-mediumNeutral);
   --font-size-cardText: var(--font-size-smaller);
   --font-size-cardLoadButton: var(--font-size-small);
-  --font-size-notFoundErrorText: var(--font-size-great);
+  --font-size-notFoundErrorTitle: var(--font-size-great);
   --font-size-filter-checkbox: var(--font-size-smallPlus);
   --font-size-mobileNavText: 18px;
   --font-size-navTabText: 13px;
   --font-size-movies-list-button: 12px;
+  --font-size-errorMessage-text: 16px;
+  --font-size-errorMessage-button: 14px;
 
   /*Высота линии элементов*/
   --font-lineHeight-titleBig: var(--font-lineHeight-biggest);
@@ -122,10 +124,12 @@
   --font-lineHeight-cardText: var(--font-lineHeight-smaller);
   --font-lineHeight-studentName: var(--font-lineHeight-biggest);
   --font-lineHeight-cardLoadButton: calc(var(--font-lineHeight-smaller) + 1.5px);
-  --font-lineHeight-notFoundErrorText: var(--font-lineHeight-great);
+  --font-lineHeight-notFoundErrorTitle: var(--font-lineHeight-great);
   --font-lineHeight-mobileNavText: 22px;
   --font-lineHeight-navTabText: 16px;
   --font-lineHeight-movies-list-button: 15px;
+  --font-lineHeight-errorMessage-text: 19px;
+  --font-lineHeight-errorMessage-button: 17px;
 
   /*Отступы и размеры*/
   --padding-main: 0 70px;
@@ -137,7 +141,7 @@
   --padding-input: 15px;
   --padding-userEditForm: 74px 0 70px 0;
   --padding-signForm: 70px 0 75px 0;
-  --padding-notFound: 246px 0 60px 0;
+  --padding-errorMessage: 246px 0 60px 0;
   --interval-formf: 10px;
   --interval-formfm: 16px;
   --interval-formBig: 20px;
@@ -211,6 +215,8 @@
   --padding-account-form-container-caption: 16px 0 0 0;
   --margin-account-form-caption: 0 6px 0 0;
   --padding-account-form-error-message: 10px 0 0 0;
+  --magrin-errorMessageTitle: 0 0 5px 0;
+  --magrin-errorMessageText: 0 0 184px 0;
 
 
 }
@@ -228,6 +234,7 @@
     --font-lineHeight-studentName: 40px;
     --font-lineHeight-smallPlus: 14.5px;
 
+
     /*Отступы и размеры*/
     --padding-main: 0 50px;
     --padding-header: 18px 30px;
@@ -239,7 +246,7 @@
     --gap-horizontal-cardGrid: 30px;
     --padding-userEditForm: 236px 0 269px 0;
     --padding-signForm: 232px 0;
-    --padding-notFound: 408px 0 447px 0;
+    --padding-errorMessage: 408px 0 222px 0;
     --height-promo: 784px;
     --padding-promoTitle: 326px 0 342px 0;
     --two-columsGap: 30px;
@@ -312,6 +319,12 @@
     --font-lineHeight-studentName: 36px;
     --font-lineHeight-searchFormText: 18px;
     --font-size-filter-checkbox: var(--font-size-smaller);
+    --font-size-errorMessage-text: 12px;
+    --font-lineHeight-errorMessage-text: 15px;
+    --font-size-errorMessage-button: 12px;
+    --font-lineHeight-errorMessage-button: 15px;
+
+
     /* Отступы и размеры*/
     --padding-header: 18px 30px;
     --padding-main: 0 18px;
@@ -321,7 +334,7 @@
     --padding-cards: 50px 10px 80px 10px;
     --padding-account-form-title: 50px 0 80px 0;
     --padding-signForm: 56px 0 30px 0;
-    --padding-notFound: 329px 0 30px 0;
+    --padding-errorMessage: 329px 0 30px 0;
     --height-promo: 570px;
     --width-promoTitle: 300px;
     --padding-promoTitle: 207px 0 346px 0;
@@ -360,5 +373,7 @@
     --padding-account-form: 56px 0 30px 0;
     --padding-account-form-button: 15px 0;
     --height-account-form-input-area: 320px;
+    --magrin-errorMessageTitle: 0 0 10px 0;
+    --magrin-errorMessageText: 0 0 284px 0;
   }
 }

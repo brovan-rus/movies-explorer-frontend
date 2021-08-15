@@ -1,0 +1,37 @@
+.error-message {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: var(--padding-errorMessage);
+  box-sizing: border-box;
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: var(--font-size-notFoundErrorTitle);
+    line-height: var(--font-lineHeight-notFoundErrorTitle);
+    margin: var(--magrin-errorMessageTitle);
+  }
+
+  &__text {
+    margin: var(--magrin-errorMessageText);
+    padding: 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: var(--font-size-errorMessage-text);
+    line-height: var(--font-lineHeight-errorMessage-text);
+  }
+
+  &__button {
+    font-size: var(--font-size-errorMessage-button);
+    line-height: var(--font-lineHeight-errorMessage-button);
+    font-weight: 400;
+    align-self: center;
+    width: min-content;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    color: var(--color-blue)
+  }
+}
