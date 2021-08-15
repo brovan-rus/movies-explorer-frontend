@@ -7,7 +7,10 @@ function Portfolio() {
       <ul className="portfolio__list">
         <li className="portfolio__list-element app__text">
           <p className="portfolio__project-name">Статичный сайт</p>
-          <a href="" className="portfolio__link app__link">
+          <a
+            href="https://github.com/brovan-rus/how-to-learn"
+            className="portfolio__link app__link"
+          >
             ↗
           </a>
         </li>
