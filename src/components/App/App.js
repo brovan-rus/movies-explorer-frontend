@@ -7,6 +7,9 @@ import React from 'react';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
+import Register from '../Register/Register';
+import Login from '../Login/Login';
+
 const user = {
   name: 'Константин',
   email: 'brovan@yandex.ru',
@@ -17,7 +20,7 @@ function App() {
     <div className="app">
       <Switch>
         <Route exact path="/">
-          <Header place="landin" />
+          <Header place="landing" />
           <Main />
           <Footer />
         </Route>
@@ -34,6 +37,12 @@ function App() {
         <Route path="/profile">
           <Header place="profile" />
           <Profile user={user} />
+        </Route>
+        <Route path="/signin">
+          <Login />
+        </Route>
+        <Route path="/signup">
+          <Register />
         </Route>
       </Switch>
     </div>

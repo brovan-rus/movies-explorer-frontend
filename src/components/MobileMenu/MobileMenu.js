@@ -47,10 +47,10 @@ function MobileMenu({ isOpened, onMobileMenuClose, place }) {
           <Link
             onClick={handleMobileMenuClose}
             to="/profile"
-            className="navigation__account-edit navigation__account-edit_place_mobile-menu app__link"
+            className="navigation__profile-edit navigation__profile-edit_place_mobile-menu app__link"
           >
             <p className="app__text ">Аккаунт</p>
-            <div className="navigation__account-icon" />
+            <div className="navigation__profile-icon" />
           </Link>
         </nav>
       </div>

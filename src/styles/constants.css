@@ -197,6 +197,21 @@
   --padding-profile-input-contatiner: 0 0 16px 0;
   --margin-profile-input-contatiner: 17px 0 0 0;
   --margin-profile-edit-button: 0 0 16px 0;
+  --padding-account-form-title: 40px 0 40px 0;
+  --width-account-form: 396px;
+  --height-account-form-input-area: 335px;
+  --margin-account-form-form: 0 0 16px 0;
+  --height-account-form-input: 46px;
+  --padding-account-form-input: 15px;
+  --magrin-account-form-input: 0 0 20px 0;
+  --magrin-account-form-label: 0 0 10px 0;
+  --padding-account-form: 70px 0 70px 0;
+  --height-account-form-button: 45px;
+  --padding-account-form-button: 13px 0 15px 0;
+  --padding-account-form-container-caption: 16px 0 0 0;
+  --margin-account-form-caption: 0 6px 0 0;
+  --padding-account-form-error-message: 10px 0 0 0;
+
 
 }
 
@@ -256,6 +271,7 @@
     --padding-profile: 236px 0 269px 0;
     --margin-profile-form-title: 0 0 96px 0;
     --margin-inputs-wrapper: 0 0 210px 0;
+    --padding-account-form: 232px 0 232px 0;
 
   }
 }
@@ -303,7 +319,7 @@
     --padding-techs: 70px 18px;
     --padding-about-me: 60px 14px 70px 14px;
     --padding-cards: 50px 10px 80px 10px;
-    --padding-userEditForm: 70px 0 40px 0;
+    --padding-account-form-title: 50px 0 80px 0;
     --padding-signForm: 56px 0 30px 0;
     --padding-notFound: 329px 0 30px 0;
     --height-promo: 570px;
@@ -339,5 +355,10 @@
     --margin-profile-form-title: 0 0 80px 0;
     --margin-inputs-wrapper: 0 0 379px 0;
     --width-profile-input-contatiner: 260px;
+    --margin-account-form-form: 0 0 14px 0;
+    --width-account-form: 260px;
+    --padding-account-form: 56px 0 30px 0;
+    --padding-account-form-button: 15px 0;
+    --height-account-form-input-area: 320px;
   }
 }

@@ -32,22 +32,25 @@ function Navigation({ place }) {
       </ul>
 
       <div className={`navigation__login ${place !== 'landing' ? 'navigation__login_hidden' : ''}`}>
-        <Link className="app__text navigation__login-element navigation__link app__link">
+        <Link
+          to="/signup"
+          className="app__text navigation__login-element navigation__link app__link"
+        >
           Регистрация
         </Link>
-        <Link>
+        <Link to="/signin">
           <button className="navigation__button navigation__login-element app__link">Войти</button>
         </Link>
       </div>
 
       <Link
         to="/profile"
-        className={`navigation__account-edit navigation__account-edit_place_header app__link ${
-          place === 'landing' ? 'navigation__account-edit_hidden' : ''
-        } navigation__account_edit_place_header`}
+        className={`navigation__profile-edit navigation__profile-edit_place_header app__link ${
+          place === 'landing' ? 'navigation__profile-edit_hidden' : ''
+        } navigation__profile_edit_place_header`}
       >
         <span className="app__text">Аккаунт</span>
-        <div className="navigation__account-icon" />
+        <div className="navigation__profile-icon" />
       </Link>
 
       <button
