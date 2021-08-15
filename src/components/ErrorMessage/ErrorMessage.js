@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 function ErrorMessage({ title, text }) {
   const history = useHistory();
