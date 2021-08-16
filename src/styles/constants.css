@@ -3,6 +3,7 @@
 @custom-media --res-wide screen and (max-width: 1279px);
 @custom-media --res-wideToMid screen and (max-width: 1280px) and (min-width: 768px);
 @custom-media --res-mid screen and (max-width: 768px);
+@custom-media --res-fromMid screen and (min-width: 768px);
 @custom-media --res-midToSm screen and (max-width: 768px) and (min-width: 320px);
 @custom-media --res-smPlus screen and (max-width: 600px);
 @custom-media --res-sm screen and (max-width: 320px);
@@ -217,6 +218,8 @@
   --padding-account-form-error-message: 10px 0 0 0;
   --magrin-errorMessageTitle: 0 0 5px 0;
   --magrin-errorMessageText: 0 0 184px 0;
+  --margin-right-navigation-login-element: 30px;
+  --width-max-header-logo: 212px;
 
 
 }
@@ -375,5 +378,6 @@
     --height-account-form-input-area: 320px;
     --magrin-errorMessageTitle: 0 0 10px 0;
     --magrin-errorMessageText: 0 0 284px 0;
+    --margin-right-navigation-login-element: 14px;
   }
 }

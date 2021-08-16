@@ -60,7 +60,11 @@
     }
 
     &-element {
-      margin-right: 30px;
+      margin-right: var(--margin-right-navigation-login-element);
+
+      @media (--res-midToSm) {
+        @mixin responsiveValue margin-right, 768, 320, 30, 14;
+      }
 
       &:last-child {
         margin-right: 0;
@@ -69,7 +73,9 @@
   }
 
   &__logo {
-    min-width: 212px;
+    @media (--res-fromMid) {
+      width: var(--width-max-header-logo);
+    }
   }
 
   &__profile {

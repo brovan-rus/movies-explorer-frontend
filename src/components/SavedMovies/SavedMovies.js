@@ -3,10 +3,14 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import card1 from '../../images/card1.jpg';
 import card2 from '../../images/card2.jpg';
 import card3 from '../../images/card3.jpg';
+import Preloader from '../Preloader/Preloader';
+import SearchForm from '../SearchForm/SearchForm';
 
 function SavedMovies() {
   return (
     <main className="movies">
+      <Preloader />
+      <SearchForm />
       <MoviesCardList>
         <MoviesCard
           place="saved-movies"
