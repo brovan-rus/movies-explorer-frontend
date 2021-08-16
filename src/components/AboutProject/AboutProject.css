@@ -80,6 +80,15 @@
   grid-template-columns: 1fr 4fr;
   font-size: var(--font-size-progress-bar);
   line-height: var(--font-lineHeight-progress-bar);
+
+  @media (--res-midToSm) {
+    @mixin responsiveValue font-size, 768, 320, 14, 11;
+    @mixin responsiveValue line-height, 768, 320, 17, 13;
+
+
+  }
+
+
   &__caption {
 
     padding: var(--padding-progress-bar-caption);

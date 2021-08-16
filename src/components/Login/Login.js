@@ -23,7 +23,7 @@ function Login() {
         Имя
       </label>
       <input
-        required
+        required="true"
         id="name"
         className="account-form__input app__text"
         type="text"
@@ -34,7 +34,7 @@ function Login() {
         Пароль
       </label>
       <input
-        required
+        required="true"
         id="password"
         className="account-form__input account-form__input_error app__text"
         type="password"
