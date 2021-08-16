@@ -73,7 +73,7 @@ function Movies() {
         <MoviesCard
           place="movies"
           image={card8}
-          title={'Gimme Danger: История Игги и The Stooges'}
+          title={'Gimme Danger: История Игги'}
           isSaved={false}
           length={'1ч 42м'}
         />

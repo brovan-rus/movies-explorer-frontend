@@ -40,7 +40,7 @@
     grid-column-gap: var(--gap-column-card-list);
 
     @media (--res-wideToMid) {
-      @mixin responsiveValue grid-row-gap, 1280, 768, 36, 30;
+      @mixin responsiveValue grid-row-gap, 1280, 768, 30, 36;
       @mixin responsiveValue grid-column-gap, 1280, 768, 24, 30;
       @mixin responsiveValue --card-width, 1280, 768, 364, 339;
       @mixin responsiveValue --card-height, 1280, 768, 271, 258;

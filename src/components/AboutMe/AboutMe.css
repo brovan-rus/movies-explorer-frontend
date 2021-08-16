@@ -9,14 +9,14 @@
   background-color: var(--bg-color);
 
   @media (--res-wideToMid) {
-    @mixin responsiveValue padding-top, 1280, 768, 110, 90;
+    @mixin responsiveValue padding-top, 1280, 768, 95, 90;
     @mixin responsiveValue padding-bottom, 1280, 768, 100, 90;
     @mixin responsiveValue padding-left, 1280, 768, 70, 50;
     @mixin responsiveValue padding-right, 1280, 768, 70, 50;
   }
 
   @media (--res-midToSm) {
-    @mixin responsiveValue padding-top, 768, 320, 90, 60;
+    @mixin responsiveValue padding-top, 768, 320, 90, 70;
     @mixin responsiveValue padding-bottom, 768, 320, 90, 70;
     @mixin responsiveValue padding-left, 768, 320, 50, 14;
     @mixin responsiveValue padding-right, 768, 320, 50, 14;
@@ -56,7 +56,7 @@
     display: flex;
 
     @media (--res-wideToMid) {
-      @mixin responsiveValue padding-top, 1280, 798, 99, 87;
+      @mixin responsiveValue padding-top, 1280, 798, 77, 87;
     }
 
     @media (--res-midToSm) {

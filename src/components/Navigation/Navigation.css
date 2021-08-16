@@ -12,8 +12,8 @@
     background: var(--bg-color);
     font-family: var(--font-baseFontFamily);
     cursor: pointer;
-    width: 76px;
-    height: 32px;
+    width: var(--width-navigation-button);
+    height: var(--height-navigation-button);
     border-radius: 3px;
     outline: none;
     border: 0;
@@ -47,7 +47,7 @@
   }
 
   &__login {
-    font-size: var(--font-size-headerTextMedium);
+    font-size: var(--font-size-headerTextSmall);
     font-weight: 500;
     line-height: var(--font-lineHeight-headerTextSmall);
     display: flex;

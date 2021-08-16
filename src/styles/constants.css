@@ -90,7 +90,7 @@
   --font-size-formTextMedium: var(--font-size-smallPlus);
   --font-size-formTextSmall: var(--font-size-smaller);
   --font-size-formTextSmaller: var(--font-size-smallest);
-  --font-size-studentName: var(--font-size-big);
+  --font-size-studentName: var(--font-size-biggest);
   --font-size-cardTitle: var(--font-size-mediumNeutral);
   --font-size-cardText: var(--font-size-smaller);
   --font-size-cardLoadButton: var(--font-size-small);
@@ -101,6 +101,8 @@
   --font-size-movies-list-button: 12px;
   --font-size-errorMessage-text: 16px;
   --font-size-errorMessage-button: 14px;
+  --font-size-title-portfolio: 18px;
+  --font-size-progress-bar: 14px;
 
   /*Высота линии элементов*/
   --font-lineHeight-titleBig: var(--font-lineHeight-biggest);
@@ -112,7 +114,7 @@
   --font-lineHeight-mainTextNormalHeight: var(--font-lineHeight-medium);
   --font-lineHeight-mainTextLargeHeight: var(--font-lineHeight-mediumNeutral);
   --font-lineHeight-mainTextSmallHeight: var(--font-lineHeight-smallPlus);
-  --font-lineHeight-headerTextSmall: var(--font-lineHeight-small);
+  --font-lineHeight-headerTextSmall: 16px;
   --font-lineHeight-headerTextBig: var(--font-lineHeight-mediumMinus);
   --font-lineHeight-footerText: var(--font-lineHeight-small);
   --font-lineHeight-searchFormText: var(--font-lineHeight-mediumMinus);
@@ -131,6 +133,8 @@
   --font-lineHeight-movies-list-button: 15px;
   --font-lineHeight-errorMessage-text: 19px;
   --font-lineHeight-errorMessage-button: 17px;
+  --font-lineHeight-title-portfolio: 20px;
+  --font-liineHeight-progress-bar: 17px;
 
   /*Отступы и размеры*/
   --padding-main: 0 70px;
@@ -159,7 +163,7 @@
   --padding-two-columns: 70px 0 110px 0;
   --margin-two-columns-title: 0 0 26px 0;
   --padding-progress-bar-caption: 9px 0;
-  --interval-progress-bar: 14px;
+  --magrin-progress-bar-caption: 0 0 14px 0;
   --padding-techs-title: 90px 0 0 0;
   --padding-techs-subtitle: 26px 0 0 0;
   --padding-techs-list: 100px 0 0 0;
@@ -178,7 +182,7 @@
   --padding-portfolio-list: 50px 0 0 0;
   --padding-footer: 79px 70px 20px 70px;
   --footer-interval: 20px;
-  --padding-search-form: 80px 70px 83px 70px;
+  --padding-search-form: 80px 0px 83px 0px;
   --padding-search-form-input: 15px 87px 15px 22px;
   --magrin-search-fieldset: 0 41px 0 0;
   --margin-filter-checkbox-text: 0 14px 0 0;
@@ -220,8 +224,8 @@
   --magrin-errorMessageText: 0 0 184px 0;
   --margin-right-navigation-login-element: 30px;
   --width-max-header-logo: 212px;
-
-
+  --width-navigation-button: 76px;
+  --height-navigation-button: 32px;
 }
 
 /* Значения для разрешения 768px */
@@ -233,6 +237,7 @@
     --font-size-big: 28px;
     --font-size-studentName: 40px;
     --font-lineHeight-titleSmallest: var(--font-lineHeight-mainTextNormalHeight);
+    --font-size-headerTextSmall: 12px;
     --font-lineHeight-medium: 18px;
     --font-lineHeight-studentName: 40px;
     --font-lineHeight-smallPlus: 14.5px;
@@ -270,7 +275,7 @@
     --padding-mobile-menu: 159px 90px 92px 90px;
     --padding-search-form: 60px 30px 57px 30px;
     --margin-filter-checkbox-text: 0 12px 0 0;
-    --magrin-search-input: 0 0 38px 0;
+    --magrin-search-input: 0 0 32px 0;
     --magrin-search-fieldset: 0;
     --padding-movies-list: 0 30px 0 30px;
     --gap-column-card-list: 30px;
@@ -297,6 +302,7 @@
 @media (--res-sm)  {
   :root {
     /* Типографика */
+    --font-size-headerTextSmall: 10px;
     --font-size-great: 80px;
     --font-size-biggest: 31px;
     --font-size-bigMinus: 18px;
@@ -326,10 +332,13 @@
     --font-lineHeight-errorMessage-text: 15px;
     --font-size-errorMessage-button: 12px;
     --font-lineHeight-errorMessage-button: 15px;
+    --font-size-title-portfolio: 14px;
+    --font-size-progress-bar: 11px;
+    --font-lineHeight-progress-bar: 13px;
 
 
     /* Отступы и размеры*/
-    --padding-header: 18px 30px;
+    --padding-header: 18px 14px;
     --padding-main: 0 18px;
     --padding-aboutProject: 70px 18px;
     --padding-techs: 70px 18px;
@@ -348,7 +357,7 @@
     --padding-techs-title: 60px 0 0 0;
     --width-techs-subtitle: 292px;
     --padding-techs-subtitle: 24px 0 0 0;
-    --padding-techs-list: 70px 0 0 0;
+    --padding-techs-list: 50px 0 0 0;
     --padding-about-me__two-columns: 60px 0;
     --padding-about-me__subtitle: 20px 0 0 0;
     --about-me__social-link-interval: 26px;
@@ -357,9 +366,9 @@
     --padding-portfolio-list: 40px 0 0 0;
     --padding-footer: 79px 10px 10px 10px;
     --padding-mobile-menu: 144px 10px 10px 48px;
-    --padding-search-form: 60px 10px 44px 10px;
+    --padding-search-form: 53px 10px 44px 10px;
     --margin-filter-checkbox-text: 0 13px 0 0;
-    --magrin-search-input: 0 0 45px 0;
+    --magrin-search-input: 0 0 39px 0;
     --padding-movies-list: 0 10px;
     --movies-card-list-magrin: 0 0 50px 0;
     --gap-row-card-list: 16px;
@@ -379,5 +388,9 @@
     --magrin-errorMessageTitle: 0 0 10px 0;
     --magrin-errorMessageText: 0 0 284px 0;
     --margin-right-navigation-login-element: 14px;
+    --width-navigation-button: 54px;
+    --height-navigation-button: 26px;
+    --magrin-progress-bar-caption: 0 0 10px 0;
+
   }
 }

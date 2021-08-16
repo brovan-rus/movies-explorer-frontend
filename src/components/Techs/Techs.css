@@ -12,14 +12,14 @@
     @mixin responsiveValue padding-top, 1280, 768, 110, 90;
     @mixin responsiveValue padding-bottom, 1280, 768, 110, 90;
     @mixin responsiveValue padding-left, 1280, 768, 70, 50;
-    @mixin responsiveValue padding-right, 1280, 768, 70, 50;
+    @mixin responsiveValue padding-right, 1280, 768, 70, 60;
   }
 
   @media (--res-midToSm) {
-    @mixin responsiveValue padding-top, 768, 320, 90, 28;
+    @mixin responsiveValue padding-top, 768, 320, 90, 70;
     @mixin responsiveValue padding-bottom, 768, 320, 90, 70;
     @mixin responsiveValue padding-left, 768, 320, 50, 18;
-    @mixin responsiveValue padding-right, 768, 320, 50, 18;
+    @mixin responsiveValue padding-right, 768, 320, 60, 18;
   }
 
   &__title {
@@ -67,7 +67,7 @@
     padding: var(--padding-techs-list);
     margin: 0;
 
-    @media (--res-mid) {
+    @media (--res-smPlus) {
       grid-template-columns: repeat(2, var(--width-techs-list-element));
     }
 

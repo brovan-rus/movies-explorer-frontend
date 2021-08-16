@@ -9,7 +9,8 @@
     border-bottom: var(--color-lightLine) solid 1px;
     padding: 0 0 23px 0;
     font-size: var(--font-size-titleSmall);
-    line-height: var(--font-lineHeight-titleSmall);
+    line-height: var(--font-lineHeight-bigMinus);
+    letter-spacing: var(--font-narrow);
     font-weight: 400;
     max-width: 1140px;
 
@@ -21,8 +22,8 @@
       color: var(--color-gray);
       border: 0;
       font-weight: normal;
-      font-size: var(--font-size-titleSmallest);
-      line-height: var(--font-lineHeight-titleSmallest);
+      font-size: var(--font-size-title-portfolio);
+      line-height: var(--font-lineHeight-title-portfolio);
       padding: 0;
     }
   }
