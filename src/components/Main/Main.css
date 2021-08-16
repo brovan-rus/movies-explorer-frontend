@@ -1,0 +1,31 @@
+.landing {
+  width: 100%;
+
+
+  &__section-title {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border-bottom: var(--color-lightLine) solid 1px;
+    padding: 0 0 23px 0;
+    font-size: var(--font-size-titleSmall);
+    line-height: var(--font-lineHeight-bigMinus);
+    letter-spacing: var(--font-narrow);
+    font-weight: 400;
+    max-width: 1140px;
+
+    @media (--res-midToSm) {
+      @mixin responsiveValue font-size, 768, 320, 22, 18;
+    }
+
+    &_place_portfolio {
+      color: var(--color-gray);
+      border: 0;
+      font-weight: normal;
+      font-size: var(--font-size-title-portfolio);
+      line-height: var(--font-lineHeight-title-portfolio);
+      padding: 0;
+    }
+  }
+}
+

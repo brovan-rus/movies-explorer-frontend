@@ -1,0 +1,154 @@
+.account-form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+  width: var(--width-account-form);
+  padding: var(--padding-account-form);
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue padding-top, 1280, 768, 70, 232;
+    @mixin responsiveValue padding-bottom, 1280, 768, 70, 232;
+  }
+
+  @media (--res-midToSm) {
+    @mixin responsiveValue padding-top, 768, 320, 232, 56;
+    @mixin responsiveValue padding-bottom, 768, 320, 232, 30;
+  }
+
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+
+    @media (--res-smPlus) {
+      align-items: center;
+    }
+  }
+
+  @media (--res-midToSm) {
+    @mixin responsiveValue width, 768, 320, 396, 260;
+  }
+
+  &__title {
+    font-size: var(--font-size-formTitle);
+    line-height: var(--font-lineHeight-formTitle);
+    margin: 0;
+    padding: var(--padding-account-form-title);
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    margin: var(--margin-account-form-form);
+  }
+
+  &__input-area {
+    width: 100%;
+    height: var(--height-account-form-input-area);
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: var(--color-mateDarkGray);
+    border: 0;
+    outline: 0;
+    height: var(--height-account-form-input);
+    padding: var(--padding-account-form-input);
+    margin: var(--magrin-account-form-input);
+    font-size: var(--font-size-formTextMedium);
+    font-weight: 400;
+    line-height: var(--font-lineHeight-formTextBigHeight);
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    &_error {
+      color: var(--color-red);
+    }
+  }
+
+  &__label {
+    font-weight: 400;
+    color: var(--color-gray);
+    font-size: var(--font-size-formTextSmaller);
+    line-height: var(--font-lineHeight-formTextSmallHeight);
+    margin: var(--magrin-account-form-label);
+  }
+
+  &__error-message {
+    transition: opacity .4s linear, visibility .4s linear;
+    visibility: hidden;
+    opacity: 0;
+    font-size: var(--font-size-formTextSmaller);
+    line-height: var(--font-lineHeight-formTextSmallHeight);
+    color: var(--color-red);
+    padding: var(--padding-account-form-error-message);
+
+    &_active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+
+  &__button {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: var(--font-size-formTextBig);
+    line-height: var(--font-lineHeight-formTextBiggerHeight);
+    cursor: pointer;
+    height: var(--height-account-form-button);
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 3px;
+    background-color: var(--color-blueButton);
+    padding: var(--padding-account-form-button);
+
+    &:disabled {
+      &:hover {
+       opacity: 1;
+      }
+      cursor: auto;
+      background-color: var(--color-gray);
+    }
+  }
+
+  &__caption {
+    margin: 0;
+    padding: 0;
+    color: var(--color-gray);
+    margin: var(--margin-account-form-caption);
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: var(--padding-account-form-container-caption);
+      font-size: var( --font-size-formTextBig);
+      line-height: var(--font-lineHeight-formTextBiggerHeight);
+    }
+
+    &-link {
+      text-decoration: none;
+      color: var(--color-textBlue)
+    }
+  }
+
+
+}

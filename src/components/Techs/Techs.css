@@ -1,0 +1,83 @@
+.techs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  --bg-color: var(--color-darkGray);
+  background-color: var(--bg-color);
+  padding: var(--padding-techs);
+
+  @media (--res-wideToMid) {
+    @mixin responsiveValue padding-top, 1280, 768, 110, 90;
+    @mixin responsiveValue padding-bottom, 1280, 768, 110, 90;
+    @mixin responsiveValue padding-left, 1280, 768, 70, 50;
+    @mixin responsiveValue padding-right, 1280, 768, 70, 60;
+  }
+
+  @media (--res-midToSm) {
+    @mixin responsiveValue padding-top, 768, 320, 90, 70;
+    @mixin responsiveValue padding-bottom, 768, 320, 90, 70;
+    @mixin responsiveValue padding-left, 768, 320, 50, 18;
+    @mixin responsiveValue padding-right, 768, 320, 60, 18;
+  }
+
+  &__title {
+    margin: 0;
+    padding: var(--padding-techs-title);
+    font-size: var(--font-size-titleTechs);
+    line-height: var(--font-lineHeight-titleTechs);
+    letter-spacing: var(--font-narrow);
+    font-weight: 400;
+    text-align: center;
+
+    @media (--res-midToSm) {
+      @mixin responsiveValue font-size, 768, 320, 50, 30;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    padding: var(--padding-techs-subtitle);
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: var(--font-narrow);
+    font-size: var(--font-size-mainText);
+    line-height: var(--font-lineHeight-mainTextNormalHeight);
+    width: var(--width-techs-subtitle);
+
+    @media (--res-midToSm) {
+      @mixin responsiveValue width, 768, 320, 460, 292;
+
+    }
+  }
+
+  &__list {
+    display: grid;
+    font-size: var(--font-size-mainText);
+    letter-spacing: var(--font-narrow);
+    line-height: var(--font-lineHeight-mainTextSmallHeight);
+    text-align: center;
+    grid-template-rows: var(--height-techs-list-element);
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, var(--width-techs-list-element));
+    justify-content: center;
+    width: 100%;
+    list-style-type: none;
+    padding: var(--padding-techs-list);
+    margin: 0;
+
+    @media (--res-smPlus) {
+      grid-template-columns: repeat(2, var(--width-techs-list-element));
+    }
+
+    &-element {
+      line-height: var(--height-techs-list-element);
+      --bg-color: var(--color-mediumGray);
+      background: var(--bg-color);
+      border-radius: 10px;
+      color: var(--color-textGray);
+    }
+  }
+}
+

@@ -1,0 +1,396 @@
+/*Разрешения экрана*/
+@custom-media --res-wideLimit screen and (min-width: 1280px);
+@custom-media --res-wide screen and (max-width: 1279px);
+@custom-media --res-wideToMid screen and (max-width: 1280px) and (min-width: 768px);
+@custom-media --res-mid screen and (max-width: 768px);
+@custom-media --res-fromMid screen and (min-width: 768px);
+@custom-media --res-midToSm screen and (max-width: 768px) and (min-width: 320px);
+@custom-media --res-smPlus screen and (max-width: 600px);
+@custom-media --res-sm screen and (max-width: 320px);
+
+:root {
+  /*Цвета палитры*/
+  --color-white: #fff;
+  --color-trueBlack: #000;
+  --color-black: #202020;
+  --color-green: #3DDC84;
+  --color-red: #EE3465;
+  --color-blue: #4285F4;
+  --color-darkBlue: #073042;
+  --color-gray: #8B8B8B;
+  --color-darkGray: #272727;
+  --color-lightGray: #DADADA;
+  --color-mediumGray: #303030;
+  --color-paleGray: #424242;
+  --color-trueGray: #A0A0A0;
+  --color-mateGray: #313131;
+  --color-mateDarkGray:  #2F2F2F;
+  --color-liteMateGray: #222222;
+  --color-neutralGrayRGB: 170, 170, 170;
+
+  /*Цвета элементов*/
+  --color-bg: var(--color-black);
+  --color-text: var(--color-white);
+  --color-textGray: var(--color-gray);
+  --color-textBlue: var(--color-blue);
+  --color-lightLine: var(--color-lightGray);
+  --color-darkLine: var(--color-paleGray);
+  --color-tranparentLine: rgba(var(--color-neutralGrayRGB), 0.2);
+  --color-blueButton: var(--color-blue);
+
+  /*Типографика используемых параметров шрифтов*/
+  --font-baseFontFamily: 'Inter', 'Arial', sans-serif;
+  --font-narrow: -0.04em;
+  /*Используемые размеры шрифтов*/
+  --font-size-great: 140px;
+  --font-size-biggest: 50px;
+  --font-size-big: 30px;
+  --font-size-bigger: 24px;
+  --font-size-bigMinus: 22px;
+  --font-size-mediumPlus: 20px;
+  --font-size-medium: 18px;
+  --font-size-mediumNeutral: 15px;
+  --font-size-mediumMinus: 14px;
+  --font-size-smallPlus: 13px;
+  --font-size-small: 12px;
+  --font-size-smaller: 11px;
+  --font-size-smallest: 10px;
+
+  /*Используемая высота линии*/
+  --font-lineHeight-great: 169px;
+  --font-lineHeight-biggest: 58px;
+  --font-lineHeight-big: 50px;
+  --font-lineHeight-bigger: 29px;
+  --font-lineHeight-bigMinus: 27px;
+  --font-lineHeight-mediumPlus: 24px;
+  --font-lineHeight-mediumNeutral: 22px;
+  --font-lineHeight-medium: 20px;
+  --font-lineHeight-mediumMinus: 18px;
+  --font-lineHeight-smallPlus: 17px;
+  --font-lineHeight-small: 16px;
+  --font-lineHeight-smaller: 13px;
+  --font-lineHeight-smallest: 12px;
+
+  /*Типографика элементов*/
+  /*Размеры шрифтов элементов*/
+  --font-size-titleBig: var(--font-size-biggest);
+  --font-size-titleTechs: var(--font-size-titleBig);
+  --font-size-titleMedium: var(--font-size-big);
+  --font-size-titleSmall: var(--font-size-bigMinus);
+  --font-size-titleSmaller: var(--font-size-mediumPlus);
+  --font-size-titleSmallest: var(--font-size-medium);
+  --font-size-mainText: var(--font-size-mediumMinus);
+  --font-size-headerTextSmall: var(--font-size-small);
+  --font-size-headerTextMedium: var(--font-size-smallPlus);
+  --font-size-headerTextBig: var(--font-size-mediumMinus);
+  --font-size-footerText: var(--font-size-smallPlus);
+  --font-size-searchFormText: var(--font-size-mediumMinus);
+  --font-size-formTitle: var(--font-size-bigger);
+  --font-size-formTextBig: var(--font-size-mediumMinus);
+  --font-size-formTextMedium: var(--font-size-smallPlus);
+  --font-size-formTextSmall: var(--font-size-smaller);
+  --font-size-formTextSmaller: var(--font-size-smallest);
+  --font-size-studentName: var(--font-size-biggest);
+  --font-size-cardTitle: var(--font-size-mediumNeutral);
+  --font-size-cardText: var(--font-size-smaller);
+  --font-size-cardLoadButton: var(--font-size-small);
+  --font-size-notFoundErrorTitle: var(--font-size-great);
+  --font-size-filter-checkbox: var(--font-size-smallPlus);
+  --font-size-mobileNavText: 18px;
+  --font-size-navTabText: 13px;
+  --font-size-movies-list-button: 12px;
+  --font-size-errorMessage-text: 16px;
+  --font-size-errorMessage-button: 14px;
+  --font-size-title-portfolio: 18px;
+  --font-size-progress-bar: 14px;
+
+  /*Высота линии элементов*/
+  --font-lineHeight-titleBig: var(--font-lineHeight-biggest);
+  --font-lineHeight-titleTechs: var(--font-lineHeight-titleBig);
+  --font-lineHeight-titleMedium: var(--font-lineHeight-big);
+  --font-lineHeight-titleSmall: var(--font-lineHeigth-bigMinus);
+  --font-lineHeight-titleSmaller: var(--font-lineHeight-mediumPlus);
+  --font-lineHeight-titleSmalest: var(--font-lineHeight-medium);
+  --font-lineHeight-mainTextNormalHeight: var(--font-lineHeight-medium);
+  --font-lineHeight-mainTextLargeHeight: var(--font-lineHeight-mediumNeutral);
+  --font-lineHeight-mainTextSmallHeight: var(--font-lineHeight-smallPlus);
+  --font-lineHeight-headerTextSmall: 16px;
+  --font-lineHeight-headerTextBig: var(--font-lineHeight-mediumMinus);
+  --font-lineHeight-footerText: var(--font-lineHeight-small);
+  --font-lineHeight-searchFormText: var(--font-lineHeight-mediumMinus);
+  --font-lineHeight-formTitle: var(--font-lineHeight-bigger);
+  --font-lineHeight-formTextBiggerHeight: var(--font-lineHeight-smallPlus);
+  --font-lineHeight-formTextBigHeight: var(--font-lineHeight-small);
+  --font-lineHeight-formTextMediumHeight: var(--font-lineHeight-smaller);
+  --font-lineHeight-formTextSmallHeight: var(--font-lineHeight-smallest);
+  --font-lineHeight-cardTitle: var(--font-lineHeight-mediumMinus);
+  --font-lineHeight-cardText: var(--font-lineHeight-smaller);
+  --font-lineHeight-studentName: var(--font-lineHeight-biggest);
+  --font-lineHeight-cardLoadButton: calc(var(--font-lineHeight-smaller) + 1.5px);
+  --font-lineHeight-notFoundErrorTitle: var(--font-lineHeight-great);
+  --font-lineHeight-mobileNavText: 22px;
+  --font-lineHeight-navTabText: 16px;
+  --font-lineHeight-movies-list-button: 15px;
+  --font-lineHeight-errorMessage-text: 19px;
+  --font-lineHeight-errorMessage-button: 17px;
+  --font-lineHeight-title-portfolio: 20px;
+  --font-liineHeight-progress-bar: 17px;
+
+  /*Отступы и размеры*/
+  --padding-main: 0 70px;
+  --padding-header: 18px 70px;
+  --padding-search: 80px 0;
+  --padding-aboutProject: 110px 70px;
+  --padding-techs: 100px 70px;
+  --padding-cards: 80px 70px;
+  --padding-input: 15px;
+  --padding-userEditForm: 74px 0 70px 0;
+  --padding-signForm: 70px 0 75px 0;
+  --padding-errorMessage: 246px 0 60px 0;
+  --interval-formf: 10px;
+  --interval-formfm: 16px;
+  --interval-formBig: 20px;
+  --interval-mobileNav: 28px;
+  --width-mobileNavWidth: 520px;
+  --height-afterSavedCards: 140px;
+  --gap-horizontal-cardGrid: 24px;
+  --gap-vertical-cardGrid: 30px;
+  --height-promo: 524px;
+  --width-promoTitle: 730px;
+  --padding-promo: 184px 0 224px 0;
+  --padding-navTab: 24px 0;
+  --two-columsGap: 140px;
+  --padding-two-columns: 70px 0 110px 0;
+  --margin-two-columns-title: 0 0 26px 0;
+  --padding-progress-bar-caption: 9px 0;
+  --magrin-progress-bar-caption: 0 0 14px 0;
+  --padding-techs-title: 90px 0 0 0;
+  --padding-techs-subtitle: 26px 0 0 0;
+  --padding-techs-list: 100px 0 0 0;
+  --width-techs-subtitle: 460px;
+  --height-techs-list-element: 60px;
+  --width-techs-list-element: 90px;
+  --padding-about-me: 110px 70px 100px 70px;
+  --padding-about-me-two-columns: 66px 0 0 0;
+  --padding-about-me-subtitle: 18px 0 0 0;
+  --padding-about-me-text: 26px 0 0 0;
+  --about-me__social-link-interval: 20px;
+  --padding-about-me__social-links-list: 99px 0 0 0;
+  --padding-portfolio: 0 70px 125px 70px;
+  --height-about-me-photo: 327px;
+  --width--about-me-photo: 270px;
+  --padding-portfolio-list: 50px 0 0 0;
+  --padding-footer: 79px 70px 20px 70px;
+  --footer-interval: 20px;
+  --padding-search-form: 80px 0px 83px 0px;
+  --padding-search-form-input: 15px 87px 15px 22px;
+  --magrin-search-fieldset: 0 41px 0 0;
+  --margin-filter-checkbox-text: 0 14px 0 0;
+  --magrin-search-input: 0;
+  --padding-movies-list: 0 70px;
+  --movies-card-list-magrin: 0 0 80px 0;
+  --card-width: 364px;
+  --card-height: 271px;
+  --gap-column-card-list: 24px;
+  --gap-row-card-list: 30px;
+  --margin-card-title: 0 0 9px 0;
+  --padding-card-heading: 14px;
+  --height-card-heading: 25%;
+  --padding-card-list-wrapper: 80px 0;
+  --width-movies-list-button: 41%;
+  --height-movies-list-button: 36px;
+  --padding-profile: 74px 0 70px 0;
+  --margin-profile-form-title: 0 0 123px 0;
+  --margin-inputs-wrapper: 0 0 220px 0;
+  --width-profile-input-contatiner: 410px;
+  --padding-profile-input-contatiner: 0 0 16px 0;
+  --margin-profile-input-contatiner: 17px 0 0 0;
+  --margin-profile-edit-button: 0 0 16px 0;
+  --padding-account-form-title: 40px 0 40px 0;
+  --width-account-form: 396px;
+  --height-account-form-input-area: 335px;
+  --margin-account-form-form: 0 0 16px 0;
+  --height-account-form-input: 46px;
+  --padding-account-form-input: 15px;
+  --magrin-account-form-input: 0 0 20px 0;
+  --magrin-account-form-label: 0 0 10px 0;
+  --padding-account-form: 70px 0 70px 0;
+  --height-account-form-button: 45px;
+  --padding-account-form-button: 13px 0 15px 0;
+  --padding-account-form-container-caption: 16px 0 0 0;
+  --margin-account-form-caption: 0 6px 0 0;
+  --padding-account-form-error-message: 10px 0 0 0;
+  --magrin-errorMessageTitle: 0 0 5px 0;
+  --magrin-errorMessageText: 0 0 184px 0;
+  --margin-right-navigation-login-element: 30px;
+  --width-max-header-logo: 212px;
+  --width-navigation-button: 76px;
+  --height-navigation-button: 32px;
+}
+
+/* Значения для разрешения 768px */
+@media (--res-mid)  {
+  :root {
+    /* Типографика */
+    --font-size-titleSmallest: var(--font-size-mainText);
+    --font-size-mediumMinus: 12px;
+    --font-size-big: 28px;
+    --font-size-studentName: 40px;
+    --font-lineHeight-titleSmallest: var(--font-lineHeight-mainTextNormalHeight);
+    --font-size-headerTextSmall: 12px;
+    --font-lineHeight-medium: 18px;
+    --font-lineHeight-studentName: 40px;
+    --font-lineHeight-smallPlus: 14.5px;
+
+
+    /*Отступы и размеры*/
+    --padding-main: 0 50px;
+    --padding-header: 18px 30px;
+    --padding-techs: 90px 50px;
+    --padding-aboutProject: 90px 50px;
+    --padding-about-me: 90px 50px;
+    --padding-cards: 80px 30px;
+    --gap-vertical-cardGrid: 36px;
+    --gap-horizontal-cardGrid: 30px;
+    --padding-userEditForm: 236px 0 269px 0;
+    --padding-signForm: 232px 0;
+    --padding-errorMessage: 408px 0 222px 0;
+    --height-promo: 784px;
+    --padding-promoTitle: 326px 0 342px 0;
+    --two-columsGap: 30px;
+    --padding-two-columns: 70px 0 93px 0;
+    --margin-two-columns-title: 0 0 22px 0;
+    --padding-techs-title: 80px 0 0 0;
+    --padding-techs-subtitle: 22px 0 0 0;
+    --padding-techs-list: 90px 0 0 0;
+    --height-techs-list-element: 57px;
+    --width-techs-list-element: 84px;
+    --padding-about-me__subtitle: 16px 0 0 0;
+    --padding-about-me-text: 20px 0 0 0;
+    --padding-about-me__social-links-list: 87px 0 0 0;
+    --padding-portfolio: 0 50px 90px 70px;
+    --height-about-me-photo: 307px;
+    --width--about-me-photo: 255px;
+    --padding-footer: 115px 30px 20px 30px;
+    --padding-mobile-menu: 159px 90px 92px 90px;
+    --padding-search-form: 60px 30px 57px 30px;
+    --margin-filter-checkbox-text: 0 12px 0 0;
+    --magrin-search-input: 0 0 32px 0;
+    --magrin-search-fieldset: 0;
+    --padding-movies-list: 0 30px 0 30px;
+    --gap-column-card-list: 30px;
+    --gap-row-card-list: 36px;
+    --card-width: 339px;
+    --card-height: 258px;
+    --height-card-heading: 26.3%;
+    --padding-profile: 236px 0 269px 0;
+    --margin-profile-form-title: 0 0 96px 0;
+    --margin-inputs-wrapper: 0 0 210px 0;
+    --padding-account-form: 232px 0 232px 0;
+
+  }
+}
+
+/*Значения для промежуточной точки 600px */
+@media (--res-smPlus) {
+  :root {
+    --height-about-me-photo: 352px;
+  }
+}
+
+/* Значения для разрешения 320px */
+@media (--res-sm)  {
+  :root {
+    /* Типографика */
+    --font-size-headerTextSmall: 10px;
+    --font-size-great: 80px;
+    --font-size-biggest: 31px;
+    --font-size-bigMinus: 18px;
+    --font-size-mediumMinus: 11px;
+    --font-size-smallPlus: 12px;
+    --font-size-titleSmaller: var(--font-size-titleSmall);
+    --font-size-titleMedium: var(--font-size-titleSmall);
+    --font-size-titleSmallest: var(--font-size-mainText);
+    --font-size-searchFormText: var(--font-size-mainText);
+    --font-size-formTextBig: var(--font-size-smallPlus);
+    --font-size-titleTechs: 30px;
+    --font-size-studentName: 30px;
+    --font-size-navTabText: 11px;
+    --font-lineHeight-great: 97px;
+    --font-lineHeight-biggest: 39px;
+    --font-lineHeight-big: 28px;
+    --font-lineHeight-medium: 16px;
+    --font-lineHeigth-bigMinus: 22px;
+    --font-lineHeight-small: 15px;
+    --font-lineHeight-formTextBiggerHeight: 13px;
+    --font-lineHeight-titleSmaller: var(--font-lineHeight-titleSmall);
+    --font-lineHeight-titleTechs: 36px;
+    --font-lineHeight-studentName: 36px;
+    --font-lineHeight-searchFormText: 18px;
+    --font-size-filter-checkbox: var(--font-size-smaller);
+    --font-size-errorMessage-text: 12px;
+    --font-lineHeight-errorMessage-text: 15px;
+    --font-size-errorMessage-button: 12px;
+    --font-lineHeight-errorMessage-button: 15px;
+    --font-size-title-portfolio: 14px;
+    --font-size-progress-bar: 11px;
+    --font-lineHeight-progress-bar: 13px;
+
+
+    /* Отступы и размеры*/
+    --padding-header: 18px 14px;
+    --padding-main: 0 18px;
+    --padding-aboutProject: 70px 18px;
+    --padding-techs: 70px 18px;
+    --padding-about-me: 60px 14px 70px 14px;
+    --padding-cards: 50px 10px 80px 10px;
+    --padding-account-form-title: 50px 0 80px 0;
+    --padding-signForm: 56px 0 30px 0;
+    --padding-errorMessage: 329px 0 30px 0;
+    --height-promo: 570px;
+    --width-promoTitle: 300px;
+    --padding-promoTitle: 207px 0 346px 0;
+    --padding-navTab: 25px 0;
+    --padding-two-columns: 60px 0;
+    --margin-two-columns-title: 0 0 16px 0;
+    --padding-progress-bar-caption: 11px 0;
+    --padding-techs-title: 60px 0 0 0;
+    --width-techs-subtitle: 292px;
+    --padding-techs-subtitle: 24px 0 0 0;
+    --padding-techs-list: 50px 0 0 0;
+    --padding-about-me__two-columns: 60px 0;
+    --padding-about-me__subtitle: 20px 0 0 0;
+    --about-me__social-link-interval: 26px;
+    --padding-about-me__social-links-list: 40px 0 0 0;
+    --padding-portfolio: 0 14px 70px 14px;
+    --padding-portfolio-list: 40px 0 0 0;
+    --padding-footer: 79px 10px 10px 10px;
+    --padding-mobile-menu: 144px 10px 10px 48px;
+    --padding-search-form: 53px 10px 44px 10px;
+    --margin-filter-checkbox-text: 0 13px 0 0;
+    --magrin-search-input: 0 0 39px 0;
+    --padding-movies-list: 0 10px;
+    --movies-card-list-magrin: 0 0 50px 0;
+    --gap-row-card-list: 16px;
+    --card-width: 300px;
+    --card-height: 236px;
+    --height-card-heading: 28.8%;
+    --width-movies-list-button: 75%;
+    --padding-profile: 70px 0 40px 0;
+    --margin-profile-form-title: 0 0 80px 0;
+    --margin-inputs-wrapper: 0 0 379px 0;
+    --width-profile-input-contatiner: 260px;
+    --margin-account-form-form: 0 0 14px 0;
+    --width-account-form: 260px;
+    --padding-account-form: 56px 0 30px 0;
+    --padding-account-form-button: 15px 0;
+    --height-account-form-input-area: 320px;
+    --magrin-errorMessageTitle: 0 0 10px 0;
+    --magrin-errorMessageText: 0 0 284px 0;
+    --margin-right-navigation-login-element: 14px;
+    --width-navigation-button: 54px;
+    --height-navigation-button: 26px;
+    --magrin-progress-bar-caption: 0 0 10px 0;
+
+  }
+}

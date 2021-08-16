@@ -1,0 +1,19 @@
+.logo {
+  --logo-size: 38px;
+  height: var(--logo-size);
+  width: var(--logo-size);
+  background: var(--color-green);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after{
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: var(--color-bg);
+    border-radius: 50%;
+  }
+}
+
