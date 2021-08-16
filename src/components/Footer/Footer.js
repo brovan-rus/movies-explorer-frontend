@@ -9,17 +9,26 @@ function Footer() {
         <nav>
           <ul className="footer__list app__text">
             <li className="footer__list-element">
-              <a href="https://practicum.yandex.ru/" className="footer__link app__link">
+              <a
+                href="https://practicum.yandex.ru/"
+                target="_blank"
+                className="footer__link app__link"
+              >
                 Яндекс.Практикум
               </a>
             </li>
             <li className="footer__list-element">
-              <a href="https://github.com/brovan-rus/" className="footer__link app__link">
+              <a
+                href="https://github.com/brovan-rus/"
+                target="_blank"
+                className="footer__link app__link"
+              >
                 Github
               </a>
             </li>
             <li className="footer__list-element">
               <a
+                target="_blank"
                 href="https://www.facebook.com/profile.php?id=100005340542138"
                 className="footer__link app__link"
               >

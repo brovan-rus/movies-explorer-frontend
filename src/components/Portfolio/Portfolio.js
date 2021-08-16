@@ -8,6 +8,7 @@ function Portfolio() {
         <li className="portfolio__list-element app__text">
           <p className="portfolio__project-name">Статичный сайт</p>
           <a
+            target="_blank"
             href="https://github.com/brovan-rus/how-to-learn"
             className="portfolio__link app__link"
           >
@@ -17,6 +18,7 @@ function Portfolio() {
         <li className="portfolio__list-element app__text">
           <p className="portfolio__project-name">Адаптивный сайт</p>
           <a
+            target="_blank"
             href="https://brovan-rus.github.io/russian-travel/"
             className="portfolio__link app__link"
           >
@@ -26,6 +28,7 @@ function Portfolio() {
         <li className="portfolio__list-element app__text">
           <p className="portfolio__project-name">Одностраничное приложение</p>
           <a
+            target="_blank"
             href="https://project-mesto-brovan.nomoredomains.club/"
             className="portfolio__link app__link"
           >
