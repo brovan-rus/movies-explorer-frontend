@@ -27,6 +27,7 @@ function Register() {
         Имя
       </label>
       <input
+        required
         id="name"
         className="account-form__input app__text"
         type="text"
@@ -37,6 +38,7 @@ function Register() {
         E-mail
       </label>
       <input
+        required
         id="email"
         className="account-form__input app__text"
         type="email"
@@ -47,6 +49,7 @@ function Register() {
         Пароль
       </label>
       <input
+        required
         id="password"
         className="account-form__input account-form__input_error app__text"
         type="password"

@@ -49,6 +49,15 @@
     font-weight: 400;
     font-size: var(--font-size-searchFormText);
     line-height: var(--font-lineHeight-searchFormText);
+    transition: border .2s linear;
+
+    &:focus  {
+      border: 1.5px solid var(--color-blue);
+    }
+
+    &:active  {
+      border: 1.5px solid var(--color-blue);
+    }
   }
 
   &__button {
