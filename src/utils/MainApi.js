@@ -25,7 +25,7 @@ class MainApi {
     }).then(handleResponse);
   }
 
-  login(email, password) {
+  login(name, email, password) {
     return fetch(`${this._url}/signin`, {
       method: 'POST',
       headers: {

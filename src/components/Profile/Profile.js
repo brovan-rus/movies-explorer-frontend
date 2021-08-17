@@ -1,6 +1,8 @@
 import React from 'react';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-function Profile({ user }) {
+function Profile() {
+  const user = React.useContext(CurrentUserContext);
   const [name, setName] = React.useState(user.name);
   const [email, setEmail] = React.useState(user.email);
   const handleNameInput = (e) => {

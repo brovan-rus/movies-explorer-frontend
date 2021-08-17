@@ -19,6 +19,7 @@ function AboutMe() {
               <li className="about-me__social-links-list-element">
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.facebook.com/profile.php?id=100005340542138"
                   className="about-me__social-link app__text app__link"
                 >
@@ -28,6 +29,7 @@ function AboutMe() {
               <li className="about-me__social-links-list-element">
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://github.com/brovan-rus/"
                   className="about-me__social-link app__text app__link"
                 >

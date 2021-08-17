@@ -11,13 +11,18 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import mainApi from '../../utils/MainApi';
 
-const user = {
-  name: 'Константин',
-  email: 'brovan@yandex.ru',
-};
 function App() {
   const [currentUser, setCurrentUser] = React.useState({ isLoggedIn: false });
+
+  const handleRegister = (name, email, password) => {
+    mainApi
+      .register(name, email, password)
+      .then((res) => console.log(res))
+      .catch();
+  };
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="app">
@@ -39,13 +44,13 @@ function App() {
           </Route>
           <Route path="/profile">
             <Header place="profile" />
-            <Profile user={user} />
+            <Profile />
           </Route>
           <Route path="/signin">
             <Login />
           </Route>
           <Route path="/signup">
-            <Register />
+            <Register onRegisterFormSubmit={handleRegister} />
           </Route>
           <Route path="*">
             <ErrorMessage title="404" text="Страница не найдена" />
