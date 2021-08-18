@@ -1,7 +1,9 @@
 import React, { useCallback } from 'react';
 import { formValidationErrorMessage } from '../../utils/constants';
+import validator from 'validator';
 
 export function useForm() {
+  const validator = require('validator');
   const [values, setValues] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [isValidationStarted, setIsValidationStarted] = React.useState({});
@@ -21,6 +23,11 @@ export function useForm() {
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: target.validationMessage });
     setIsValid(target.closest('form').checkValidity());
+
+    if (name === 'email' && !target.validationMessage && !validator.isEmail(value)) {
+      setErrors({ ...errors, [name]: formValidationErrorMessage });
+      setIsValid(false);
+    }
     if (
       name === 'name' &&
       !(value.match(nameRegEx) && value.match(nameRegEx).length === value.length)
@@ -37,7 +44,7 @@ export function useForm() {
       setIsValid(newIsValid);
       setIsValidationStarted(newIsValidationStarted);
     },
-    [setValues, setErrors, setIsValid, setIsValid, setIsValidationStarted],
+    [setValues, setErrors, setIsValid, setIsValidationStarted],
   );
 
   return {

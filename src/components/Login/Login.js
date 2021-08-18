@@ -1,15 +1,18 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
+import { useForm } from '../FormHandler/FormHandler';
 
-function Login() {
-  const [name, setName] = React.useState();
-  const [password, setPassword] = React.useState();
-  const handleNameInput = (e) => {
-    setName(e.target.value);
+function Login({ onLoginSubmit, isError }) {
+  const form = useForm();
+
+  const handleLoginSubmit = () => {
+    onLoginSubmit(form.values);
   };
-  const handlePasswordInput = (e) => {
-    setPassword(e.target.value);
-  };
+
+  React.useEffect(() => {
+    form.resetForm();
+  }, []);
+
   return (
     <AccountForm
       title="Рады видеть!"
@@ -17,30 +20,65 @@ function Login() {
       caption="Ещё не зарегистрированы?"
       link="/signup"
       linkText="Регистрация"
-      isError={false}
+      isError={isError}
+      onSubmit={handleLoginSubmit}
+      isButtonDisabled={!form.isValid}
     >
-      <label className="account-form__label" htmlFor="name">
-        Имя
-      </label>
-      <input
-        required="true"
-        id="name"
-        className="account-form__input app__text"
-        type="text"
-        value={name}
-        onChange={handleNameInput}
-      />
-      <label className="account-form__label" htmlFor="password">
-        Пароль
-      </label>
-      <input
-        required="true"
-        id="password"
-        className="account-form__input account-form__input_error app__text"
-        type="password"
-        value={password}
-        onChange={handlePasswordInput}
-      />
+      <div className="account-form__input-wrapper">
+        <label className="account-form__label" htmlFor="name">
+          E-mail
+        </label>
+        <input
+          onBlur={form.handleBlur}
+          required={true}
+          name="email"
+          id="email"
+          className={`account-form__input ${
+            form.errors.email && form.isValidationStarted.email && 'account-form__input_error'
+          } app__text`}
+          type="email"
+          minLength={2}
+          maxLength={31}
+          value={form.values.email || ''}
+          onChange={form.handleChange}
+        />
+        <span
+          className={`account-form__error-message ${
+            form.errors.email &&
+            form.isValidationStarted.email &&
+            'account-form__error-message_active'
+          } account-form__error-message_place_input`}
+        >
+          {`${form.errors.email}`}
+        </span>
+      </div>
+      <div className="account-form__input-wrapper">
+        <label className="account-form__label" htmlFor="password">
+          Пароль
+        </label>
+        <input
+          onBlur={form.handleBlur}
+          required={true}
+          name="password"
+          id="password"
+          className={`account-form__input ${
+            form.errors.password && form.isValidationStarted.password && 'account-form__input_error'
+          } app__text`}
+          type="password"
+          minLength={3}
+          value={form.values.password || ''}
+          onChange={form.handleChange}
+        />
+        <span
+          className={`account-form__error-message ${
+            form.errors.password &&
+            form.isValidationStarted.password &&
+            'account-form__error-message_active'
+          } account-form__error-message_place_input`}
+        >
+          {`${form.errors.password}`}
+        </span>
+      </div>
     </AccountForm>
   );
 }

@@ -219,7 +219,7 @@
   --padding-account-form-button: 13px 0 15px 0;
   --padding-account-form-container-caption: 16px 0 0 0;
   --margin-account-form-caption: 0 6px 0 0;
-  --padding-account-form-error-message: 10px 0 0 0;
+  --padding-account-form-error-message: 0 0 10px 0;
   --magrin-errorMessageTitle: 0 0 5px 0;
   --magrin-errorMessageText: 0 0 184px 0;
   --margin-right-navigation-login-element: 30px;

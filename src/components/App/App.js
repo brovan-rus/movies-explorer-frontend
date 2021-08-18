@@ -27,6 +27,20 @@ function App() {
       });
   };
 
+  const handleLogin = ({ email, password }) => {
+    setFormError({ ...formError, loginForm: false });
+    mainApi
+      .login(email, password)
+      .then((res) => console.log(res))
+      .catch(() => {
+        setFormError({ ...formError, loginForm: true });
+      });
+  };
+
+  React.useEffect(() => {
+    setFormError({});
+  }, []);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="app">
@@ -51,10 +65,10 @@ function App() {
             <Profile />
           </Route>
           <Route path="/signin">
-            <Login />
+            <Login onLoginSubmit={handleLogin} isError={formError.loginForm} />
           </Route>
           <Route path="/signup">
-            <Register onRegisterFormSubmit={handleRegister} isError={formError.registerForm} />
+            <Register onRegisterSubmit={handleRegister} isError={formError.registerForm} />
           </Route>
           <Route path="*">
             <ErrorMessage title="404" text="Страница не найдена" />

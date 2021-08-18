@@ -23,18 +23,16 @@ function AccountForm({
       <div className="account-form__container">
         <Logo />
         <h1 className="account-form__title">{title}</h1>
-        <fieldset className="account-form__input-area">
-          {children}
-          <span
-            className={`account-form__error-message ${
-              isError && 'account-form__error-message_active'
-            }`}
-          >
-            {formErrorMessage}
-          </span>
-        </fieldset>
+        <fieldset className="account-form__input-area">{children}</fieldset>
       </div>
       <div className="account-form__container">
+        <span
+          className={`account-form__error-message ${
+            isError && 'account-form__error-message_active'
+          }`}
+        >
+          {formErrorMessage}
+        </span>
         <button
           type="submit"
           disabled={isButtonDisabled}

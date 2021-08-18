@@ -2,12 +2,10 @@ import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
 import { useForm } from '../FormHandler/FormHandler';
 
-function Register({ onRegisterFormSubmit, isError }) {
+function Register({ onRegisterSubmit, isError }) {
   const handleRegisterFormSubmit = () => {
-    onRegisterFormSubmit(form.values);
+    onRegisterSubmit(form.values);
   };
-
-  console.log(isError);
 
   const form = useForm();
   React.useEffect(() => {
