@@ -15,12 +15,16 @@ import mainApi from '../../utils/MainApi';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({ isLoggedIn: false });
+  const [formError, setFormError] = React.useState({});
 
-  const handleRegister = (name, email, password) => {
+  const handleRegister = ({ name, email, password }) => {
+    setFormError({ ...formError, registerForm: false });
     mainApi
       .register(name, email, password)
       .then((res) => console.log(res))
-      .catch();
+      .catch(() => {
+        setFormError({ ...formError, registerForm: true });
+      });
   };
 
   return (
@@ -50,7 +54,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/signup">
-            <Register onRegisterFormSubmit={handleRegister} />
+            <Register onRegisterFormSubmit={handleRegister} isError={formError.registerForm} />
           </Route>
           <Route path="*">
             <ErrorMessage title="404" text="Страница не найдена" />

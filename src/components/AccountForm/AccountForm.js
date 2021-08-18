@@ -1,5 +1,7 @@
 import Logo from '../Logo/Logo';
 import { Link } from 'react-router-dom';
+import { formErrorMessage } from '../../utils/constants';
+
 function AccountForm({
   children,
   title,
@@ -10,7 +12,6 @@ function AccountForm({
   isError,
   isButtonDisabled,
   onSubmit,
-  errorMessage,
 }) {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ function AccountForm({
               isError && 'account-form__error-message_active'
             }`}
           >
-            {errorMessage}
+            {formErrorMessage}
           </span>
         </fieldset>
       </div>
