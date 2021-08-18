@@ -14,7 +14,7 @@ function FilterCheckbox() {
           type="checkbox"
           className="filter-checkbox__checkbox-invisible"
           checked={isFilterCheckboxChecked}
-          onClick={handleFilterCheckboxClick}
+          onChange={handleFilterCheckboxClick}
         />
         <div className="filter-checkbox__button" />
       </label>

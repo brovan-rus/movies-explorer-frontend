@@ -1,13 +1,13 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
-import { useForm } from '../FormHandler/FormHandler';
+import FormHandler from '../FormHandler/FormHandler';
 
 function Register({ onRegisterSubmit, isError }) {
   const handleRegisterFormSubmit = () => {
     onRegisterSubmit(form.values);
   };
 
-  const form = useForm();
+  const form = FormHandler();
   React.useEffect(() => {
     form.resetForm();
   }, []);

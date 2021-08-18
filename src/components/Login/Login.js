@@ -1,9 +1,9 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
-import { useForm } from '../FormHandler/FormHandler';
+import FormHandler from '../FormHandler/FormHandler';
 
 function Login({ onLoginSubmit, isError }) {
-  const form = useForm();
+  const form = FormHandler();
 
   const handleLoginSubmit = () => {
     onLoginSubmit(form.values);

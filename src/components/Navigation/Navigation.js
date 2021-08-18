@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import MobileMenu from '../MobileMenu/MobileMenu';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Navigation({ place }) {
+  const { isLogged } = React.useContext(CurrentUserContext);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const handleMobileMenuOpen = () => {
     setIsMobileMenuOpen(true);
@@ -17,7 +19,11 @@ function Navigation({ place }) {
       <div className="navigation__logo">
         <Logo />
       </div>
-      <ul className={`navigation__films ${place === 'landing' ? 'navigation__films_hidden' : ''}`}>
+      <ul
+        className={`navigation__films ${
+          place === 'landing' && !isLogged && 'navigation__films_hidden'
+        }`}
+      >
         <li className="navigation__films-element">
           <Link to="/movies" className="app__text navigation__link app__link">
             Фильмы
@@ -30,7 +36,11 @@ function Navigation({ place }) {
         </li>
       </ul>
 
-      <div className={`navigation__login ${place !== 'landing' ? 'navigation__login_hidden' : ''}`}>
+      <div
+        className={`navigation__login ${
+          (place !== 'landing' || isLogged) && 'navigation__login_hidden'
+        }`}
+      >
         <Link
           to="/signup"
           className="app__text navigation__login-element navigation__link app__link"
@@ -45,11 +55,15 @@ function Navigation({ place }) {
       <Link
         to="/profile"
         className={`navigation__profile-edit navigation__profile-edit_place_header app__link ${
-          place === 'landing' ? 'navigation__profile-edit_hidden' : ''
+          !isLogged && 'navigation__profile-edit_hidden'
         } navigation__profile_edit_place_header`}
       >
         <span className="app__text">Аккаунт</span>
-        <div className="navigation__profile-icon" />
+        <div
+          className={`${
+            place === 'landing' && 'navigation__profile-icon_place_landing'
+          } navigation__profile-icon`}
+        />
       </Link>
 
       <button

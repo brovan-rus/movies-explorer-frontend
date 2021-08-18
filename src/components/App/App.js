@@ -11,35 +11,44 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import mainApi from '../../utils/MainApi';
+import UserHandler from '../UserHandler/UserHandler';
 
 function App() {
-  const [currentUser, setCurrentUser] = React.useState({ isLoggedIn: false });
-  const [formError, setFormError] = React.useState({});
-
-  const handleRegister = ({ name, email, password }) => {
-    setFormError({ ...formError, registerForm: false });
-    mainApi
-      .register(name, email, password)
-      .then((res) => console.log(res))
-      .catch(() => {
-        setFormError({ ...formError, registerForm: true });
-      });
-  };
-
-  const handleLogin = ({ email, password }) => {
-    setFormError({ ...formError, loginForm: false });
-    mainApi
-      .login(email, password)
-      .then((res) => console.log(res))
-      .catch(() => {
-        setFormError({ ...formError, loginForm: true });
-      });
-  };
+  const user = new UserHandler();
+  const currentUser = user.currentUser;
+  const formError = user.formError;
+  const handleRegister = (user) => user.handleRegister(user);
+  const handleLogin = (email, password) => user.handleLogin({ email, password });
 
   React.useEffect(() => {
-    setFormError({});
+    user.auth();
   }, []);
+
+  console.log(currentUser);
+
+  // const handleRegister = ({ name, email, password }) => {
+  //   setFormError({ ...formError, registerForm: false });
+  //   mainApi
+  //     .register(name, email, password)
+  //     .then((res) => console.log(res))
+  //     .catch(() => {
+  //       setFormError({ ...formError, registerForm: true });
+  //     });
+  // };
+
+  // const handleLogin = ({ email, password }) => {
+  //   setFormError({ ...formError, loginForm: false });
+  //   mainApi
+  //     .login(email, password)
+  //     .then((res) => console.log(res))
+  //     .catch(() => {
+  //       setFormError({ ...formError, loginForm: true });
+  //     });
+  // };
+
+  // React.useEffect(() => {
+  //   setFormError({});
+  // }, []);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

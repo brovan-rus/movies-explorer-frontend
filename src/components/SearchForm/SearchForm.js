@@ -5,7 +5,7 @@ function SearchForm() {
     <div className="search-form">
       <form className="search-form__search-field">
         <input
-          required="true"
+          required={true}
           type="text"
           placeholder="Фильмы"
           className="search-form__input app__text"

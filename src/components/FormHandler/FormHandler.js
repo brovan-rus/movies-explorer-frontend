@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
 import { formValidationErrorMessage } from '../../utils/constants';
-import validator from 'validator';
 
-export function useForm() {
+function FormHandler() {
   const validator = require('validator');
   const [values, setValues] = React.useState({});
   const [errors, setErrors] = React.useState({});
@@ -57,3 +56,5 @@ export function useForm() {
     isValidationStarted,
   };
 }
+
+export default FormHandler;

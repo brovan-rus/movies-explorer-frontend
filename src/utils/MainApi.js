@@ -25,7 +25,7 @@ class MainApi {
     }).then(handleResponse);
   }
 
-  login(name, email, password) {
+  login(email, password) {
     return fetch(`${this._url}/signin`, {
       method: 'POST',
       headers: {
@@ -35,13 +35,13 @@ class MainApi {
     }).then(handleResponse);
   }
 
-  register(email, password) {
+  register(email, name, password) {
     return fetch(`${this._url}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, name, password }),
     }).then(handleResponse);
   }
 
