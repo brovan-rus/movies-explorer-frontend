@@ -1,0 +1,22 @@
+.form-error {
+  transition: opacity .4s linear, visibility .4s linear;
+  visibility: hidden;
+  opacity: 0;
+  font-size: var(--font-size-formTextSmaller);
+  line-height: var(--font-lineHeight-formTextSmallHeight);
+  color: var(--color-red);
+  padding: var(--padding-account-form-error-message);
+
+  &_place_input {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    bottom: -26px;
+    text-align: right;
+  }
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

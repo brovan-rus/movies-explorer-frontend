@@ -1,24 +1,24 @@
 import React from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import FormHandler from '../FormHandler/FormHandler';
 
-function Profile() {
+function Profile({ onLogout, onEdit }) {
   const user = React.useContext(CurrentUserContext);
-  const [name, setName] = React.useState(user.name);
-  const [email, setEmail] = React.useState(user.email);
-  const handleNameInput = (e) => {
-    setName(e.target.value);
-  };
-  const handleEmailInput = (e) => {
-    setEmail(e.target.value);
-  };
+  const form = FormHandler();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onEdit(form.values);
   };
 
   const handleLogout = (e) => {
     e.preventDefault();
+    onLogout();
   };
+
+  React.useEffect(() => {
+    form.resetForm(user);
+  }, [user]);
 
   return (
     <section className="profile app__text">
@@ -33,8 +33,9 @@ function Profile() {
               className="profile__input app__text"
               id="name"
               type="text"
-              value={name}
-              onChange={handleNameInput}
+              value={form.values.name || ''}
+              name="name"
+              onChange={form.handleChange}
             />
           </div>
           <div className="profile__input-container">
@@ -44,9 +45,10 @@ function Profile() {
             <input
               className="profile__input app__text"
               id="name"
+              name="email"
               type="text"
-              value={email}
-              onChange={handleEmailInput}
+              value={form.values.email || ''}
+              onChange={form.handleChange}
             />
           </div>
         </div>

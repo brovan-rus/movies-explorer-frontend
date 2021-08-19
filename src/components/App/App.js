@@ -16,39 +16,14 @@ import UserHandler from '../UserHandler/UserHandler';
 function App() {
   const user = new UserHandler();
   const currentUser = user.currentUser;
+
   const formError = user.formError;
-  const handleRegister = (user) => user.handleRegister(user);
-  const handleLogin = (email, password) => user.handleLogin({ email, password });
+  const handleRegister = (user) => user.register(user);
+  const handleLogin = ({ email, password }) => user.login({ email, password });
 
   React.useEffect(() => {
     user.auth();
   }, []);
-
-  console.log(currentUser);
-
-  // const handleRegister = ({ name, email, password }) => {
-  //   setFormError({ ...formError, registerForm: false });
-  //   mainApi
-  //     .register(name, email, password)
-  //     .then((res) => console.log(res))
-  //     .catch(() => {
-  //       setFormError({ ...formError, registerForm: true });
-  //     });
-  // };
-
-  // const handleLogin = ({ email, password }) => {
-  //   setFormError({ ...formError, loginForm: false });
-  //   mainApi
-  //     .login(email, password)
-  //     .then((res) => console.log(res))
-  //     .catch(() => {
-  //       setFormError({ ...formError, loginForm: true });
-  //     });
-  // };
-
-  // React.useEffect(() => {
-  //   setFormError({});
-  // }, []);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -71,13 +46,13 @@ function App() {
           </Route>
           <Route path="/profile">
             <Header place="profile" />
-            <Profile />
+            <Profile onLogout={user.logout} onEdit={user.edit} />
           </Route>
           <Route path="/signin">
-            <Login onLoginSubmit={handleLogin} isError={formError.loginForm} />
+            <Login onLoginSubmit={user.login} isError={formError.loginForm} />
           </Route>
           <Route path="/signup">
-            <Register onRegisterSubmit={handleRegister} isError={formError.registerForm} />
+            <Register onRegisterSubmit={user.register} isError={formError.registerForm} />
           </Route>
           <Route path="*">
             <ErrorMessage title="404" text="Страница не найдена" />

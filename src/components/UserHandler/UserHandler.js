@@ -7,25 +7,25 @@ function UserHandler() {
   const [currentUser, setCurrentUser] = React.useState({ isLogged: false });
   const history = useHistory();
 
-  const handleRegister = ({ name, email, password }) => {
+  const register = ({ name, email, password }) => {
     setFormError({ ...formError, registerForm: false });
     mainApi
       .register(email, password, name)
-      .then((res) => handleLogin({ email, password }))
+      .then(() => login({ email, password }))
       .then(() => setCurrentUser({ name, email, isLogged: true }))
       .catch((e) => {
         setFormError({ ...formError, registerForm: true });
       });
   };
 
-  const handleLogin = ({ email, password }) => {
-    console.log(password);
+  const login = ({ email, password }) => {
     setFormError({ ...formError, loginForm: false });
     mainApi
       .login(email, password)
       .then((res) => {
         localStorage.setItem('jwt', res.token);
       })
+      .then(() => auth())
       .then(() => history.push('/movies'))
       .catch((e) => {
         setFormError({ ...formError, loginForm: true });
@@ -44,12 +44,32 @@ function UserHandler() {
     }
   };
 
+  const logout = () => {
+    localStorage.removeItem('jwt');
+    setCurrentUser({});
+    history.push('/');
+  };
+
+  const edit = ({ name, email }) => {
+    const token = localStorage.getItem('jwt');
+    mainApi
+      .editProfile(token, { name, email })
+      .then((res) => {
+        setCurrentUser({ ...res.data, isLogged: true });
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
   return {
-    handleRegister,
-    handleLogin,
+    register,
+    login,
     auth,
     currentUser,
     formError,
+    logout,
+    edit,
   };
 }
 

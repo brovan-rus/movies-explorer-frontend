@@ -1,14 +1,13 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
 import FormHandler from '../FormHandler/FormHandler';
+import FormError from '../FormError/FormError';
 
 function Login({ onLoginSubmit, isError }) {
   const form = FormHandler();
-
   const handleLoginSubmit = () => {
     onLoginSubmit(form.values);
   };
-
   React.useEffect(() => {
     form.resetForm();
   }, []);
@@ -42,15 +41,11 @@ function Login({ onLoginSubmit, isError }) {
           value={form.values.email || ''}
           onChange={form.handleChange}
         />
-        <span
-          className={`account-form__error-message ${
-            form.errors.email &&
-            form.isValidationStarted.email &&
-            'account-form__error-message_active'
-          } account-form__error-message_place_input`}
-        >
-          {`${form.errors.email}`}
-        </span>
+        <FormError
+          errorMessage={form.errors.email}
+          isActive={form.errors.email && form.isValidationStarted.email}
+          place="input"
+        />
       </div>
       <div className="account-form__input-wrapper">
         <label className="account-form__label" htmlFor="password">
@@ -69,15 +64,11 @@ function Login({ onLoginSubmit, isError }) {
           value={form.values.password || ''}
           onChange={form.handleChange}
         />
-        <span
-          className={`account-form__error-message ${
-            form.errors.password &&
-            form.isValidationStarted.password &&
-            'account-form__error-message_active'
-          } account-form__error-message_place_input`}
-        >
-          {`${form.errors.password}`}
-        </span>
+        <FormError
+          errorMessage={form.errors.password}
+          isActive={form.errors.password && form.isValidationStarted.password}
+          place="input"
+        />
       </div>
     </AccountForm>
   );
