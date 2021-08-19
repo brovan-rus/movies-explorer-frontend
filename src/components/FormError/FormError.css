@@ -7,13 +7,35 @@
   color: var(--color-red);
   padding: var(--padding-account-form-error-message);
 
-  &_place_input {
-    padding: 0;
-    position: absolute;
-    right: 0;
-    bottom: -26px;
-    text-align: right;
+  &_place {
+
+    &_profile-edit {
+      align-self: center;
+      text-align: center;
+      width: 70%;
+      max-width: 1140px;
+    }
+
+    &_input {
+
+      padding: 0;
+      position: absolute;
+      right: 0;
+      bottom: -26px;
+      text-align: right;
+
+      &-profile-edit {
+        padding: 0;
+        position: absolute;
+        right: 0;
+        bottom: 1px;
+        text-align: right;
+      }
+    }
   }
+
+
+
 
   &_active {
     opacity: 1;

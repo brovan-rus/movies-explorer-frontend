@@ -20,7 +20,7 @@ function AccountForm({
   };
 
   return (
-    <form className="account-form app__text" onSubmit={handleSubmit}>
+    <form className="account-form app__text" onSubmit={handleSubmit} noValidate={true}>
       <div className="account-form__container">
         <Logo />
         <h1 className="account-form__title">{title}</h1>

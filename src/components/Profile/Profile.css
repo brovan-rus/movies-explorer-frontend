@@ -48,6 +48,7 @@
     justify-content: space-between;
     border-bottom: 1px solid var(--color-paleGray);
     padding: var(--padding-profile-input-contatiner);
+    position: relative;
 
     &:last-child {
       border: 0;
@@ -81,6 +82,9 @@
   }
 
   &__button {
+    transition: color .4s linear;
+    width: max-content;
+    align-self: center;
     font-weight: 400;
     font-size: var(--font-size-formTextMedium);
     line-height: var(--font-lineHeight-formTextBigHeight);
@@ -89,6 +93,17 @@
     border: 0;
     outline: 0;
     margin: var(--margin-profile-edit-button);
+
+    &:disabled {
+      cursor: auto;
+      color: var(--color-trueGray);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+
 
     &_color_red {
       color: var(--color-red);

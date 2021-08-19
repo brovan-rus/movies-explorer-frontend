@@ -51,6 +51,7 @@ function UserHandler() {
   };
 
   const edit = ({ name, email }) => {
+    setFormError({ ...formError, profileForm: false });
     const token = localStorage.getItem('jwt');
     mainApi
       .editProfile(token, { name, email })
@@ -59,6 +60,7 @@ function UserHandler() {
       })
       .catch((e) => {
         console.log(e);
+        setFormError({ ...formError, profileForm: true });
       });
   };
 

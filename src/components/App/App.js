@@ -46,7 +46,7 @@ function App() {
           </Route>
           <Route path="/profile">
             <Header place="profile" />
-            <Profile onLogout={user.logout} onEdit={user.edit} />
+            <Profile onLogout={user.logout} onEdit={user.edit} isError={formError.profileForm} />
           </Route>
           <Route path="/signin">
             <Login onLoginSubmit={user.login} isError={formError.loginForm} />
