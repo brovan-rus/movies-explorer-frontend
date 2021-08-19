@@ -42,8 +42,13 @@
     }
   }
 
-
-
+  &_place_input {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    bottom: -26px;
+    text-align: right;
+  }
 
   &_active {
     opacity: 1;

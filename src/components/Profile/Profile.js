@@ -18,8 +18,6 @@ function Profile({ onLogout, onEdit, isError }) {
     onLogout();
   };
 
-  console.log(form.errors);
-
   React.useEffect(() => {
     form.resetForm(user);
   }, [user]);
@@ -49,6 +47,9 @@ function Profile({ onLogout, onEdit, isError }) {
               errorMessage={form.errors.name}
               isActive={form.errors.name && form.isValidationStarted.name}
               place="input-profile-edit"
+              value={form.values.name || ''}
+              name="name"
+              onChange={form.handleChange}
             />
           </div>
           <div className="profile__input-container">
@@ -69,6 +70,11 @@ function Profile({ onLogout, onEdit, isError }) {
               errorMessage={form.errors.email}
               isActive={form.errors.email && form.isValidationStarted.email}
               place="input-profile-edit"
+              id="name"
+              name="email"
+              type="text"
+              value={form.values.email || ''}
+              onChange={form.handleChange}
             />
           </div>
         </div>
