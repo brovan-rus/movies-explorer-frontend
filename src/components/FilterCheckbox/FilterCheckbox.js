@@ -1,10 +1,12 @@
 import React from 'react';
 
-function FilterCheckbox() {
-  const [isFilterCheckboxChecked, setIsFilterCheckboxChecked] = React.useState(false);
-  const handleFilterCheckboxClick = () => {
-    setIsFilterCheckboxChecked(!isFilterCheckboxChecked);
+function FilterCheckbox({ onCheck }) {
+  const [isChecked, setIsChecked] = React.useState(false);
+  const handleFilterCheckboxClick = (e) => {
+    setIsChecked(!isChecked);
+    onCheck(!isChecked);
   };
+
   return (
     <div className="filter-checkbox">
       <p className="app__text filter-checkbox__text">Короткометражки</p>
@@ -13,7 +15,7 @@ function FilterCheckbox() {
           id="filter-checkbox"
           type="checkbox"
           className="filter-checkbox__checkbox-invisible"
-          checked={isFilterCheckboxChecked}
+          checked={isChecked}
           onChange={handleFilterCheckboxClick}
         />
         <div className="filter-checkbox__button" />

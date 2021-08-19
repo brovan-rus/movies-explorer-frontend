@@ -1,4 +1,13 @@
-function MoviesCard({ image, title, isSaved, length, place }) {
+function MoviesCard({
+  imageSrc,
+  imageAlt,
+  imageWidth,
+  title,
+  isSaved,
+  length,
+  place,
+  trailerLink,
+}) {
   return (
     <li className="movies-card">
       <div className="movies-card__heading">
@@ -15,7 +24,9 @@ function MoviesCard({ image, title, isSaved, length, place }) {
           <div className="movies-card__button-icon" />
         </button>
       </div>
-      <img src={image} alt={title} />
+      <a href={trailerLink} target="_blank">
+        <img className="movies-card__image" src={imageSrc} alt={imageAlt} width={imageWidth} />
+      </a>
     </li>
   );
 }

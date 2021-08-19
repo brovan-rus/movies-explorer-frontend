@@ -3,12 +3,15 @@ import FormError from '../FormError/FormError';
 import FormHandler from '../FormHandler/FormHandler';
 import React from 'react';
 
-function SearchForm({ onSearch }) {
+function SearchForm({ onSearch, filterShortFilms }) {
   const [searchFormError, setSearchFormError] = React.useState({
     message: 'Запрос не может быть пустым',
     isError: false,
   });
   const form = FormHandler();
+  const handleSetCheckbox = (isChecked) => {
+    filterShortFilms(isChecked);
+  };
   const searchFormErrorReset = () => {
     setSearchFormError({ ...searchFormError, isError: false });
   };
@@ -22,7 +25,7 @@ function SearchForm({ onSearch }) {
     if (!form.values.searchRequest) {
       setSearchFormError({ ...searchFormError, isError: true });
     } else {
-      onSearch(form.values.searchRequest);
+      onSearch({ request: form.values.searchRequest });
     }
   };
 
@@ -50,7 +53,7 @@ function SearchForm({ onSearch }) {
           onClick={handleSearchSubmit}
         />
       </form>
-      <FilterCheckbox />
+      <FilterCheckbox onCheck={handleSetCheckbox} />
     </div>
   );
 }
