@@ -57,6 +57,10 @@
     display: flex;
     padding: var(--padding-card-list-wrapper);
     width: 100%;
+
+    &_hidden {
+      display: none;
+    }
   }
 
   &__button {
