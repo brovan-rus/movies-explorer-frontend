@@ -147,7 +147,6 @@
   }
 
   &__caption {
-    margin: 0;
     padding: 0;
     color: var(--color-gray);
     margin: var(--margin-account-form-caption);

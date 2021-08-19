@@ -1,6 +1,7 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
 import FormHandler from '../FormHandler/FormHandler';
+import FormError from '../FormError/FormError';
 
 function Register({ onRegisterSubmit, isError }) {
   const handleRegisterFormSubmit = () => {
@@ -41,15 +42,11 @@ function Register({ onRegisterSubmit, isError }) {
           maxLength={31}
           onChange={form.handleChange}
         />
-        <span
-          className={`account-form__error-message ${
-            form.errors.name &&
-            form.isValidationStarted.name &&
-            'account-form__error-message_active'
-          } account-form__error-message_place_input`}
-        >
-          {`${form.errors.name}`}
-        </span>
+        <FormError
+          errorMessage={form.errors.name}
+          place="input"
+          isActive={form.errors.name && form.isValidationStarted.name}
+        />
       </div>
       <div className="account-form__input-wrapper">
         <label className="account-form__label" htmlFor="email">
@@ -68,15 +65,11 @@ function Register({ onRegisterSubmit, isError }) {
           value={form.values.email || ''}
           onChange={form.handleChange}
         />
-        <span
-          className={`account-form__error-message ${
-            form.errors.email &&
-            form.isValidationStarted.email &&
-            'account-form__error-message_active'
-          } account-form__error-message_place_input`}
-        >
-          {`${form.errors.email}`}
-        </span>
+        <FormError
+          errorMessage={form.errors.email}
+          place="input"
+          isActive={form.errors.email && form.isValidationStarted.email}
+        />
       </div>
       <div className="account-form__input-wrapper">
         <label className="account-form__label" htmlFor="password">
@@ -95,15 +88,11 @@ function Register({ onRegisterSubmit, isError }) {
           minLength={3}
           onChange={form.handleChange}
         />
-        <span
-          className={`account-form__error-message ${
-            form.errors.password &&
-            form.isValidationStarted.password &&
-            'account-form__error-message_active'
-          } account-form__error-message_place_input`}
-        >
-          {`${form.errors.password}`}
-        </span>
+        <FormError
+          errorMessage={form.errors.password}
+          place="input"
+          isActive={form.errors.password && form.isValidationStarted.password}
+        />
       </div>
     </AccountForm>
   );

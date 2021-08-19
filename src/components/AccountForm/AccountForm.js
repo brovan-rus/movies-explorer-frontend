@@ -1,6 +1,7 @@
 import Logo from '../Logo/Logo';
 import { Link } from 'react-router-dom';
 import { formErrorMessage } from '../../utils/constants';
+import FormError from '../FormError/FormError';
 
 function AccountForm({
   children,
@@ -26,13 +27,7 @@ function AccountForm({
         <fieldset className="account-form__input-area">{children}</fieldset>
       </div>
       <div className="account-form__container">
-        <span
-          className={`account-form__error-message ${
-            isError && 'account-form__error-message_active'
-          }`}
-        >
-          {formErrorMessage}
-        </span>
+        <FormError isActive={isError} errorMessage={formErrorMessage} />
         <button
           type="submit"
           disabled={isButtonDisabled}
