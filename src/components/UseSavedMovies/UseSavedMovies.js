@@ -10,6 +10,7 @@ function UseSavedMovies() {
   const [request, setRequest] = React.useState('');
   const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
   const user = React.useContext(CurrentUserContext);
+
   const search = (request) => setRequest(request);
   const onFilmsFilter = (isFiltered) => setShowShortMoviesOnly(isFiltered);
 
