@@ -20,10 +20,14 @@ function MoviesCard({ movie, onLike, place }) {
           <div className="movies-card__button-icon" />
         </button>
       </div>
-      <a href={movie.trailerLink} rel="noreferrer" target="_blank">
+      <a
+        href={movie.trailerLink ? movie.trailerLink : movie.trailer}
+        rel="noreferrer"
+        target="_blank"
+      >
         <img
           className="movies-card__image"
-          src={`https://api.nomoreparties.co${movie.image.url}`}
+          src={movie.image.url ? `https://api.nomoreparties.co${movie.image.url}` : movie.image}
           alt={movie.image.alternativeText ? movie.image.alternativeText : movie.nameRU}
           width={movie.image.width}
         />

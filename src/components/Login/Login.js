@@ -8,9 +8,7 @@ function Login({ onLoginSubmit, isError }) {
   const handleLoginSubmit = () => {
     onLoginSubmit(form.values);
   };
-  React.useEffect(() => {
-    form.resetForm();
-  }, []);
+  React.useEffect(() => form.resetForm(), []);
 
   return (
     <AccountForm

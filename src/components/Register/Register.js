@@ -9,9 +9,7 @@ function Register({ onRegisterSubmit, isError }) {
   };
 
   const form = FormHandler();
-  React.useEffect(() => {
-    form.resetForm();
-  }, []);
+  React.useEffect(() => form.resetForm(), []);
 
   return (
     <AccountForm

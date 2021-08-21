@@ -1,40 +1,32 @@
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import card1 from '../../images/card1.jpg';
-import card2 from '../../images/card2.jpg';
-import card3 from '../../images/card3.jpg';
 import Preloader from '../Preloader/Preloader';
 import SearchForm from '../SearchForm/SearchForm';
+import React from 'react';
+import UseSavedMovies from '../UseSavedMovies/UseSavedMovies';
+import mainApi from '../../utils/MainApi';
+import moviesHandler from '../../utils/MoviesHandler';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function SavedMovies() {
+  const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
+  const onFilmsFilter = (isFiltered) => setShowShortMoviesOnly(isFiltered);
+  const useSavedMovies = UseSavedMovies();
+  React.useEffect(() => useSavedMovies.init(), []);
+
   return (
     <main className="movies">
       <Preloader />
-      <SearchForm />
+      <SearchForm onSearch={useSavedMovies.search} filterShortFilms={onFilmsFilter} />
       <MoviesCardList>
-        <MoviesCard
-          place="saved-movies"
-          image={card1}
-          title={'33 слова о дизайне'}
-          isSaved={false}
-          length={'1 ч. 47м'}
-        />
-        <MoviesCard
-          place="saved-movies"
-          image={card2}
-          title={'Киноальманах «100 лет дизайна»'}
-          isSaved={true}
-          length={'1ч 3м'}
-        />
-        <MoviesCard
-          place="saved-movies"
-          image={card3}
-          title={'В погоне за Бенкси'}
-          isSaved={true}
-          length={'1ч 42м'}
-        />
+        {showShortMoviesOnly
+          ? useSavedMovies.shortSavedMoviesList.map((movie) => {
+              return <MoviesCard movie={movie} onLike="" key={movie.id} place="saved-movies" />;
+            })
+          : useSavedMovies.savedMoviesList.map((movie) => {
+              return <MoviesCard movie={movie} onLike="" key={movie.id} place="saved-movies" />;
+            })}
       </MoviesCardList>
-      ;
     </main>
   );
 }
