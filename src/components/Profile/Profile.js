@@ -1,6 +1,6 @@
 import React from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import FormHandler from '../FormHandler/FormHandler';
+import FormHandler from '../../utils/FormHandler';
 import FormError from '../FormError/FormError';
 import { formErrorMessage } from '../../utils/constants';
 

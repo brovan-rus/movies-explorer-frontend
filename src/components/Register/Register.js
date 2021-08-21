@@ -1,6 +1,6 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
-import FormHandler from '../FormHandler/FormHandler';
+import FormHandler from '../../utils/FormHandler';
 import FormError from '../FormError/FormError';
 
 function Register({ onRegisterSubmit, isError }) {

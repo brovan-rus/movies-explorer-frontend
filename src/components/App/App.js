@@ -11,7 +11,7 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import UserHandler from '../UserHandler/UserHandler';
+import UserHandler from '../../utils/UserHandler';
 
 function App() {
   const user = new UserHandler();

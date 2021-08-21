@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
-import mainApi from '../../utils/MainApi';
+import mainApi from './MainApi';
 import { useHistory } from 'react-router-dom';
+import MoviesHandler from './MoviesHandler';
 
 function UserHandler() {
   const [formError, setFormError] = React.useState({});
@@ -46,6 +47,7 @@ function UserHandler() {
 
   const logout = () => {
     localStorage.removeItem('jwt');
+    localStorage.removeItem('savedMovies');
     setCurrentUser({});
     history.push('/');
   };

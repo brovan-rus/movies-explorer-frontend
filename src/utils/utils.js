@@ -1,3 +1,4 @@
+const { error } = require('bfj/src/events');
 const userFormValidation = (name, email, password) => {
   const validator = require('validator');
   const nameRegEx = new RegExp(/[а-яёa-z-\s]/gi);
@@ -34,7 +35,7 @@ const resEquation = (resA, resB, sizeA, sizeB) => {
 
 function handleResponse(res) {
   if (!res.ok) {
-    return Promise.reject(`Ошибка ${res}`);
+    return Promise.reject(res);
   } else {
     return res.json();
   }
