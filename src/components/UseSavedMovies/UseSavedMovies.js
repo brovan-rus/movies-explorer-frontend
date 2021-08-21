@@ -10,13 +10,17 @@ function UseSavedMovies() {
   const [request, setRequest] = React.useState('');
   const user = React.useContext(CurrentUserContext);
 
-  console.log(savedMoviesList);
-
   const search = (request) => setRequest(request);
+
+  const remove = (movie) =>
+    moviesHandler.remove(movie, savedMoviesList).then((res) => {
+      console.log(res);
+      setSavedMoviesList(res);
+    });
 
   const init = () => {
     const storedSavedMoviesList = moviesHandler.getFromLocalStorage('savedMovies');
-    if (storedSavedMoviesList) {
+    if (storedSavedMoviesList.length > 0) {
       setSavedMoviesList(storedSavedMoviesList);
       const shortSavedMovies = moviesHandler.filterShortMovies(shortSavedMoviesList);
       setShortSavedMoviesList(shortSavedMovies);
@@ -43,25 +47,8 @@ function UseSavedMovies() {
     shortSavedMoviesList,
     search,
     init,
+    remove,
   };
-
-  // React.useEffect(() => {
-  //   const storedSavedMoviesList = moviesHandler.getFromLocalStorage('savedMovies');
-  //   if (storedSavedMoviesList) {
-  //     setSavedMoviesList(storedSavedMoviesList);
-  //     setShortSavedMoviesList(moviesHandler.filterShortMovies(setShortSavedMoviesList));
-  //   } else {
-  //     mainApi
-  //       .getSavedMovies(moviesHandler.getToken())
-  //       .then((res) => {
-  //         const savedMoviesByMe = res.data.filter((m) => m.owner === user._id);
-  //         moviesHandler.saveToLocalStorage('savedMovies', savedMoviesByMe);
-  //         setSavedMoviesList(savedMoviesByMe);
-  //         setShortSavedMoviesList(moviesHandler.filterShortMovies(savedMoviesByMe));
-  //       })
-  //       .catch((e) => console.log(e));
-  //   }
-  // }, []);
 }
 
 export default UseSavedMovies;

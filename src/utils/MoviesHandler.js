@@ -25,7 +25,9 @@ class MoviesHandler {
 
   _removeFromSavedMoviesList(movie) {
     const savedMoviesOldList = this.getFromLocalStorage('savedMovies');
-    const savedMoviesNewList = savedMoviesOldList.filter((m) => !(m.movieId === movie.id));
+    const savedMoviesNewList = savedMoviesOldList.filter((m) =>
+      movie._id ? !(m._id === movie._id) : !(m.movieId === movie.id),
+    );
     console.log(savedMoviesNewList, savedMoviesOldList, movie);
     this.saveToLocalStorage('savedMovies', savedMoviesNewList);
     return this.getFromLocalStorage('savedMovies');
@@ -75,7 +77,7 @@ class MoviesHandler {
 
   remove = (movie, savedMoviesList) => {
     const token = this.getToken();
-    const savedMovie = savedMoviesList.find((m) => m.movieId === movie.id);
+    const savedMovie = movie._id ? movie : savedMoviesList.find((m) => m.movieId === movie.id);
     console.log(movie, savedMovie, savedMoviesList);
     return mainApi
       .removeMovieFromSaved(token, savedMovie._id)
