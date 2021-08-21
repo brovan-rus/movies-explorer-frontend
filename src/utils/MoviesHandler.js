@@ -1,54 +1,36 @@
-import moviesApi from './MoviesApi';
 import mainApi from './MainApi';
 
 class MoviesHandler {
   constructor() {}
 
-  getToken() {
-    return localStorage.getItem('jwt');
-  }
-
-  saveToLocalStorage(name, value) {
-    return localStorage.setItem(`${name}`, JSON.stringify(value));
-  }
-
-  getFromLocalStorage(name) {
-    return JSON.parse(localStorage.getItem(name));
-  }
-
+  getToken = () => localStorage.getItem('jwt');
+  saveToLocalStorage = (name, value) => localStorage.setItem(`${name}`, JSON.stringify(value));
+  getFromLocalStorage = (name) => JSON.parse(localStorage.getItem(name));
   _addToSavedMoviesList(movie) {
     const savedMoviesOldList = this.getFromLocalStorage('savedMovies');
     const savedMoviesNewList = [...savedMoviesOldList, movie];
     this.saveToLocalStorage('savedMovies', savedMoviesNewList);
     return this.getFromLocalStorage('savedMovies');
   }
-
   _removeFromSavedMoviesList(movie) {
     const savedMoviesOldList = this.getFromLocalStorage('savedMovies');
-    const savedMoviesNewList = savedMoviesOldList.filter((m) => !(m.movieId === movie.id));
-    console.log(savedMoviesNewList, savedMoviesOldList, movie);
+    const savedMoviesNewList = savedMoviesOldList.filter((m) =>
+      movie._id ? !(m._id === movie._id) : !(m.movieId === movie.id),
+    );
     this.saveToLocalStorage('savedMovies', savedMoviesNewList);
     return this.getFromLocalStorage('savedMovies');
   }
-
-  searchMovie = (movies, fields, { request }) => {
-    return movies.filter((movie) =>
+  searchMovie = (movies, fields, { request }) =>
+    movies.filter((movie) =>
       fields.some((field) => movie[field] && movie[field].includes(request)),
     );
-  };
-
-  filterShortMovies = (movies) => {
-    return movies.filter((m) => m.duration * 1 < 41);
-  };
-
-  setIsSaved = (movies, savedMovies, user) => {
-    return movies.map((movie) =>
+  filterShortMovies = (movies) => movies.filter((m) => m.duration * 1 < 41);
+  setIsSaved = (movies, savedMovies) =>
+    movies.map((movie) =>
       savedMovies.some((savedMovie) => movie.id === savedMovie.movieId)
         ? { ...movie, isSaved: true }
         : { ...movie, isSaved: false },
     );
-  };
-
   save = (movie) => {
     const token = this.getToken();
     const savedMovie = {
@@ -72,11 +54,9 @@ class MoviesHandler {
       })
       .catch((e) => console.log(e));
   };
-
   remove = (movie, savedMoviesList) => {
     const token = this.getToken();
-    const savedMovie = savedMoviesList.find((m) => m.movieId === movie.id);
-    console.log(movie, savedMovie, savedMoviesList);
+    const savedMovie = movie._id ? movie : savedMoviesList.find((m) => m.movieId === movie.id);
     return mainApi
       .removeMovieFromSaved(token, savedMovie._id)
       .then(() => {

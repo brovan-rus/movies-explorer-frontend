@@ -1,6 +1,10 @@
-function MoviesCard({ movie, onLike, place }) {
+function MoviesCard({ movie, onDelete, place, onLike }) {
   const handleButtonClick = () => {
-    onLike(movie);
+    if (onLike) {
+      onLike(movie);
+    } else {
+      onDelete(movie);
+    }
   };
 
   return (

@@ -32,9 +32,7 @@ function UseMovies() {
     const getAllMoviesList = new Promise((resolve) => {
       moviesApi
         .getAllMovies()
-        .then((res) => {
-          resolve(res);
-        })
+        .then((res) => resolve(res))
         .catch((e) => console.log(e));
     });
 
@@ -56,14 +54,9 @@ function UseMovies() {
 
   const handleLike = (movie) => {
     if (!movie.isSaved) {
-      moviesHandler.save(movie).then((res) => {
-        setSavedMoviesList(res);
-      });
+      moviesHandler.save(movie).then((res) => setSavedMoviesList(res));
     } else {
-      moviesHandler.remove(movie, savedMoviesList).then((res) => {
-        console.log(res);
-        setSavedMoviesList(res);
-      });
+      moviesHandler.remove(movie, savedMoviesList).then((res) => setSavedMoviesList(res));
     }
     movie.isSaved = !movie.isSaved;
   };
