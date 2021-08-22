@@ -4,6 +4,7 @@ import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../Preloader/Preloader';
 import React from 'react';
 import UseMovies from '../UseMovies/UseMovies';
+import ErrorPopup from '../ErrorPopup/ErrorPopup';
 
 function Movies() {
   const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
@@ -12,7 +13,8 @@ function Movies() {
 
   return (
     <main className="movies">
-      <Preloader />
+      <Preloader isActive={useMovies.preloaderActive} />
+      <ErrorPopup errorText={useMovies.errorMessage} isActive={useMovies.errorMessage.length > 0} />
       <SearchForm onSearch={useMovies.handleSearch} filterShortFilms={onFilmsFilter} />
       <MoviesCardList>
         {showShortMoviesOnly
