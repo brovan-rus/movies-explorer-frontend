@@ -1,8 +1,6 @@
 import mainApi from './MainApi';
 
 class MoviesHandler {
-  constructor() {}
-
   getToken = () => localStorage.getItem('jwt');
   saveToLocalStorage = (name, value) => localStorage.setItem(`${name}`, JSON.stringify(value));
   getFromLocalStorage = (name) => JSON.parse(localStorage.getItem(name));
@@ -32,6 +30,7 @@ class MoviesHandler {
         : { ...movie, isSaved: false },
     );
   save = (movie) => {
+    console.log(movie);
     const token = this.getToken();
     const savedMovie = {
       nameEN: movie.nameEN,
@@ -55,6 +54,7 @@ class MoviesHandler {
       .catch((e) => console.log(e));
   };
   remove = (movie, savedMoviesList) => {
+    console.log(movie, savedMoviesList);
     const token = this.getToken();
     const savedMovie = movie._id ? movie : savedMoviesList.find((m) => m.movieId === movie.id);
     return mainApi

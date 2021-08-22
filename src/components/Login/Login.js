@@ -1,10 +1,10 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
-import FormHandler from '../../utils/FormHandler';
+import useForm from '../../utils/useForm';
 import FormError from '../FormError/FormError';
 
 function Login({ onLoginSubmit, isError }) {
-  const form = FormHandler();
+  const form = useForm();
   const handleLoginSubmit = () => {
     onLoginSubmit(form.values);
   };

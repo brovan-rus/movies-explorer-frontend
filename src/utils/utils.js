@@ -1,4 +1,3 @@
-const { error } = require('bfj/src/events');
 const userFormValidation = (name, email, password) => {
   const validator = require('validator');
   const nameRegEx = new RegExp(/[а-яёa-z-\s]/gi);

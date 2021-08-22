@@ -6,23 +6,35 @@ import { searchFields } from '../../utils/constants';
 
 function UseSavedMovies() {
   const [savedMoviesList, setSavedMoviesList] = React.useState([]);
-  const [shortSavedMoviesList, setShortSavedMoviesList] = React.useState([]);
+  const [resultMoviesList, setResultMoviesList] = React.useState([]);
   const [request, setRequest] = React.useState('');
   const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
   const user = React.useContext(CurrentUserContext);
 
-  const search = (request) => setRequest(request);
-  const onFilmsFilter = (isFiltered) => setShowShortMoviesOnly(isFiltered);
-
   const remove = (movie) =>
     moviesHandler.remove(movie, savedMoviesList).then((res) => setSavedMoviesList(res));
+
+  const makeResultMovieList = () => {
+    const matchingFilms = request
+      ? moviesHandler.searchMovie(savedMoviesList, searchFields, request)
+      : savedMoviesList;
+    console.log(matchingFilms);
+    if (showShortMoviesOnly) {
+      setResultMoviesList(moviesHandler.filterShortMovies(matchingFilms));
+    } else {
+      setResultMoviesList(matchingFilms);
+    }
+  };
+
+  React.useEffect(() => {
+    makeResultMovieList();
+  }, [request, showShortMoviesOnly]);
 
   const init = () => {
     const storedSavedMoviesList = moviesHandler.getFromLocalStorage('savedMovies');
     if (storedSavedMoviesList.length > 0) {
       setSavedMoviesList(storedSavedMoviesList);
-      const shortSavedMovies = moviesHandler.filterShortMovies(shortSavedMoviesList);
-      setShortSavedMoviesList(shortSavedMovies);
+      setResultMoviesList(storedSavedMoviesList);
     } else {
       mainApi
         .getSavedMovies(moviesHandler.getToken())
@@ -30,23 +42,22 @@ function UseSavedMovies() {
           const savedMoviesByMe = res.data.filter((m) => m.owner === user._id);
           moviesHandler.saveToLocalStorage('savedMovies', savedMoviesByMe);
           setSavedMoviesList(savedMoviesByMe);
-          setShortSavedMoviesList(moviesHandler.filterShortMovies(savedMoviesByMe));
+          setResultMoviesList(savedMoviesByMe);
         })
         .catch((e) => console.log(e));
     }
   };
 
-  React.useEffect(() => {
-    setSavedMoviesList(moviesHandler.searchMovie(savedMoviesList, searchFields, request));
-  }, [request]);
-
-  React.useEffect(() => {
-    setShortSavedMoviesList(moviesHandler.filterShortMovies(savedMoviesList));
-  }, [showShortMoviesOnly]);
+  const search = (request) => {
+    setRequest(request);
+  };
+  const onFilmsFilter = (isFiltered) => {
+    setShowShortMoviesOnly(isFiltered);
+  };
 
   return {
     savedMoviesList,
-    shortSavedMoviesList,
+    resultMoviesList,
     search,
     init,
     remove,

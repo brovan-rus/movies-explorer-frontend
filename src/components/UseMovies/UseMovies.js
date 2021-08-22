@@ -16,7 +16,6 @@ function UseMovies() {
   const user = React.useContext(CurrentUserContext);
 
   const handleSearch = (request) => {
-    setPreloaderActive(true);
     setRequest(request);
   };
 
@@ -39,39 +38,55 @@ function UseMovies() {
         .catch((e) => reject(e));
     });
 
-    Promise.all([getAllMoviesList, getSavedMoviesList])
-      .then(([moviesList, savedMoviesList]) => {
-        const filteredMoviesList = moviesHandler.searchMovie(moviesList, searchFields, request);
-        const filteredMoviesListWithSaved = moviesHandler.setIsSaved(
-          filteredMoviesList,
-          savedMoviesList,
-          user,
-        );
-        const filteredShortMoviesWithSaved = moviesHandler.filterShortMovies(
-          filteredMoviesListWithSaved,
-        );
-        setMoviesList(filteredMoviesListWithSaved);
-        setSavedMoviesList(savedMoviesList);
-        setShortMoviesList(filteredShortMoviesWithSaved);
-        setPreloaderActive(false);
-      })
-      .catch(() => {
-        setPreloaderActive(false);
-        setErrorMessage(formErrorMessage);
-        setTimeout(() => {
-          setErrorMessage('');
-        }, 3000);
-      })
-      .finally(() => setPreloaderActive(false));
+    if (request) {
+      setPreloaderActive(true);
+      Promise.all([getAllMoviesList, getSavedMoviesList])
+        .then(([moviesList, savedMoviesList]) => {
+          const filteredMoviesList = moviesHandler.searchMovie(moviesList, searchFields, request);
+          const filteredMoviesListWithSaved = moviesHandler.setIsSaved(
+            filteredMoviesList,
+            savedMoviesList,
+            user,
+          );
+          const filteredShortMoviesWithSaved = moviesHandler.filterShortMovies(
+            filteredMoviesListWithSaved,
+          );
+          setMoviesList(filteredMoviesListWithSaved);
+          setSavedMoviesList(savedMoviesList);
+          setShortMoviesList(filteredShortMoviesWithSaved);
+          if (filteredMoviesList.length === 0) {
+            setErrorMessage('Ничего не найдено');
+            setTimeout(() => {
+              setErrorMessage('');
+            }, 2500);
+          }
+        })
+        .catch(() => {
+          setPreloaderActive(false);
+          setErrorMessage(formErrorMessage);
+          setTimeout(() => {
+            setErrorMessage('');
+          }, 2500);
+        })
+        .finally(() => setPreloaderActive(false));
+    }
   }, [request]);
 
   const handleLike = (movie) => {
+    console.log(movie);
     if (!movie.isSaved) {
-      moviesHandler.save(movie).then((res) => setSavedMoviesList(res));
+      moviesHandler
+        .save(movie)
+        .then(() => (movie.isSaved = true))
+        .then((res) => setSavedMoviesList(res))
+        .catch((e) => console.log(e));
     } else {
-      moviesHandler.remove(movie, savedMoviesList).then((res) => setSavedMoviesList(res));
+      moviesHandler
+        .remove(movie, savedMoviesList)
+        .then(() => (movie.isSaved = false))
+        .then((res) => setSavedMoviesList(res))
+        .catch((e) => console.log(e));
     }
-    movie.isSaved = !movie.isSaved;
   };
 
   return {

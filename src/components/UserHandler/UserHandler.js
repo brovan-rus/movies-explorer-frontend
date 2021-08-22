@@ -1,7 +1,6 @@
-import React, { useCallback } from 'react';
-import mainApi from './MainApi';
+import React from 'react';
+import mainApi from '../../utils/MainApi';
 import { useHistory } from 'react-router-dom';
-import MoviesHandler from './MoviesHandler';
 
 function UserHandler() {
   const [formError, setFormError] = React.useState({});

@@ -11,15 +11,12 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import UserHandler from '../../utils/UserHandler';
+import UserHandler from '../UserHandler/UserHandler';
 
 function App() {
   const user = new UserHandler();
   const currentUser = user.currentUser;
-
   const formError = user.formError;
-  const handleRegister = (user) => user.register(user);
-  const handleLogin = ({ email, password }) => user.login({ email, password });
 
   React.useEffect(() => {
     user.auth();

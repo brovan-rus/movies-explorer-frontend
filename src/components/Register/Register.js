@@ -1,6 +1,6 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
-import FormHandler from '../../utils/FormHandler';
+import useForm from '../../utils/useForm';
 import FormError from '../FormError/FormError';
 
 function Register({ onRegisterSubmit, isError }) {
@@ -8,7 +8,7 @@ function Register({ onRegisterSubmit, isError }) {
     onRegisterSubmit(form.values);
   };
 
-  const form = FormHandler();
+  const form = useForm();
   React.useEffect(() => form.resetForm(), []);
 
   return (

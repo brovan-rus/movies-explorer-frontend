@@ -17,27 +17,17 @@ function SavedMovies() {
         filterShortFilms={useSavedMovies.onFilmsFilter}
       />
       <MoviesCardList>
-        {useSavedMovies.showShortMoviesOnly
-          ? useSavedMovies.shortSavedMoviesList.map((movie) => {
-              return (
-                <MoviesCard
-                  movie={movie}
-                  onDelete={useSavedMovies.remove}
-                  key={movie.id}
-                  place="saved-movies"
-                />
-              );
-            })
-          : useSavedMovies.savedMoviesList.map((movie) => {
-              return (
-                <MoviesCard
-                  movie={movie}
-                  onDelete={useSavedMovies.remove}
-                  key={movie.id}
-                  place="saved-movies"
-                />
-              );
-            })}
+        {useSavedMovies.resultMoviesList.map((movie) => {
+          return (
+            <MoviesCard
+              movie={movie}
+              onDelete={useSavedMovies.remove}
+              key={movie._id}
+              place="saved-movies"
+            />
+          );
+        })}
+        ;
       </MoviesCardList>
     </main>
   );

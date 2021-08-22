@@ -1,12 +1,12 @@
 import React from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import FormHandler from '../../utils/FormHandler';
+import useForm from '../../utils/useForm';
 import FormError from '../FormError/FormError';
 import { formErrorMessage } from '../../utils/constants';
 
 function Profile({ onLogout, onEdit, isError }) {
   const user = React.useContext(CurrentUserContext);
-  const form = FormHandler();
+  const form = useForm();
 
   const handleSubmit = (e) => {
     e.preventDefault();
