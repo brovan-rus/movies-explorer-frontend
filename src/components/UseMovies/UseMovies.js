@@ -6,18 +6,17 @@ import moviesApi from '../../utils/MoviesApi';
 import { formErrorMessage, searchFields } from '../../utils/constants';
 
 function UseMovies() {
+  const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
   const [moviesList, setMoviesList] = React.useState([]);
   const [savedMoviesList, setSavedMoviesList] = React.useState([]);
   const [shortMoviesList, setShortMoviesList] = React.useState([]);
   const [request, setRequest] = React.useState('');
   const [preloaderActive, setPreloaderActive] = React.useState(false);
   const [errorMessage, setErrorMessage] = React.useState('');
-
+  const onFilmsFilter = (isFiltered) => setShowShortMoviesOnly(isFiltered);
   const user = React.useContext(CurrentUserContext);
-
-  const handleSearch = (request) => {
-    setRequest(request);
-  };
+  const handleSearch = (request) => setRequest(request);
+  const cardList = showShortMoviesOnly ? shortMoviesList : moviesList;
 
   React.useEffect(() => {
     const getSavedMoviesList = new Promise((resolve, reject) => {
@@ -97,12 +96,13 @@ function UseMovies() {
   };
 
   return {
-    moviesList,
-    shortMoviesList,
+    cardList,
     handleSearch,
     handleLike,
     preloaderActive,
     errorMessage,
+    onFilmsFilter,
+    showShortMoviesOnly,
   };
 }
 

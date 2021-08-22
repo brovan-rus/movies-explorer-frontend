@@ -16,19 +16,11 @@ function SavedMovies() {
         onSearch={useSavedMovies.search}
         filterShortFilms={useSavedMovies.onFilmsFilter}
       />
-      <MoviesCardList>
-        {useSavedMovies.resultMoviesList.map((movie) => {
-          return (
-            <MoviesCard
-              movie={movie}
-              onDelete={useSavedMovies.remove}
-              key={movie._id}
-              place="saved-movies"
-            />
-          );
-        })}
-        ;
-      </MoviesCardList>
+      <MoviesCardList
+        cardList={useSavedMovies.resultMoviesList}
+        onDelete={useSavedMovies.remove}
+        place="saved-movies"
+      />
     </main>
   );
 }
