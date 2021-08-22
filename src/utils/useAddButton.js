@@ -30,7 +30,7 @@ function useAddButton() {
     );
   };
 
-  console.log(addCardQuantity, initialCardQuantity, cardsToRender);
+  // console.log(addCardQuantity, initialCardQuantity, cardsToRender);
 
   return {
     handleClick,

@@ -12,16 +12,17 @@ function Movies() {
   const useMovies = UseMovies();
   const onFilmsFilter = (isFiltered) => setShowShortMoviesOnly(isFiltered);
   const addButton = useAddButton();
-  React.useEffect(() => {
-    addButton.init(useMovies.moviesList);
-  }, [useMovies.moviesList]);
+
+  // React.useEffect(() => {
+  //   addButton.init(useMovies.moviesList);
+  // }, [useMovies.moviesList]);
 
   return (
     <main className="movies">
       <Preloader isActive={useMovies.preloaderActive} />
       <ErrorPopup errorText={useMovies.errorMessage} isActive={useMovies.errorMessage.length > 0} />
       <SearchForm onSearch={useMovies.handleSearch} filterShortFilms={onFilmsFilter} />
-      <MoviesCardList handleButtonClick={addButton.hadleClick}>
+      <MoviesCardList handleButtonClick={addButton.handleClick}>
         {showShortMoviesOnly
           ? useMovies.shortMoviesList.map((movie) => {
               return (

@@ -73,18 +73,25 @@ function UseMovies() {
   }, [request]);
 
   const handleLike = (movie) => {
-    console.log(movie);
     if (!movie.isSaved) {
       moviesHandler
         .save(movie)
-        .then(() => (movie.isSaved = true))
-        .then((res) => setSavedMoviesList(res))
+        .then((res) => {
+          setMoviesList((state) =>
+            state.map((c) => (c.id === movie.id ? { ...movie, isSaved: true } : c)),
+          );
+          setSavedMoviesList(res);
+        })
         .catch((e) => console.log(e));
     } else {
       moviesHandler
         .remove(movie, savedMoviesList)
-        .then(() => (movie.isSaved = false))
-        .then((res) => setSavedMoviesList(res))
+        .then((res) => {
+          setMoviesList((state) =>
+            state.map((c) => (c.id === movie.id ? { ...movie, isSaved: false } : c)),
+          );
+          setSavedMoviesList(res);
+        })
         .catch((e) => console.log(e));
     }
   };

@@ -48,13 +48,13 @@ class MoviesHandler {
 
     return mainApi
       .addMovieToSaved(token, savedMovie)
-      .then(() => {
-        return this._addToSavedMoviesList(savedMovie);
+      .then((res) => {
+        return this._addToSavedMoviesList(res.data);
       })
       .catch((e) => console.log(e));
   };
+
   remove = (movie, savedMoviesList) => {
-    console.log(movie, savedMoviesList);
     const token = this.getToken();
     const savedMovie = movie._id ? movie : savedMoviesList.find((m) => m.movieId === movie.id);
     return mainApi

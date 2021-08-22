@@ -12,7 +12,9 @@ function UseSavedMovies() {
   const user = React.useContext(CurrentUserContext);
 
   const remove = (movie) =>
-    moviesHandler.remove(movie, savedMoviesList).then((res) => setSavedMoviesList(res));
+    moviesHandler.remove(movie, savedMoviesList).then((res) => {
+      setSavedMoviesList(res);
+    });
 
   const makeResultMovieList = () => {
     const matchingFilms = request
@@ -28,7 +30,7 @@ function UseSavedMovies() {
 
   React.useEffect(() => {
     makeResultMovieList();
-  }, [request, showShortMoviesOnly]);
+  }, [request, showShortMoviesOnly, savedMoviesList]);
 
   const init = () => {
     const storedSavedMoviesList = moviesHandler.getFromLocalStorage('savedMovies');
