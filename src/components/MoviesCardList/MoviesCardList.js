@@ -1,17 +1,18 @@
 import MoviesCard from '../MoviesCard/MoviesCard';
+import useAddButton from '../../utils/useAddButton';
+import React from 'react';
 
-function MoviesCardList({
-  isButtonActive,
-  handleButtonClick,
-  cardList,
-  place,
-  handleLike,
-  onDelete,
-}) {
+function MoviesCardList({ cardList, place, handleLike, onDelete }) {
+  const addButton = useAddButton();
+
+  React.useEffect(() => {
+    addButton.init(cardList);
+  }, [cardList]);
+
   return (
     <section className="movies-card-list">
       <ul className="movies-card-list__list">
-        {cardList.map((movie) => {
+        {addButton.cardsToRender.map((movie) => {
           return (
             <MoviesCard
               movie={movie}
@@ -24,9 +25,9 @@ function MoviesCardList({
         })}
       </ul>
       <div
-        onClick={handleButtonClick}
+        onClick={addButton.handleClick}
         className={`movies-card-list__button-wrapper ${
-          !isButtonActive && 'movies-card-list__button-wrapper_hidden'
+          !addButton.isButtonActive ? 'movies-card-list__button-wrapper_hidden' : ''
         }`}
       >
         <button className="movies-card-list__button app__text app__link">Ещё</button>

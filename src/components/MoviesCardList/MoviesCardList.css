@@ -75,15 +75,6 @@
     font-size: var(--font-size-movies-list-button);
     line-height: var(--font-lineHeight-movies-list-button);
 
-    @media (--res-wideLimit) {
-      visibility: hidden;
-    }
-
-    @media (--res-wide) {
-      visibility: visible;
-    }
-
-
   }
 
 

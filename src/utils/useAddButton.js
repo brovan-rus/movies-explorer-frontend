@@ -4,24 +4,16 @@ function useAddButton() {
   const width = useWindowWidth();
   const [initialCardQuantity, setInitialCardQuantity] = React.useState(0);
   const [addCardQuantity, setAddCardQuantity] = React.useState();
-  const [currentPortion, setCurrentPortion] = React.useState(1);
   const [cardsToRender, setCardsToRender] = React.useState([]);
   const [cards, setCards] = React.useState([]);
   const [isButtonActive, setIsButtonActive] = React.useState(false);
 
-  const handleClick = () => setCurrentPortion(currentPortion + 1);
-  const checkIsButtonActive = () => cards.length < cardsToRender.length + 1;
+  const checkIsButtonActive = () =>
+    cards.length > cardsToRender.length ||
+    (cards.length === cardsToRender.length && !cards.length === 0);
 
-  React.useEffect(() => {
-    setAddCardQuantity(width > 1279 ? 3 : 2);
-    if (width > 1270) {
-      setInitialCardQuantity(12);
-    } else if (width < 480) {
-      setInitialCardQuantity(5);
-    } else {
-      setInitialCardQuantity(8);
-    }
-  }, [width]);
+  console.log(cards.length, cardsToRender.length);
+  const currentCardsQuantity = () => cardsToRender.length + addCardQuantity;
 
   const init = (cardList) => {
     setCards(cardList);
@@ -32,10 +24,35 @@ function useAddButton() {
         }
       }),
     );
+  };
+
+  const handleClick = () => {
+    setCardsToRender(
+      cards.filter((element, i, arr) => {
+        if (i < currentCardsQuantity()) {
+          return element === arr[i];
+        }
+      }),
+    );
     setIsButtonActive(checkIsButtonActive());
   };
 
-  console.log(addCardQuantity, initialCardQuantity, cardsToRender, isButtonActive);
+  React.useEffect(() => {
+    setIsButtonActive(checkIsButtonActive());
+  }, [cards, cardsToRender]);
+
+  React.useEffect(() => {
+    setAddCardQuantity(width > 1279 ? 3 : 2);
+    if (width > 1270) {
+      setInitialCardQuantity(12);
+    } else if (width < 768) {
+      setInitialCardQuantity(5);
+    } else {
+      setInitialCardQuantity(8);
+    }
+  }, [width]);
+
+  console.log(addCardQuantity, initialCardQuantity, cardsToRender, isButtonActive, cards);
 
   return {
     handleClick,
