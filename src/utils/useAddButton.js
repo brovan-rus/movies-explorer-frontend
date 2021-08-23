@@ -11,31 +11,14 @@ function useAddButton() {
   const checkIsButtonActive = () =>
     cards.length > cardsToRender.length ||
     (cards.length === cardsToRender.length && !cards.length === 0);
-
-  console.log(cards.length, cardsToRender.length);
   const currentCardsQuantity = () => cardsToRender.length + addCardQuantity;
-
   const init = (cardList) => {
     setCards(cardList);
-    setCardsToRender(
-      cardList.filter((element, i, arr) => {
-        if (i < initialCardQuantity) {
-          return element === arr[i];
-        }
-      }),
-    );
+    setCardsToRender(cardList.filter((el, i) => i < initialCardQuantity && el));
   };
 
-  const handleClick = () => {
-    setCardsToRender(
-      cards.filter((element, i, arr) => {
-        if (i < currentCardsQuantity()) {
-          return element === arr[i];
-        }
-      }),
-    );
-    setIsButtonActive(checkIsButtonActive());
-  };
+  const handleClick = () =>
+    setCardsToRender(cards.filter((el, i) => i < currentCardsQuantity() && el));
 
   React.useEffect(() => {
     setIsButtonActive(checkIsButtonActive());
@@ -51,8 +34,6 @@ function useAddButton() {
       setInitialCardQuantity(8);
     }
   }, [width]);
-
-  console.log(addCardQuantity, initialCardQuantity, cardsToRender, isButtonActive, cards);
 
   return {
     handleClick,
