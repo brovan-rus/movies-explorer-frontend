@@ -3,7 +3,12 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import mainApi from '../MainApi';
 import moviesHandler from '../MoviesHandler';
 import moviesApi from '../MoviesApi';
-import { formErrorMessage, searchFields } from '../constants';
+import {
+  formErrorMessage,
+  messagePopupDelay,
+  searchErrorMessage,
+  searchFields,
+} from '../constants';
 
 function useMovies() {
   const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
@@ -55,11 +60,11 @@ function useMovies() {
           setSavedMoviesList(savedMoviesList);
           setShortMoviesList(filteredShortMoviesWithSaved);
           if (filteredMoviesList.length === 0) {
-            setErrorMessage('Ничего не найдено');
+            setErrorMessage(searchErrorMessage);
             setErrorMessagePopupOpen(true);
             setTimeout(() => {
               setErrorMessagePopupOpen(false);
-            }, 1000);
+            }, messagePopupDelay);
           }
         })
         .catch(() => {

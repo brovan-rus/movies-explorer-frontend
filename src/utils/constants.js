@@ -5,5 +5,16 @@ const searchFields = ['country', 'description', 'director', 'nameRU', 'nameEN', 
 const formValidationErrorMessage = 'Проверьте правильность заполнения поля';
 const formErrorMessage =
   'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.';
-
-export { moviesApiUrl, mainApiUrl, formValidationErrorMessage, formErrorMessage, searchFields };
+const searchErrorMessage = 'Ничего не найдено';
+const profileEditSuccessMessage = 'Вы успешно отредактировали профиль';
+const messagePopupDelay = 1000;
+export {
+  moviesApiUrl,
+  mainApiUrl,
+  formValidationErrorMessage,
+  formErrorMessage,
+  searchFields,
+  searchErrorMessage,
+  messagePopupDelay,
+  profileEditSuccessMessage,
+};

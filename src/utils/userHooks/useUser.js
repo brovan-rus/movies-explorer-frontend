@@ -1,10 +1,13 @@
 import React from 'react';
 import mainApi from '../MainApi';
 import { useHistory } from 'react-router-dom';
+import { messagePopupDelay } from '../constants';
 
 function useUser() {
   const [formError, setFormError] = React.useState({});
   const [currentUser, setCurrentUser] = React.useState({ isLogged: false });
+  const [isProfilePopupMessageOpen, setIsProfilePopupMessageOpen] = React.useState(false);
+
   const history = useHistory();
 
   const register = ({ name, email, password }) => {
@@ -57,7 +60,9 @@ function useUser() {
     mainApi
       .editProfile(token, { name, email })
       .then((res) => {
+        setIsProfilePopupMessageOpen(true);
         setCurrentUser({ ...res.data, isLogged: true });
+        setTimeout(() => setIsProfilePopupMessageOpen(false), messagePopupDelay);
       })
       .catch((e) => {
         console.log(e);
@@ -73,6 +78,7 @@ function useUser() {
     formError,
     logout,
     edit,
+    isProfilePopupMessageOpen,
   };
 }
 

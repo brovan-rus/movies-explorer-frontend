@@ -44,7 +44,12 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute path="/profile" loggedIn={currentUser.isLogged}>
             <Header place="profile" />
-            <Profile onLogout={user.logout} onEdit={user.edit} isError={formError.profileForm} />
+            <Profile
+              onLogout={user.logout}
+              onEdit={user.edit}
+              isError={formError.profileForm}
+              isMessagePopupOpen={user.isProfilePopupMessageOpen}
+            />
           </ProtectedRoute>
           <Route path="/signin">
             <Login onLoginSubmit={user.login} isError={formError.loginForm} />
