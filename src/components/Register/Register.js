@@ -1,6 +1,6 @@
 import React from 'react';
 import AccountForm from '../AccountForm/AccountForm';
-import useForm from '../../utils/useForm';
+import useForm from '../../utils/userHooks/useForm';
 import FormError from '../FormError/FormError';
 
 function Register({ onRegisterSubmit, isError }) {

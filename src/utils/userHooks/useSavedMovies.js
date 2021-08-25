@@ -1,10 +1,10 @@
 import React from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import moviesHandler from '../../utils/MoviesHandler';
-import mainApi from '../../utils/MainApi';
-import { searchFields } from '../../utils/constants';
+import moviesHandler from '../MoviesHandler';
+import mainApi from '../MainApi';
+import { searchFields } from '../constants';
 
-function UseSavedMovies() {
+function useSavedMovies() {
   const [savedMoviesList, setSavedMoviesList] = React.useState([]);
   const [resultMoviesList, setResultMoviesList] = React.useState([]);
   const [request, setRequest] = React.useState('');
@@ -68,4 +68,4 @@ function UseSavedMovies() {
   };
 }
 
-export default UseSavedMovies;
+export default useSavedMovies;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import mainApi from '../../utils/MainApi';
-import moviesHandler from '../../utils/MoviesHandler';
-import moviesApi from '../../utils/MoviesApi';
-import { formErrorMessage, searchFields } from '../../utils/constants';
+import mainApi from '../MainApi';
+import moviesHandler from '../MoviesHandler';
+import moviesApi from '../MoviesApi';
+import { formErrorMessage, searchFields } from '../constants';
 
-function UseMovies() {
+function useMovies() {
   const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
   const [moviesList, setMoviesList] = React.useState([]);
   const [savedMoviesList, setSavedMoviesList] = React.useState([]);
@@ -106,4 +106,4 @@ function UseMovies() {
   };
 }
 
-export default UseMovies;
+export default useMovies;

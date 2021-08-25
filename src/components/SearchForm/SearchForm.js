@@ -1,6 +1,6 @@
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import FormError from '../FormError/FormError';
-import FormHandler from '../../utils/useForm';
+import FormHandler from '../../utils/userHooks/useForm';
 import React from 'react';
 
 function SearchForm({ onSearch, filterShortFilms }) {

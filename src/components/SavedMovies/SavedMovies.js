@@ -2,22 +2,19 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Preloader from '../Preloader/Preloader';
 import SearchForm from '../SearchForm/SearchForm';
 import React from 'react';
-import UseSavedMovies from '../UseSavedMovies/UseSavedMovies';
+import useSavedMovies from '../../utils/userHooks/useSavedMovies';
 
 function SavedMovies() {
-  const useSavedMovies = UseSavedMovies();
-  React.useEffect(() => useSavedMovies.init(), []);
+  const savedMovies = useSavedMovies();
+  React.useEffect(() => savedMovies.init(), []);
 
   return (
     <main className="movies">
       <Preloader />
-      <SearchForm
-        onSearch={useSavedMovies.search}
-        filterShortFilms={useSavedMovies.onFilmsFilter}
-      />
+      <SearchForm onSearch={useSavedMovies.search} filterShortFilms={savedMovies.onFilmsFilter} />
       <MoviesCardList
-        cardList={useSavedMovies.resultMoviesList}
-        onDelete={useSavedMovies.remove}
+        cardList={savedMovies.resultMoviesList}
+        onDelete={savedMovies.remove}
         place="saved-movies"
       />
     </main>

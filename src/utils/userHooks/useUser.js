@@ -1,8 +1,8 @@
 import React from 'react';
-import mainApi from '../../utils/MainApi';
+import mainApi from '../MainApi';
 import { useHistory } from 'react-router-dom';
 
-function UserHandler() {
+function useUser() {
   const [formError, setFormError] = React.useState({});
   const [currentUser, setCurrentUser] = React.useState({ isLogged: false });
   const history = useHistory();
@@ -76,4 +76,4 @@ function UserHandler() {
   };
 }
 
-export default UserHandler;
+export default useUser;

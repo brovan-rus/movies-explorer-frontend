@@ -1,6 +1,6 @@
 import React from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import useForm from '../../utils/useForm';
+import useForm from '../../utils/userHooks/useForm';
 import FormError from '../FormError/FormError';
 import { formErrorMessage } from '../../utils/constants';
 

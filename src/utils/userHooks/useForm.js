@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { formValidationErrorMessage } from './constants';
+import { formValidationErrorMessage } from '../constants';
 
 function useForm() {
   const validator = require('validator');

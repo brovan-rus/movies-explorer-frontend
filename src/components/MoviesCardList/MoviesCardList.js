@@ -1,5 +1,5 @@
 import MoviesCard from '../MoviesCard/MoviesCard';
-import useAddButton from '../../utils/useAddButton';
+import useAddButton from '../../utils/userHooks/useAddButton';
 import React from 'react';
 
 function MoviesCardList({ cardList, place, handleLike, onDelete }) {

@@ -11,11 +11,11 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import UserHandler from '../UserHandler/UserHandler';
+import useUser from '../../utils/userHooks/useUser';
 import ProtectedRoute from '../ProtectedRoute';
 
 function App() {
-  const user = new UserHandler();
+  const user = new useUser();
   const currentUser = user.currentUser;
   const formError = user.formError;
 
