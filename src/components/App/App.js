@@ -12,6 +12,7 @@ import Login from '../Login/Login';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import UserHandler from '../UserHandler/UserHandler';
+import ProtectedRoute from '../ProtectedRoute';
 
 function App() {
   const user = new UserHandler();
@@ -31,20 +32,20 @@ function App() {
             <Main />
             <Footer />
           </Route>
-          <Route path="/movies">
+          <ProtectedRoute path="/movies" loggedIn={currentUser.isLogged}>
             <Header place="movies" />
             <Movies />
             <Footer />
-          </Route>
-          <Route path="/saved-movies">
+          </ProtectedRoute>
+          <ProtectedRoute path="/saved-movies" loggedIn={currentUser.isLogged}>
             <Header place="saved-movies" />
             <SavedMovies />
             <Footer />
-          </Route>
-          <Route path="/profile">
+          </ProtectedRoute>
+          <ProtectedRoute path="/profile" loggedIn={currentUser.isLogged}>
             <Header place="profile" />
             <Profile onLogout={user.logout} onEdit={user.edit} isError={formError.profileForm} />
-          </Route>
+          </ProtectedRoute>
           <Route path="/signin">
             <Login onLoginSubmit={user.login} isError={formError.loginForm} />
           </Route>
