@@ -10,7 +10,7 @@ function useUser() {
   const register = ({ name, email, password }) => {
     setFormError({ ...formError, registerForm: false });
     mainApi
-      .register(email, password, name)
+      .register(name, email, password)
       .then(() => login({ email, password }))
       .then(() => setCurrentUser({ name, email, isLogged: true }))
       .catch((e) => {

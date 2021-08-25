@@ -35,13 +35,13 @@ class MainApi {
     }).then(handleResponse);
   }
 
-  register(email, name, password) {
+  register(name, email, password) {
     return fetch(`${this._url}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, name, password }),
+      body: JSON.stringify({ name, email, password }),
     }).then(handleResponse);
   }
 
