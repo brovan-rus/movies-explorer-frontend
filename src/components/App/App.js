@@ -15,13 +15,15 @@ import useUser from '../../utils/userHooks/useUser';
 import ProtectedRoute from '../ProtectedRoute';
 
 function App() {
-  const user = new useUser();
+  const user = useUser();
   const currentUser = user.currentUser;
   const formError = user.formError;
 
   React.useEffect(() => {
     user.auth();
   }, []);
+
+  console.log(currentUser);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

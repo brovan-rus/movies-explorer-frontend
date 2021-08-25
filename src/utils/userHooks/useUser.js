@@ -2,10 +2,13 @@ import React from 'react';
 import mainApi from '../MainApi';
 import { useHistory } from 'react-router-dom';
 import { messagePopupDelay } from '../constants';
+import moviesHandler from '../MoviesHandler';
 
 function useUser() {
   const [formError, setFormError] = React.useState({});
-  const [currentUser, setCurrentUser] = React.useState({ isLogged: false });
+  const [currentUser, setCurrentUser] = React.useState(
+    moviesHandler.getToken() ? { isLogged: true } : { isLogged: false },
+  );
   const [isProfilePopupMessageOpen, setIsProfilePopupMessageOpen] = React.useState(false);
 
   const history = useHistory();
@@ -35,10 +38,10 @@ function useUser() {
       });
   };
 
-  const auth = () => {
+  const auth = async () => {
     const token = localStorage.getItem('jwt');
     if (token) {
-      mainApi
+      await mainApi
         .auth(token)
         .then((res) => {
           setCurrentUser({ ...res.data, isLogged: true });
