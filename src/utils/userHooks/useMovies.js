@@ -7,6 +7,7 @@ import { formErrorMessage, searchFields } from '../constants';
 
 function useMovies() {
   const [showShortMoviesOnly, setShowShortMoviesOnly] = React.useState(false);
+  const [errorMessagePopupOpen, setErrorMessagePopupOpen] = React.useState(false);
   const [moviesList, setMoviesList] = React.useState([]);
   const [savedMoviesList, setSavedMoviesList] = React.useState([]);
   const [shortMoviesList, setShortMoviesList] = React.useState([]);
@@ -55,9 +56,10 @@ function useMovies() {
           setShortMoviesList(filteredShortMoviesWithSaved);
           if (filteredMoviesList.length === 0) {
             setErrorMessage('Ничего не найдено');
+            setErrorMessagePopupOpen(true);
             setTimeout(() => {
-              setErrorMessage('');
-            }, 2500);
+              setErrorMessagePopupOpen(false);
+            }, 1000);
           }
         })
         .catch(() => {
@@ -103,6 +105,7 @@ function useMovies() {
     errorMessage,
     onFilmsFilter,
     showShortMoviesOnly,
+    errorMessagePopupOpen,
   };
 }
 

@@ -3,7 +3,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Preloader from '../Preloader/Preloader';
 import React from 'react';
 import useMovies from '../../utils/userHooks/useMovies';
-import ErrorPopup from '../ErrorPopup/ErrorPopup';
+import MessagePopup from '../MessagePopup/MessagePopup';
 
 function Movies() {
   const movies = useMovies();
@@ -13,7 +13,7 @@ function Movies() {
   return (
     <main className="movies">
       <Preloader isActive={preloaderActive} />
-      <ErrorPopup errorText={errorMessage} isActive={movies.errorMessage.length > 0} />
+      <MessagePopup messageText={movies.errorMessage} isActive={movies.errorMessagePopupOpen} />
       <SearchForm onSearch={handleSearch} filterShortFilms={onFilmsFilter} />
       <MoviesCardList cardList={cardList} place="movies" handleLike={handleLike} />
     </main>
