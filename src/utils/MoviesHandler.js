@@ -1,23 +1,7 @@
 import mainApi from './MainApi';
+import localStorageHandler from './LocalStorageHandler';
 
 class MoviesHandler {
-  getToken = () => localStorage.getItem('jwt');
-  saveToLocalStorage = (name, value) => localStorage.setItem(`${name}`, JSON.stringify(value));
-  getFromLocalStorage = (name) => JSON.parse(localStorage.getItem(name));
-  _addToSavedMoviesList(movie) {
-    const savedMoviesOldList = this.getFromLocalStorage('savedMovies');
-    const savedMoviesNewList = [...savedMoviesOldList, movie];
-    this.saveToLocalStorage('savedMovies', savedMoviesNewList);
-    return this.getFromLocalStorage('savedMovies');
-  }
-  _removeFromSavedMoviesList(movie) {
-    const savedMoviesOldList = this.getFromLocalStorage('savedMovies');
-    const savedMoviesNewList = savedMoviesOldList.filter((m) =>
-      movie._id ? !(m._id === movie._id) : !(m.movieId === movie.id),
-    );
-    this.saveToLocalStorage('savedMovies', savedMoviesNewList);
-    return this.getFromLocalStorage('savedMovies');
-  }
   searchMovie = (movies, fields, { request }) =>
     movies.filter((movie) =>
       fields.some((field) => movie[field] && movie[field].includes(request)),
@@ -31,7 +15,7 @@ class MoviesHandler {
     );
   save = (movie) => {
     console.log(movie);
-    const token = this.getToken();
+    const token = localStorageHandler.getToken();
     const savedMovie = {
       nameEN: movie.nameEN,
       nameRU: movie.nameRU,
@@ -46,23 +30,13 @@ class MoviesHandler {
       country: movie.country,
     };
 
-    return mainApi
-      .addMovieToSaved(token, savedMovie)
-      .then((res) => {
-        return this._addToSavedMoviesList(res.data);
-      })
-      .catch((e) => console.log(e));
+    return mainApi.addMovieToSaved(token, savedMovie).catch(() => Promise.reject());
   };
 
   remove = (movie, savedMoviesList) => {
-    const token = this.getToken();
+    const token = localStorageHandler.getToken();
     const savedMovie = movie._id ? movie : savedMoviesList.find((m) => m.movieId === movie.id);
-    return mainApi
-      .removeMovieFromSaved(token, savedMovie._id)
-      .then(() => {
-        return this._removeFromSavedMoviesList(movie);
-      })
-      .catch((e) => console.log(e));
+    return mainApi.removeMovieFromSaved(token, savedMovie._id).catch(() => Promise.reject());
   };
 }
 

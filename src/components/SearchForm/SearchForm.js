@@ -3,7 +3,7 @@ import FormError from '../FormError/FormError';
 import FormHandler from '../../utils/userHooks/useForm';
 import React from 'react';
 
-function SearchForm({ onSearch, filterShortFilms }) {
+function SearchForm({ onSearch, filterShortFilms, isFiltered }) {
   const [searchFormError, setSearchFormError] = React.useState({
     message: 'Запрос не может быть пустым',
     isError: false,
@@ -53,7 +53,7 @@ function SearchForm({ onSearch, filterShortFilms }) {
           onClick={handleSearchSubmit}
         />
       </form>
-      <FilterCheckbox onCheck={handleSetCheckbox} />
+      <FilterCheckbox onCheck={handleSetCheckbox} isActive={isFiltered} />
     </div>
   );
 }

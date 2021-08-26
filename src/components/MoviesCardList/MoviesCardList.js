@@ -4,7 +4,6 @@ import React from 'react';
 
 function MoviesCardList({ cardList, place, handleLike, onDelete }) {
   const addButton = useAddButton();
-
   React.useEffect(() => {
     addButton.init(cardList);
   }, [cardList]);
@@ -18,7 +17,7 @@ function MoviesCardList({ cardList, place, handleLike, onDelete }) {
               movie={movie}
               onLike={handleLike}
               onDelete={onDelete}
-              key={movie.id}
+              key={movie.id || movie._id}
               place={place}
             />
           );

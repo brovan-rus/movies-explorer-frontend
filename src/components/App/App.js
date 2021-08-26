@@ -13,17 +13,29 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import useUser from '../../utils/userHooks/useUser';
 import ProtectedRoute from '../ProtectedRoute';
+import localStorageHandler from '../../utils/LocalStorageHandler';
+import mainApi from '../../utils/MainApi';
 
 function App() {
   const user = useUser();
   const currentUser = user.currentUser;
   const formError = user.formError;
+  const [savedFilteredMovies, setSavedFilteredMovies] = React.useState([]);
+  const [savedMovies, setSavedMovies] = React.useState([]);
+  const [isFiltered, setIsFiltered] = React.useState(false);
+  console.log(savedMovies);
 
   React.useEffect(() => {
     user.auth();
+    const savedFilteredMovies = localStorageHandler.getFromLocalStorage('filteredMoviesList');
+    const isFiltered = localStorageHandler.getFromLocalStorage('isFiltered');
+    if (savedFilteredMovies) {
+      setSavedFilteredMovies(savedFilteredMovies);
+      setIsFiltered(isFiltered);
+    }
+    mainApi.getSavedMovies(localStorageHandler.getToken()).then((res) => setSavedMovies(res.data));
   }, []);
-
-  console.log(currentUser);
+  const updateSavedMovies = (updateSavedMovies) => setSavedMovies(updateSavedMovies);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -36,12 +48,17 @@ function App() {
           </Route>
           <ProtectedRoute path="/movies" loggedIn={currentUser.isLogged}>
             <Header place="movies" />
-            <Movies />
+            <Movies
+              savedSearch={savedFilteredMovies}
+              savedMovies={savedMovies}
+              isFiltered={isFiltered}
+              updateSavedMovies={updateSavedMovies}
+            />
             <Footer />
           </ProtectedRoute>
           <ProtectedRoute path="/saved-movies" loggedIn={currentUser.isLogged}>
             <Header place="saved-movies" />
-            <SavedMovies />
+            <SavedMovies savedMovies={savedMovies} updateSavedMovies={updateSavedMovies} />
             <Footer />
           </ProtectedRoute>
           <ProtectedRoute path="/profile" loggedIn={currentUser.isLogged}>

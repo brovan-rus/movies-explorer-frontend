@@ -1,11 +1,13 @@
 import React from 'react';
 
-function FilterCheckbox({ onCheck }) {
+function FilterCheckbox({ onCheck, isActive }) {
   const [isChecked, setIsChecked] = React.useState(false);
   const handleFilterCheckboxClick = (e) => {
     setIsChecked(!isChecked);
     onCheck(!isChecked);
   };
+
+  React.useEffect(() => setIsChecked(isActive), [isActive]);
 
   return (
     <div className="filter-checkbox">

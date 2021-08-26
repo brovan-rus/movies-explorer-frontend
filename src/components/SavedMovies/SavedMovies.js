@@ -4,17 +4,20 @@ import SearchForm from '../SearchForm/SearchForm';
 import React from 'react';
 import useSavedMovies from '../../utils/userHooks/useSavedMovies';
 
-function SavedMovies() {
-  const savedMovies = useSavedMovies();
-  React.useEffect(() => savedMovies.init(), []);
+function SavedMovies({ savedMovies, updateSavedMovies }) {
+  const savedMoviesHandler = useSavedMovies(updateSavedMovies);
+  React.useEffect(() => savedMoviesHandler.init(savedMovies), [savedMovies]);
 
   return (
     <main className="movies">
       <Preloader />
-      <SearchForm onSearch={useSavedMovies.search} filterShortFilms={savedMovies.onFilmsFilter} />
+      <SearchForm
+        onSearch={savedMoviesHandler.search}
+        filterShortFilms={savedMoviesHandler.onFilmsFilter}
+      />
       <MoviesCardList
-        cardList={savedMovies.resultMoviesList}
-        onDelete={savedMovies.remove}
+        cardList={savedMoviesHandler.cardList}
+        onDelete={savedMoviesHandler.remove}
         place="saved-movies"
       />
     </main>

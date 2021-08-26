@@ -11,12 +11,19 @@ function useAddButton() {
   const checkIsButtonActive = () =>
     cards.length > cardsToRender.length ||
     (cards.length === cardsToRender.length && !cards.length === 0);
-  const currentCardsQuantity = () => cardsToRender.length + addCardQuantity;
-  const init = (cardList) => {
-    setCards(cardList);
-    setCardsToRender(cardList.filter((el, i) => i < initialCardQuantity && el));
-  };
 
+  const currentCardsQuantity = () => cardsToRender.length + addCardQuantity;
+
+  React.useEffect(() => {
+    setCardsToRender(
+      cards.filter(
+        (el, i) =>
+          i < (cardsToRender.length === 0 ? initialCardQuantity : cardsToRender.length) && el,
+      ),
+    );
+  }, [cards]);
+
+  const init = (cardList) => setCards(cardList);
   const handleClick = () =>
     setCardsToRender(cards.filter((el, i) => i < currentCardsQuantity() && el));
 
