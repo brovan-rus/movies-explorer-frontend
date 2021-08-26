@@ -1,5 +1,6 @@
 import React from 'react';
 import useWindowWidth from './useWindowWidth';
+import { res } from '../constants';
 function useAddButton() {
   const width = useWindowWidth();
   const [initialCardQuantity, setInitialCardQuantity] = React.useState(0);
@@ -32,13 +33,13 @@ function useAddButton() {
   }, [cards, cardsToRender]);
 
   React.useEffect(() => {
-    setAddCardQuantity(width > 1279 ? 3 : 2);
-    if (width > 1270) {
-      setInitialCardQuantity(12);
-    } else if (width < 768) {
-      setInitialCardQuantity(5);
+    setAddCardQuantity(width > res.wide.res - 1 ? res.wide.addCards : res.mid.addCards);
+    if (width > res.wide.res - 1) {
+      setInitialCardQuantity(res.wide.initCards);
+    } else if (width < res.mid.res) {
+      setInitialCardQuantity(res.low.initCards);
     } else {
-      setInitialCardQuantity(8);
+      setInitialCardQuantity(res.mid.initCards);
     }
   }, [width]);
 

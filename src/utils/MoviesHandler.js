@@ -1,12 +1,13 @@
 import mainApi from './MainApi';
 import localStorageHandler from './LocalStorageHandler';
+import { shortMovieDuration } from './constants';
 
 class MoviesHandler {
   searchMovie = (movies, fields, { request }) =>
     movies.filter((movie) =>
       fields.some((field) => movie[field] && movie[field].includes(request)),
     );
-  filterShortMovies = (movies) => movies.filter((m) => m.duration * 1 < 41);
+  filterShortMovies = (movies) => movies.filter((m) => m.duration * 1 < shortMovieDuration);
   setIsSaved = (movies, savedMovies) =>
     movies.map((movie) =>
       savedMovies.some((savedMovie) => movie.id === savedMovie.movieId)
