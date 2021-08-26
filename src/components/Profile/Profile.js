@@ -5,7 +5,7 @@ import FormError from '../FormError/FormError';
 import { formErrorMessage, profileEditSuccessMessage } from '../../utils/constants';
 import MessagePopup from '../MessagePopup/MessagePopup';
 
-function Profile({ onLogout, onEdit, isError, isMessagePopupOpen }) {
+function Profile({ onLogout, onEdit, isError, isMessagePopupOpen, isButtonDisabled }) {
   const user = React.useContext(CurrentUserContext);
   const form = useForm();
 
@@ -85,7 +85,8 @@ function Profile({ onLogout, onEdit, isError, isMessagePopupOpen }) {
             <button
               disabled={
                 !form.isValid ||
-                (user.name === form.values.name && user.email === form.values.email)
+                (user.name === form.values.name && user.email === form.values.email) ||
+                isButtonDisabled
               }
               onClick={handleSubmit}
               type="submit"

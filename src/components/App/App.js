@@ -20,10 +20,11 @@ function App() {
   const user = useUser();
   const currentUser = user.currentUser;
   const formError = user.formError;
+  const formButtonIsDisabled = user.formButtonIsDisabled;
   const [savedFilteredMovies, setSavedFilteredMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [isFiltered, setIsFiltered] = React.useState(false);
-  console.log(savedMovies);
+  console.log(formButtonIsDisabled);
 
   React.useEffect(() => {
     user.auth();
@@ -68,13 +69,22 @@ function App() {
               onEdit={user.edit}
               isError={formError.profileForm}
               isMessagePopupOpen={user.isProfilePopupMessageOpen}
+              isButtonDisabled={formButtonIsDisabled}
             />
           </ProtectedRoute>
           <Route path="/signin">
-            <Login onLoginSubmit={user.login} isError={formError.loginForm} />
+            <Login
+              onLoginSubmit={user.login}
+              isError={formError.loginForm}
+              isButtonDisabled={formButtonIsDisabled}
+            />
           </Route>
           <Route path="/signup">
-            <Register onRegisterSubmit={user.register} isError={formError.registerForm} />
+            <Register
+              onRegisterSubmit={user.register}
+              isError={formError.registerForm}
+              isButtonDisabled={formButtonIsDisabled}
+            />
           </Route>
           <Route path="*">
             <ErrorMessage title="404" text="Страница не найдена" />

@@ -3,12 +3,13 @@ import AccountForm from '../AccountForm/AccountForm';
 import useForm from '../../utils/userHooks/useForm';
 import FormError from '../FormError/FormError';
 
-function Login({ onLoginSubmit, isError }) {
+function Login({ onLoginSubmit, isError, isButtonDisabled }) {
   const form = useForm();
   const handleLoginSubmit = () => {
     onLoginSubmit(form.values);
   };
   React.useEffect(() => form.resetForm(), []);
+  console.log(isButtonDisabled);
 
   return (
     <AccountForm
@@ -19,7 +20,7 @@ function Login({ onLoginSubmit, isError }) {
       linkText="Регистрация"
       isError={isError}
       onSubmit={handleLoginSubmit}
-      isButtonDisabled={!form.isValid}
+      isButtonDisabled={!form.isValid || isButtonDisabled}
     >
       <div className="account-form__input-wrapper">
         <label className="account-form__label" htmlFor="name">

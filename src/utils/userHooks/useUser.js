@@ -6,6 +6,7 @@ import localStorageHandler from '../LocalStorageHandler';
 
 function useUser() {
   const [formError, setFormError] = React.useState({});
+  const [formButtonIsDisabled, setFormButtonIsDisabled] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState(
     localStorageHandler.getToken() ? { isLogged: true } : { isLogged: false },
   );
@@ -15,16 +16,19 @@ function useUser() {
 
   const register = ({ name, email, password }) => {
     setFormError({ ...formError, registerForm: false });
+    setFormButtonIsDisabled(true);
     mainApi
       .register(name, email, password)
       .then(() => login({ email, password }))
       .then(() => setCurrentUser({ name, email, isLogged: true }))
       .catch((e) => {
         setFormError({ ...formError, registerForm: true });
-      });
+      })
+      .finally(() => setFormButtonIsDisabled(false));
   };
 
   const login = ({ email, password }) => {
+    setFormButtonIsDisabled(true);
     setFormError({ ...formError, loginForm: false });
     mainApi
       .login(email, password)
@@ -35,7 +39,8 @@ function useUser() {
       .then(() => history.push('/movies'))
       .catch(() => {
         setFormError({ ...formError, loginForm: true });
-      });
+      })
+      .finally(() => setFormButtonIsDisabled(false));
   };
 
   const auth = () => {
@@ -58,6 +63,7 @@ function useUser() {
 
   const edit = ({ name, email }) => {
     setFormError({ ...formError, profileForm: false });
+    setFormButtonIsDisabled(true);
     const token = localStorageHandler.getToken();
     mainApi
       .editProfile(token, { name, email })
@@ -69,7 +75,8 @@ function useUser() {
       .catch((e) => {
         console.log(e);
         setFormError({ ...formError, profileForm: true });
-      });
+      })
+      .finally(() => setFormButtonIsDisabled(false));
   };
 
   return {
@@ -81,6 +88,7 @@ function useUser() {
     logout,
     edit,
     isProfilePopupMessageOpen,
+    formButtonIsDisabled,
   };
 }
 

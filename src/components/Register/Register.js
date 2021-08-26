@@ -3,7 +3,7 @@ import AccountForm from '../AccountForm/AccountForm';
 import useForm from '../../utils/userHooks/useForm';
 import FormError from '../FormError/FormError';
 
-function Register({ onRegisterSubmit, isError }) {
+function Register({ onRegisterSubmit, isError, isButtonDisabled }) {
   const handleRegisterFormSubmit = () => {
     onRegisterSubmit(form.values);
   };
@@ -19,7 +19,7 @@ function Register({ onRegisterSubmit, isError }) {
       link="/signin"
       linkText="Войти"
       isError={isError}
-      isButtonDisabled={!form.isValid}
+      isButtonDisabled={!form.isValid || isButtonDisabled}
       onSubmit={handleRegisterFormSubmit}
     >
       <div className="account-form__input-wrapper">
