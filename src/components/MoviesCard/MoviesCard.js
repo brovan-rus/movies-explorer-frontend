@@ -1,3 +1,5 @@
+import { hoursAndMinutes } from '../../utils/utils';
+
 function MoviesCard({ movie, onDelete, place, onLike }) {
   const handleButtonClick = () => {
     if (onLike) {
@@ -12,7 +14,7 @@ function MoviesCard({ movie, onDelete, place, onLike }) {
       <div className="movies-card__heading">
         <div className="movies-card__title-wrapper app__text">
           <h3 className="movies-card__title">{movie.nameRU}</h3>
-          <p className="movies-card__subtitle">{movie.duration}</p>
+          <p className="movies-card__subtitle">{hoursAndMinutes(movie.duration)}</p>
         </div>
         <button
           onClick={handleButtonClick}

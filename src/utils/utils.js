@@ -25,6 +25,8 @@ const userFormValidation = (name, email, password) => {
   return validation;
 };
 
+const hoursAndMinutes = (minutes) => `${(minutes - (minutes % 60)) / 60}ч ${minutes % 60}м`;
+
 const resEquation = (resA, resB, sizeA, sizeB) => {
   const det = resB - resA;
   const shift = (resB * sizeA - resA * sizeB) / det;
@@ -40,4 +42,4 @@ function handleResponse(res) {
   }
 }
 
-module.exports = { resEquation, handleResponse, userFormValidation };
+module.exports = { resEquation, handleResponse, userFormValidation, hoursAndMinutes };
