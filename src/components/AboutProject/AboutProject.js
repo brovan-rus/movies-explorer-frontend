@@ -23,7 +23,7 @@ function AboutProject() {
         </div>
       </div>
 
-      <progresss className="progress-bar">
+      <div className="progress-bar">
         <div className="progress-bar__element">
           <p className="progress-bar__caption progress-bar__caption_active app__text">1 неделя</p>
           <p className="progress-bar__text app__text">Back-end</p>
@@ -32,7 +32,7 @@ function AboutProject() {
           <p className="progress-bar__caption app__text">4 недели</p>
           <p className="progress-bar__text progress-bar__text_active app__text">Front-end</p>
         </div>
-      </progresss>
+      </div>
     </section>
   );
 }

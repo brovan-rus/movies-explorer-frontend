@@ -12,6 +12,7 @@ function Footer() {
               <a
                 href="https://practicum.yandex.ru/"
                 target="_blank"
+                rel="noreferrer"
                 className="footer__link app__link"
               >
                 Яндекс.Практикум
@@ -21,6 +22,7 @@ function Footer() {
               <a
                 href="https://github.com/brovan-rus/"
                 target="_blank"
+                rel="noreferrer"
                 className="footer__link app__link"
               >
                 Github
@@ -29,6 +31,7 @@ function Footer() {
             <li className="footer__list-element">
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://www.facebook.com/profile.php?id=100005340542138"
                 className="footer__link app__link"
               >

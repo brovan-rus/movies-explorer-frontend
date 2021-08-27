@@ -1,21 +1,43 @@
-function MoviesCard({ image, title, isSaved, length, place }) {
+import { hoursAndMinutes } from '../../utils/utils';
+
+function MoviesCard({ movie, onDelete, place, onLike }) {
+  const handleButtonClick = () => {
+    if (onLike) {
+      onLike(movie);
+    } else {
+      onDelete(movie);
+    }
+  };
+
   return (
     <li className="movies-card">
       <div className="movies-card__heading">
         <div className="movies-card__title-wrapper app__text">
-          <h3 className="movies-card__title">{title}</h3>
-          <p className="movies-card__subtitle">{length}</p>
+          <h3 className="movies-card__title">{movie.nameRU}</h3>
+          <p className="movies-card__subtitle">{hoursAndMinutes(movie.duration)}</p>
         </div>
         <button
+          onClick={handleButtonClick}
           className={`app__link movies-card__button ${
-            isSaved && place === 'movies' ? 'movies-card__button_active' : ''
+            movie.isSaved && place === 'movies' ? 'movies-card__button_active' : ''
           }
           ${place === 'saved-movies' ? 'movies-card__button_place_saved-movies' : ''}`}
         >
           <div className="movies-card__button-icon" />
         </button>
       </div>
-      <img src={image} alt={title} />
+      <a
+        href={movie.trailerLink ? movie.trailerLink : movie.trailer}
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img
+          className="movies-card__image"
+          src={movie.image.url ? `https://api.nomoreparties.co${movie.image.url}` : movie.image}
+          alt={movie.image.alternativeText ? movie.image.alternativeText : movie.nameRU}
+          width={movie.image.width}
+        />
+      </a>
     </li>
   );
 }

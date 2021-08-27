@@ -1,40 +1,25 @@
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import MoviesCard from '../MoviesCard/MoviesCard';
-import card1 from '../../images/card1.jpg';
-import card2 from '../../images/card2.jpg';
-import card3 from '../../images/card3.jpg';
 import Preloader from '../Preloader/Preloader';
 import SearchForm from '../SearchForm/SearchForm';
+import React from 'react';
+import useSavedMovies from '../../utils/userHooks/useSavedMovies';
 
-function SavedMovies() {
+function SavedMovies({ savedMovies, updateSavedMovies }) {
+  const savedMoviesHandler = useSavedMovies(updateSavedMovies);
+  React.useEffect(() => savedMoviesHandler.init(savedMovies), [savedMovies]);
+
   return (
     <main className="movies">
       <Preloader />
-      <SearchForm />
-      <MoviesCardList>
-        <MoviesCard
-          place="saved-movies"
-          image={card1}
-          title={'33 слова о дизайне'}
-          isSaved={false}
-          length={'1 ч. 47м'}
-        />
-        <MoviesCard
-          place="saved-movies"
-          image={card2}
-          title={'Киноальманах «100 лет дизайна»'}
-          isSaved={true}
-          length={'1ч 3м'}
-        />
-        <MoviesCard
-          place="saved-movies"
-          image={card3}
-          title={'В погоне за Бенкси'}
-          isSaved={true}
-          length={'1ч 42м'}
-        />
-      </MoviesCardList>
-      ;
+      <SearchForm
+        onSearch={savedMoviesHandler.search}
+        filterShortFilms={savedMoviesHandler.onFilmsFilter}
+      />
+      <MoviesCardList
+        cardList={savedMoviesHandler.cardList}
+        onDelete={savedMoviesHandler.remove}
+        place="saved-movies"
+      />
     </main>
   );
 }

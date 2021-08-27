@@ -23,3 +23,5 @@
 @import url('../components/Profile/Profile.css');
 @import url('../components/AccountForm/AccountForm.css');
 @import url('../components/ErrorMessage/ErrorMessage.css');
+@import url('../components/FormError/FormError.css');
+@import url('../components/MessagePopup/MessagePopup.css');

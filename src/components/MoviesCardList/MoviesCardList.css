@@ -57,6 +57,10 @@
     display: flex;
     padding: var(--padding-card-list-wrapper);
     width: 100%;
+
+    &_hidden {
+      display: none;
+    }
   }
 
   &__button {
@@ -70,15 +74,6 @@
     border: 1px solid var(--color-paleGray);
     font-size: var(--font-size-movies-list-button);
     line-height: var(--font-lineHeight-movies-list-button);
-
-    @media (--res-wideLimit) {
-      visibility: hidden;
-    }
-
-    @media (--res-wide) {
-      visibility: visible;
-    }
-
 
   }
 

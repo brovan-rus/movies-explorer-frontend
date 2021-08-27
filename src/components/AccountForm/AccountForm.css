@@ -71,6 +71,7 @@
     font-size: var(--font-size-formTextMedium);
     font-weight: 400;
     line-height: var(--font-lineHeight-formTextBigHeight);
+    position: relative;
 
     &:last-of-type {
       margin: 0;
@@ -81,6 +82,15 @@
     }
   }
 
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: var(--magrin-account-form-input);
+
+  }
+
   &__label {
     font-weight: 400;
     color: var(--color-gray);
@@ -88,23 +98,6 @@
     line-height: var(--font-lineHeight-formTextSmallHeight);
     margin: var(--magrin-account-form-label);
   }
-
-  &__error-message {
-    transition: opacity .4s linear, visibility .4s linear;
-    visibility: hidden;
-    opacity: 0;
-    font-size: var(--font-size-formTextSmaller);
-    line-height: var(--font-lineHeight-formTextSmallHeight);
-    color: var(--color-red);
-    padding: var(--padding-account-form-error-message);
-
-    &_active {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-
 
   &__button {
     box-sizing: border-box;
@@ -119,6 +112,7 @@
     border-radius: 3px;
     background-color: var(--color-blueButton);
     padding: var(--padding-account-form-button);
+    transition: background-color .4s linear;
 
     &:disabled {
       &:hover {
@@ -130,7 +124,6 @@
   }
 
   &__caption {
-    margin: 0;
     padding: 0;
     color: var(--color-gray);
     margin: var(--margin-account-form-caption);
